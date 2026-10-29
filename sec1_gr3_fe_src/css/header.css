@@ -9,7 +9,7 @@ header{
     height: 80px;
 }
 
-div {
+.header div {
     font-weight: bold;
     font-size: 50px;
 

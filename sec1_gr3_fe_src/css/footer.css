@@ -7,6 +7,8 @@ footer{
     align-items: center;
 }
 
-.team, .mahidol{
+.footer .team, .mahidol{
     font-size: 10px;
+
+    margin: 10px;
 }
