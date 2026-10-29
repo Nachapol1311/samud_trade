@@ -1,0 +1,12 @@
+footer{
+    background-color: #601D49;
+    color: #ffebb8;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.team, .mahidol{
+    font-size: 10px;
+}
