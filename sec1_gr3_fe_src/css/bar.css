@@ -6,10 +6,16 @@ header, footer{
     justify-content:space-between;
     align-items: center;
 
-    div{
-        margin-inline: 10px;
-    }
+}
 
+header div{
+    margin-inline: 10px;
+    font-size: 30px;
+}
+
+footer div{
+    margin-inline: 10px;
+    font-size: 10px;
 }
 
 nav{
