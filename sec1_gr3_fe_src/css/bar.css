@@ -6,46 +6,49 @@ header, footer{
     justify-content:space-between;
     align-items: center;
 
-}
-
-a{
-    text-decoration: none;
-}
-
-header a{
-    color: #ffebb8;   /* สีเหลือง */
+    padding-inline:15px;
 }
 
 header div{
-    margin-inline: 10px;
     font-size: 30px;
+}
+
+footer div{
+    font-size: 10px;
+}
+
+footer a{
+    text-decoration: none;
+    color: #ffebb8;
+    text-align: center;
+
+    p:hover{
+        background-color: #ffebb8;
+        color: #601D49;
+        border-radius: 10%;
+    }    
 }
 
 nav{
     background-color: #ffebb8;
-    color: #601049;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    flex-wrap: nowrap;   /* ไม่ให้ขึ้นบรรทัดใหม่ */
-
-    height: 50px;
-    padding: 0 20px;
+    height: 30px;
+    padding-inline: 15px;
 }
 
-nav a{
-    color: #601049;   /* สีม่วงของเมนู */
+.nav{
+    font-size: 15px;
+    text-decoration: none;
+    color: #601D49;
+
+    margin-inline:5px;
 }
 
-nav div{
-    display: flex;
-    align-items: center;
-    gap: 15px;          /* ระยะห่างระหว่างเมนู */
-}
-
-footer div{
-    margin-inline: 10px;
-    font-size: 10px;
+.nav:hover{
+    font-size: 20px;
+    color:#444;
 }
