@@ -9,7 +9,7 @@ article {
     margin-bottom: 30pt;
 }
 
-.book {
+.item {
     background-color: #ddd;
     /* display: block; */
     text-align: center;
@@ -28,7 +28,7 @@ img {
     overflow: hidden;
 }
 
-.bookname{
+.itemname{
     color: #601d49;
     font-size: 15pt;
     font-weight: bold;
@@ -37,12 +37,12 @@ img {
 
 }
 
-.catagory{
+.info{
     color: #000;
     font-size: 10pt;
 }
 
-.book a {
+.item a {
     text-decoration: none;
     background-color: #bd5579;
     color: #ffebb8;
@@ -53,7 +53,7 @@ img {
     padding: 3pt;
 }
 
-.book a:hover {
+.item a:hover {
     background-color: #ea9d9d;
     color: #601d49;
 
