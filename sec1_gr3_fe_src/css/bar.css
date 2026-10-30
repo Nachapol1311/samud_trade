@@ -1,60 +1,68 @@
+/*  #601d49
+    #BD5579
+    #ea9d9d
+    #ffebb8 */
+
 *{
     font-family: 'Courier New', Courier, monospace;
 }
+
 header, footer{
-    background-color: #601D49;
-    color: #ffebb8;
+    background-color: #601d49;
 
     display: flex;
     justify-content:space-between;
     align-items: center;
 
-    padding-inline:15px;
+    padding-inline:15pt;
 }
 
 header div{
-    font-size: 30px;
+    color: #ffebb8;
+    font-size: 30pt;
     font-weight: bold;
 }
 
 footer div{
-    font-size: 10px;
+    color: #ea9d9d;
+    font-size: 10pt;
 }
 
 footer a{
     text-decoration: none;
-    color: #ffebb8;
+    color: #ea9d9d;
     text-align: center;
 
     p:hover{
-        background-color: #ffebb8;
-        color: #601D49;
-        border-radius: 10%;
+        background-color: #ea9d9d;
+        color: #601d49;
+        font-weight: bold;
+        border-radius: 5pt;
     }    
 }
 
 nav{
-    background-color: #ffebb8;
+    background-color: #bd5579;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    height: 30px;
-    padding-inline: 15px;
+    height: 30pt;
+    padding-inline: 15pt;
 }
 
-.nav{
-    font-size: 15px;
+.nav, span{
+    font-size: 15pt;
     font-weight: bold;
     text-decoration: none;
-    color: #601D49;
+    color: #ea9d9d;
 
-    margin-inline:5px;
+    margin-inline:5pt;
 }
 
 .nav:hover{
-    font-size: 20px;
+    font-size: 20pt;
     font-weight: bolder;
-    color:#000;
+    color:#ffebb8;
 }
