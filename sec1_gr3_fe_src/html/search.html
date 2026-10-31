@@ -46,7 +46,57 @@
     </nav>
 
     <article class="search">
+        <link rel="stylesheet" href="../css/searchbar.css">
 
+        <h2 class="searchtitle">Search</h2>
+        <form action="">
+
+            <div class="searchname">
+                <label for="name">Book name / Keyword</label>
+                <input type="text" id="name" placeholder="Enter name or keyword.">
+            </div>
+
+            <div class="searchcategory">
+                <label for="category">Category</label>
+                <select id="category" name="category">
+                    <option value="">--all--</option>
+                    <option value="manga">manga</option>
+                    <option value="comic">comic</option>
+                </select>
+            </div>
+
+            <div class="searchprice">
+                <label for="min">Price range</label>
+                <input type="number" id="min" name="min" placeholder="Min">
+                <input type="number" id="max" name="max" placeholder="Max">
+            </div>
+
+            <fieldset class="searchcondition">
+                <legend>Condition</legend>
+                <div class="stars">
+                    <input type="radio" id="star5" name="condition" value="5">
+                    <label for="star5" title="5 ดาว">&#9733;</label>
+
+                    <input type="radio" id="star4" name="condition" value="4">
+                    <label for="star4" title="4 ดาว">&#9733;</label>
+
+                    <input type="radio" id="star3" name="condition" value="3">
+                    <label for="star3" title="3 ดาว">&#9733;</label>
+
+                    <input type="radio" id="star2" name="condition" value="2">
+                    <label for="star2" title="2 ดาว">&#9733;</label>
+
+                    <input type="radio" id="star1" name="condition" value="1">
+                    <label for="star1" title="1 ดาว">&#9733;</label>
+                </div>
+            </fieldset>
+
+            <div class="searchbtn">
+                <button type="reset" class="clear">Clear</button>
+                <button type="submit" class="submit">Search</button>
+            </div>
+
+        </form>
     </article>
 
     <article class="show">
@@ -102,7 +152,9 @@
 
     <footer>
         <div>
-            <a href="team.html"><p class="team">team</p></a>
+            <a href="team.html">
+                <p class="team">team</p>
+            </a>
             <p class="team">6887013 Nachapol Pinsumrong</p>
             <p class="team">6887014 Nuttapon</p>
             <p class="team">6887093 Chayawat</p>

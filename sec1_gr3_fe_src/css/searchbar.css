@@ -1,0 +1,159 @@
+/* กล่องพื้นเทาครอบทั้งหมด */
+.search {
+  box-sizing: border-box;
+  width: 1000pt;
+  max-width: 100%;
+  margin: 20pt auto;
+  padding: 10pt 35pt 20pt 10pt;
+  background: #f2f2f2;
+}
+
+/* หัวข้อ | Search */
+.searchtitle {
+  margin: 0 0 10pt;
+  padding-left: 6pt;
+  border-left: 3pt solid #601d49;
+  color: #601d49;
+  font-size: 20pt;
+  font-weight: bold;
+  line-height: 1.1;
+}
+
+/* เลย์เอาต์ฟอร์ม */
+.search form {
+  display: grid;
+  grid-template-columns: 350pt 320pt 1fr;
+  gap: 20pt 0;
+}
+
+/* ป้ายหัวข้อสีชมพู */
+.search form > div > label,
+.searchcondition legend {
+  display: block;
+  margin-bottom: 5pt;
+  color: #bd5579;
+  font-size: 15pt;
+}
+
+/* ช่องกรอกและ select */
+.search input[type="text"],
+.search input[type="number"],
+.search select {
+  box-sizing: border-box;
+  height: 28pt;
+  background: #ddd;
+  border: 1pt solid #333;
+  border-radius: 4pt;
+  font-size: 12pt;
+}
+
+/* แถว 1: ช่องชื่อ */
+.searchname {
+  grid-column: 1 / -1;
+}
+
+.searchname input {
+  width: 500pt;
+  max-width: 100%;
+}
+
+/* แถว 2: Category */
+.searchcategory select {
+  width: 250pt;
+  max-width: 100%;
+}
+
+/* แถว 2: Price range */
+.searchprice {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 28pt;
+}
+
+.searchprice label {
+  width: 100%;
+}
+
+.searchprice input {
+  width: 80pt;
+}
+
+/* แถว 2: Condition */
+.searchcondition {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.stars {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  height: 30pt;
+  box-sizing: border-box;
+  align-items: center;
+  padding: 0 5pt;
+  background: #ddd;
+  border: 1pt solid #333;
+  border-radius: 5pt;
+}
+
+.stars input {
+  position: absolute;
+  opacity: 0;
+}
+
+.stars label {
+  font-size: 20pt;
+  line-height: 1;
+  color: #999;
+  cursor: pointer;
+}
+
+.stars input:checked ~ label,
+.stars label:hover,
+.stars label:hover ~ label {
+  color: #ffebb8;
+}
+
+/* แถว 3: ปุ่ม */
+.searchbtn {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 30pt;
+  margin-top: 50pt;
+}
+
+.searchbtn button {
+  padding: 2pt 10pt;
+  border: 0;
+  border-radius: 5pt;
+  font-size: 12pt;
+}
+
+.clear {
+  background: #aaa;
+  color: #777;
+}
+
+.clear:hover{
+    background: #ccc;
+    color: #666;
+}
+
+.submit {
+  background: #bd5579;
+  color: #ffebb8;
+}
+
+.submit:hover{
+    background-color: #ea9d9d;
+    color: #601d49;
+}
+
+/* จอเล็ก: เรียงเป็นคอลัมน์เดียว */
+@media (max-width: 700pt) {
+  .search form {
+    grid-template-columns: 1fr;
+  }
+}
