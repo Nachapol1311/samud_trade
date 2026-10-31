@@ -59,3 +59,21 @@ img {
 
     /* font-weight: bold; */
 }
+
+#editbtn {
+    text-decoration: none;
+    background-color: #aaa;
+    color: #777;
+    font-size: 8pt;
+    border-radius: 12pt;
+    overflow: hidden;
+
+    padding: 3pt;
+}
+
+#editbtn:hover {
+    background-color: #ccc;
+    color: #666;
+
+    /* font-weight: bold; */
+}
