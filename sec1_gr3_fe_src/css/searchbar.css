@@ -1,158 +1,158 @@
 /* กล่องพื้นเทาครอบทั้งหมด */
 .search {
-  box-sizing: border-box;
-  width: 1000pt;
-  max-width: 100%;
-  margin: 20pt auto;
-  padding: 10pt 35pt 20pt 10pt;
-  background: #f2f2f2;
+    box-sizing: border-box;
+    width: 1000px;
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 10px 35px 20px 10px;
+    background: #f2f2f2;
 }
 
 /* หัวข้อ | Search */
 .searchtitle {
-  margin: 0 0 10pt;
-  padding-left: 6pt;
-  border-left: 3pt solid #601d49;
-  color: #601d49;
-  font-size: 20pt;
-  font-weight: bold;
-  line-height: 1.1;
+    margin: 0 0 10px;
+    padding-left: 6px;
+    border-left: 3px solid #601d49;
+    color: #601d49;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.1;
 }
 
 /* เลย์เอาต์ฟอร์ม */
 .search form {
-  display: grid;
-  grid-template-columns: 350pt 320pt 1fr;
-  gap: 20pt 0;
+    display: grid;
+    grid-template-columns: 350px 320px 1fr;
+    gap: 20px 0;
 }
 
 /* ป้ายหัวข้อสีชมพู */
-.search form > div > label,
+.search form>div>label,
 .searchcondition legend {
-  display: block;
-  margin-bottom: 5pt;
-  color: #bd5579;
-  font-size: 15pt;
+    display: block;
+    margin-bottom: 5px;
+    color: #bd5579;
+    font-size: 15px;
 }
 
 /* ช่องกรอกและ select */
 .search input[type="text"],
 .search input[type="number"],
 .search select {
-  box-sizing: border-box;
-  height: 28pt;
-  background: #ddd;
-  border: 1pt solid #333;
-  border-radius: 4pt;
-  font-size: 12pt;
+    box-sizing: border-box;
+    height: 28px;
+    background: #ddd;
+    border: 1px solid #333;
+    border-radius: 4px;
+    font-size: 12px;
 }
 
 /* แถว 1: ช่องชื่อ */
 .searchname {
-  grid-column: 1 / -1;
+    grid-column: 1 / -1;
 }
 
 .searchname input {
-  width: 500pt;
-  max-width: 100%;
+    width: 500px;
+    max-width: 100%;
 }
 
 /* แถว 2: Category */
 .searchcategory select {
-  width: 250pt;
-  max-width: 100%;
+    width: 250px;
+    max-width: 100%;
 }
 
 /* แถว 2: Price range */
 .searchprice {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 28pt;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 28px;
 }
 
 .searchprice label {
-  width: 100%;
+    width: 100%;
 }
 
 .searchprice input {
-  width: 80pt;
+    width: 80px;
 }
 
 /* แถว 2: Condition */
 .searchcondition {
-  border: 0;
-  padding: 0;
-  margin: 0;
+    border: 0;
+    padding: 0;
+    margin: 0;
 }
 
 .stars {
-  display: inline-flex;
-  flex-direction: row-reverse;
-  height: 30pt;
-  box-sizing: border-box;
-  align-items: center;
-  padding: 0 5pt;
-  background: #ddd;
-  border: 1pt solid #333;
-  border-radius: 5pt;
+    display: inline-flex;
+    flex-direction: row-reverse;
+    height: 30px;
+    box-sizing: border-box;
+    align-items: center;
+    padding: 0 5px;
+    background: #ddd;
+    border: 1px solid #333;
+    border-radius: 5px;
 }
 
 .stars input {
-  position: absolute;
-  opacity: 0;
+    position: absolute;
+    opacity: 0;
 }
 
 .stars label {
-  font-size: 20pt;
-  line-height: 1;
-  color: #999;
-  cursor: pointer;
+    font-size: 20px;
+    line-height: 1;
+    color: #999;
+    cursor: pointer;
 }
 
-.stars input:checked ~ label,
+.stars input:checked~label,
 .stars label:hover,
-.stars label:hover ~ label {
-  color: #ffebb8;
+.stars label:hover~label {
+    color: #ffebb8;
 }
 
 /* แถว 3: ปุ่ม */
 .searchbtn {
-  grid-column: 1 / -1;
-  display: flex;
-  justify-content: flex-end;
-  gap: 30pt;
-  margin-top: 50pt;
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    margin-top: 50px;
 }
 
 .searchbtn button {
-  padding: 2pt 10pt;
-  border: 0;
-  border-radius: 5pt;
-  font-size: 12pt;
+    padding: 2px 10px;
+    border: 0;
+    border-radius: 5px;
+    font-size: 12px;
 }
 
 .clear {
-  background: #aaa;
-  color: #777;
+    background: #aaa;
+    color: #777;
 }
 
-.clear:hover{
+.clear:hover {
     background: #ccc;
     color: #666;
 }
 
 .submit {
-  background: #bd5579;
-  color: #ffebb8;
+    background: #bd5579;
+    color: #ffebb8;
 }
 
-.submit:hover{
+.submit:hover {
     background-color: #ea9d9d;
     color: #601d49;
 }
 
 /* จอเล็ก: เรียงเป็นคอลัมน์เดียว */
-@media (max-width: 700pt) {
+@media (max-width: 700px) {
   .search form {
     grid-template-columns: 1fr;
   }
