@@ -1,6 +1,6 @@
 .show {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 160px);
+    grid-template-columns: repeat(auto-fill, 250px);
     gap: 50px;
     justify-content: center;
     align-items: start;
@@ -23,8 +23,8 @@
 img {
     /* border-color:#000 ; */
     background-color: #aaa;
-    height: 160px;
-    width: 120px;
+    height: 200px;
+    width: 150px;
     overflow: hidden;
 }
 
