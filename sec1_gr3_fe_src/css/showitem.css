@@ -33,6 +33,8 @@ img {
     font-size: 15px;
     font-weight: bold;
     width: 95%;
+    margin-left: auto;
+    margin-right: auto;
     overflow: hidden;
 
 }
