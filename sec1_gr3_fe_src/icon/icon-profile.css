@@ -3,18 +3,18 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  /* [แก้] #555 -> #bd5579 */
+
   background: #bd5579;
   overflow: hidden;
   transition: background 0.2s;
 }
 
-/* [แก้] #666 -> #ea9d9d */
+
 .profile:hover {
   background: #ea9d9d;
 }
 
-/* [เพิ่ม] เปลี่ยนสีรูปคนตอน hover */
+
 .profile:hover .profile-icon {
   fill: #601d49;
 }

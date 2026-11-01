@@ -7,7 +7,7 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
-/* [เพิ่ม] เอาขอบขาวรอบหน้าเว็บออก */
+
 body {
     margin: 0;
 }
@@ -23,26 +23,29 @@ footer {
     padding-inline: 15px;
 }
 
+
 header div {
     color: #ffebb8;
     font-size: 30px;
     font-weight: bold;
 }
 
+
 .home-icon:hover {
     fill: #ea9d9d;
 }
 
-/* [แก้] font-size 10px -> 12px */
+
 footer div {
     color: #ea9d9d;
     font-size: 12px;
 }
 
-/* [เพิ่ม] ลดระยะห่างระหว่างบรรทัดใน footer */
+
 footer p {
     margin: 4px 0;
 }
+
 
 footer a {
     text-decoration: none;
@@ -57,6 +60,7 @@ footer a {
     }
 }
 
+
 nav {
     background-color: #bd5579;
 
@@ -68,7 +72,7 @@ nav {
     padding-inline: 15px;
 }
 
-/* [แก้] เดิมคือ .nav, span รวมกัน ตอนนี้จำกัด span เฉพาะใน nav */
+
 .nav,
 nav span {
     font-size: 15px;
@@ -78,19 +82,19 @@ nav span {
     margin-inline: 5px;
 }
 
-/* [แก้] เปลี่ยนสีเมนูเป็นครีม + inline-block + transition */
+
 .nav {
     display: inline-block;
     color: #ffebb8;
     transition: transform 0.15s;
 }
 
-/* [แก้] สีขีดคั่น | */
+
 nav span {
     color: #ea9d9d;
 }
 
-/* [แก้] เดิมขยาย font-size ทำให้เมนูข้างเคียงขยับ ใช้ scale แทน */
+
 .nav:hover {
     transform: scale(1.2);
     color: #601d49;

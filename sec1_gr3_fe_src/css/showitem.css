@@ -39,13 +39,13 @@ img {
 
 }
 
-/* [แก้] font-size 10px -> 12px */
+
 .info{
     color: #000;
     font-size: 12px;
 }
 
-/* [แก้] font-size 8px -> 11px, padding 3px -> 4px 10px, เพิ่ม display: inline-block */
+
 .item a {
     display: inline-block;
     text-decoration: none;
@@ -65,7 +65,7 @@ img {
     /* font-weight: bold; */
 }
 
-/* [แก้] เหมือน .item a: font-size 11px, padding 4px 10px, inline-block */
+
 #editbtn {
     display: inline-block;
     text-decoration: none;
