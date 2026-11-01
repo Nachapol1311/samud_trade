@@ -28,16 +28,18 @@
 }
 
 /* ป้ายหัวข้อสีชมพู */
+/* [แก้] font-size 15px -> 16px */
 .search form>div>label,
 .searchcondition legend {
     display: block;
     margin-bottom: 5px;
     padding: 0;
     color: #bd5579;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 /* ช่องกรอกและ select */
+/* [แก้] font-size 12px -> 14px */
 .search input[type="text"],
 .search input[type="number"],
 .search select {
@@ -46,7 +48,7 @@
     background: #ddd;
     border: 1px solid #333;
     border-radius: 4px;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 /* ช่องชื่อ: ยืดได้ตามพื้นที่ที่เหลือ */
@@ -111,10 +113,11 @@
     cursor: pointer;
 }
 
+/* [แก้] สีดาวที่เลือก #ffebb8 -> #bd5579 (เดิมครีมบนพื้นเทามองไม่ชัด) */
 .stars input:checked~label,
 .stars label:hover,
 .stars label:hover~label {
-    color: #ffebb8;
+    color: #bd5579;
 }
 
 /* ปุ่ม: อยู่บรรทัดเดียวกัน ชิดขวา */
@@ -124,12 +127,13 @@
     margin-left: auto;
 }
 
+/* [แก้] font-size 12px -> 14px */
 .searchbtn button {
     height: 30px;
     padding: 2px 12px;
     border: 0;
     border-radius: 5px;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .clear {

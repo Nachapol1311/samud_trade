@@ -38,12 +38,13 @@
 }
 
 /* value cell */
+/* [แก้] background #c8c8c8 -> #ddd, font-size 15px -> 16px */
 .infomation > .detail:nth-child(2) > div > p:last-child {
     margin: 0;
     padding: 8px 10px;
-    background: #c8c8c8;
+    background: #ddd;
     color: #bd5579;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 /* ---------- Detail: label on top, big box below ---------- */
@@ -85,11 +86,12 @@
     margin-top: 40px;
 }
 
+/* [แก้] padding 4px 16px -> 6px 20px, font-size 14px -> 16px */
 .infomation button {
-    padding: 4px 16px;
+    padding: 6px 20px;
     border: 0;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
 }
 
