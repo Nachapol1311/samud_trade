@@ -4,6 +4,7 @@
 <head>
     <title>add item</title>
     <link rel="stylesheet" href="../css/bar.css">
+    <link rel="stylesheet" href="../css/additem.css">
 </head>
 
 <body>
@@ -44,12 +45,98 @@
         </div>
     </nav>
 
-    <article>
+    <article class="additem">
+        <div class="detail">
+            <img src="" alt="">
+        </div>
+
+        <div class="detail">
+            <div>
+                <p>Book</p>
+                <input type="text" placeholder="Enter book">
+            </div>
+            <div>
+                <p>Catagory</p>
+                <select id="category" name="category">
+                    <option value="">--all--</option>
+
+                    <option value="art-design">art &amp; design</option>
+                    <option value="biography">biography</option>
+                    <option value="business">business</option>
+                    <option value="children">children</option>
+                    <option value="comic">comic</option>
+                    <option value="cooking">cooking</option>
+                    <option value="exam-prep">exam prep</option>
+                    <option value="fantasy">fantasy</option>
+                    <option value="finance">finance</option>
+                    <option value="health">health</option>
+                    <option value="history">history</option>
+                    <option value="horror">horror</option>
+                    <option value="language">language</option>
+                    <option value="light-novel">light novel</option>
+                    <option value="magazine">magazine</option>
+                    <option value="manga">manga</option>
+                    <option value="mystery">mystery</option>
+                    <option value="novel">novel</option>
+                    <option value="other">other</option>
+                    <option value="programming">programming</option>
+                    <option value="psychology">psychology</option>
+                    <option value="religion">religion</option>
+                    <option value="romance">romance</option>
+                    <option value="science">science</option>
+                    <option value="sci-fi">sci-fi</option>
+                    <option value="self-help">self-help</option>
+                    <option value="technology">technology</option>
+                    <option value="textbook">textbook</option>
+                    <option value="thriller">thriller</option>
+                    <option value="travel">travel</option>
+                </select>
+            </div>
+            <div>
+                <p>Price</p>
+                <input type="text" placeholder="Enter book">
+            </div>
+            <div>
+                <p>Condition</p>
+                <div class="stars">
+                    <input type="radio" id="star5" name="condition" value="5">
+                    <label for="star5" title="5 ดาว">&#9733;</label>
+
+                    <input type="radio" id="star4" name="condition" value="4">
+                    <label for="star4" title="4 ดาว">&#9733;</label>
+
+                    <input type="radio" id="star3" name="condition" value="3">
+                    <label for="star3" title="3 ดาว">&#9733;</label>
+
+                    <input type="radio" id="star2" name="condition" value="2">
+                    <label for="star2" title="2 ดาว">&#9733;</label>
+
+                    <input type="radio" id="star1" name="condition" value="1">
+                    <label for="star1" title="1 ดาว">&#9733;</label>
+                </div>
+            </div>
+            <div>
+                <p>Owner</p>
+                <p>info-owner</p>
+
+            </div>
+            <div id="info-detail">
+                <p>detail</p>
+                <textarea name="deteil" id=""></textarea>
+            </div>
+        </div>
+
+        <div>
+            <button>cancel</button>
+            <button>add</button>
+        </div>
     </article>
 
     <footer>
         <div>
-            <a href="team.html"><p class="team">team</p></a>
+            <a href="team.html">
+                <p class="team">team</p>
+            </a>
             <p class="team">6887013 Nachapol Pinsumrong</p>
             <p class="team">6887014 Nuttapon</p>
             <p class="team">6887093 Chayawat</p>
