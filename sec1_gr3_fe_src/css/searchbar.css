@@ -1,4 +1,3 @@
-/* กล่องพื้นเทาครอบทั้งหมด */
 .search {
     box-sizing: border-box;
     width: 1480px;
@@ -8,18 +7,16 @@
     background: #f2f2f2;
 }
 
-/* หัวข้อ | Search */
+
 .searchtitle {
     margin: 0 0 10px;
-    padding-left: 6px;
-    border-left: 3px solid #601d49;
     color: #601d49;
     font-size: 20px;
     font-weight: bold;
     line-height: 1.1;
 }
 
-/* เลย์เอาต์ฟอร์ม: เรียงบรรทัดเดียว */
+
 .search form {
     display: flex;
     flex-wrap: wrap;
@@ -27,17 +24,17 @@
     gap: 20px 40px;
 }
 
-/* ป้ายหัวข้อสีชมพู */
+
 .search form>div>label,
 .searchcondition legend {
     display: block;
     margin-bottom: 5px;
     padding: 0;
     color: #bd5579;
-    font-size: 15px;
+    font-size: 16px;
 }
 
-/* ช่องกรอกและ select */
+
 .search input[type="text"],
 .search input[type="number"],
 .search select {
@@ -46,25 +43,26 @@
     background: #ddd;
     border: 1px solid #333;
     border-radius: 4px;
-    font-size: 12px;
+    font-size: 14px;
 }
 
-/* ช่องชื่อ: ยืดได้ตามพื้นที่ที่เหลือ */
+
 .searchname {
     flex: 1 1 250px;
     max-width: 500px;
 }
 
+
 .searchname input {
     width: 100%;
 }
 
-/* Category */
+
 .searchcategory select {
     width: 200px;
 }
 
-/* Price range */
+
 .searchprice {
     display: flex;
     flex-wrap: wrap;
@@ -72,20 +70,23 @@
     width: 180px;
 }
 
+
 .searchprice label {
     width: 100%;
 }
+
 
 .searchprice input {
     width: 80px;
 }
 
-/* Condition */
+
 .searchcondition {
     border: 0;
     padding: 0;
     margin: 0;
 }
+
 
 .stars {
     display: inline-flex;
@@ -99,9 +100,13 @@
     border-radius: 5px;
 }
 
+
 .stars input {
     position: absolute;
     opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
 }
 
 .stars label {
@@ -111,25 +116,27 @@
     cursor: pointer;
 }
 
+
 .stars input:checked~label,
 .stars label:hover,
 .stars label:hover~label {
-    color: #ffebb8;
+    color: #bd5579;
 }
 
-/* ปุ่ม: อยู่บรรทัดเดียวกัน ชิดขวา */
+
 .searchbtn {
     display: flex;
     gap: 20px;
     margin-left: auto;
 }
 
+
 .searchbtn button {
     height: 30px;
     padding: 2px 12px;
     border: 0;
     border-radius: 5px;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .clear {

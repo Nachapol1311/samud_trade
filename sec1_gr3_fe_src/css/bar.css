@@ -7,6 +7,11 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
+
+body {
+    margin: 0;
+}
+
 header,
 footer {
     background-color: #601d49;
@@ -18,20 +23,29 @@ footer {
     padding-inline: 15px;
 }
 
+
 header div {
     color: #ffebb8;
     font-size: 30px;
     font-weight: bold;
 }
 
+
 .home-icon:hover {
     fill: #ea9d9d;
 }
 
+
 footer div {
     color: #ea9d9d;
-    font-size: 10px;
+    font-size: 12px;
 }
+
+
+footer p {
+    margin: 4px 0;
+}
+
 
 footer a {
     text-decoration: none;
@@ -46,6 +60,7 @@ footer a {
     }
 }
 
+
 nav {
     background-color: #bd5579;
 
@@ -57,18 +72,30 @@ nav {
     padding-inline: 15px;
 }
 
+
 .nav,
-span {
+nav span {
     font-size: 15px;
     font-weight: bold;
     text-decoration: none;
-    color: #ea9d9d;
 
     margin-inline: 5px;
 }
 
-.nav:hover {
-    font-size: 20px;
-    font-weight: bolder;
+
+.nav {
+    display: inline-block;
     color: #ffebb8;
+    transition: transform 0.15s;
+}
+
+
+nav span {
+    color: #ea9d9d;
+}
+
+
+.nav:hover {
+    transform: scale(1.2);
+    color: #601d49;
 }

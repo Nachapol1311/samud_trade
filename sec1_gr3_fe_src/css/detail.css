@@ -11,6 +11,7 @@
     background: #f2f2f2;
 }
 
+
 .infomation > .detail:first-child img {
     display: block;
     width: 100%;
@@ -19,7 +20,7 @@
     background: #c8c8c8;
 }
 
-/* ---------- right: info rows ---------- */
+
 .infomation > .detail:nth-child(2) > div {
     display: grid;
     grid-template-columns: 150px 1fr;
@@ -27,7 +28,7 @@
     margin-bottom: 8px;
 }
 
-/* label cell (Book, Category, Price ...) */
+
 .infomation > .detail:nth-child(2) > div > p:first-child {
     margin: 0;
     padding: 8px 10px;
@@ -37,29 +38,29 @@
     font-weight: bold;
 }
 
-/* value cell */
+
 .infomation > .detail:nth-child(2) > div > p:last-child {
     margin: 0;
     padding: 8px 10px;
-    background: #c8c8c8;
+    background: #ddd;
     color: #bd5579;
-    font-size: 15px;
+    font-size: 16px;
 }
 
-/* ---------- Detail: label on top, big box below ---------- */
-/* คอลัมน์ขวาเป็น flex แนวตั้ง จะได้ให้ detail กินพื้นที่ที่เหลือ */
+
 .infomation > .detail:nth-child(2) {
     display: flex;
     flex-direction: column;
 }
 
-/* ส่วน detail ยืดเต็มพื้นที่ที่เหลือ */
+
 #info-detail {
     display: flex;
     flex-direction: column;
     flex: 1;
     margin-bottom: 0;
 }
+
 
 #info-detail > p:first-child {
     margin: 0 0 2px;
@@ -70,13 +71,13 @@
     font-weight: bold;
 }
 
-/* กล่องเนื้อหายืดลงมาถึงขอบล่าง */
+
 #info-detail > p:last-child {
     flex: 1;
     box-sizing: border-box;
 }
 
-/* ---------- buttons: bottom right ---------- */
+
 .infomation > div:last-child {
     grid-column: 1 / -1;
     display: flex;
@@ -85,28 +86,33 @@
     margin-top: 40px;
 }
 
+
 .infomation button {
-    padding: 4px 16px;
+    padding: 6px 20px;
     border: 0;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
 }
+
 
 .infomation button:first-child {
     background: #c8c8c8;
     color: #999;
 }
 
+
 .infomation button:first-child:hover {
     background: #ddd;
     color: #666;
 }
 
+
 .infomation button:last-child {
     background: #bd5579;
     color: #ffebb8;
 }
+
 
 .infomation button:last-child:hover {
     background: #ea9d9d;
