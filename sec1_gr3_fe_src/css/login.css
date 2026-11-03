@@ -1,0 +1,103 @@
+:root {
+  --plum: #601d49;
+  --rose: #bd5579;
+  --blush: #ea9d9d;
+  --cream: #ffebb8;
+  --field: #f3dede;      
+  --admin-bg: #ea9d9d;    
+  --admin-text: #601d49;  
+  --skyblue:#dbeafe;
+}
+main {
+  padding: 20px 16px;
+}
+
+.card {
+  max-width: 860px;
+  margin: 0 auto;
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 8px 0 28px;
+}
+
+.card h2 {
+  margin: 0 0 36px;
+  text-align: center;
+  color: var(--plum);
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.form {
+  width: min(535px, 80%);
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  color: var(--rose);
+  font-size: 26px;
+  margin-bottom: 4px;
+}
+
+input {
+  width: 100%;
+  height: 53px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--skyblue);
+  font-size: 20px;
+  padding: 0 16px;
+  margin-bottom: 42px;
+}
+.pw{
+    background: var(--field);
+}
+
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--rose);
+  outline-offset: 2px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 10px;
+  font-size: 20px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.login {
+  background-color: #bd5579;
+  color: #ffebb8;
+  margin-top: 28px;
+}
+
+.login:hover {
+  background-color: #ea9d9d;
+  color: #601d49;
+}
+
+.admin {
+  background-color: #aaa;
+  color: #777;
+  margin-top: 12px;
+}
+
+.admin:hover {
+  background-color: #ccc;
+  color: #666;
+}
+
+@media (max-width: 600px) {
+  header h1 { font-size: 30px; }
+  .home { left: 16px; }
+  .home svg { width: 32px; height: 32px; }
+  label { font-size: 20px; }
+  .card h2 { font-size: 26px; }
+}
