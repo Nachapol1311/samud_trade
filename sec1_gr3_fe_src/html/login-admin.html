@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SAMUD TRADE - Login</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/bar.css">
+</head>
+
+<body>
+
+    <header>
+        <link rel="stylesheet" href="../icon/icon-home.css">
+        <a href="home.html" class="home">
+            <svg class="home-icon" viewBox="0 0 24 24">
+                <path d="M12 3L2 12h3v8h5v-5h4v5h5v-8h3L12 3z" />
+            </svg>
+        </a>
+
+        <div>samud trade</div>
+
+        <link rel="stylesheet" href="../icon/icon-profile.css">
+        <a href="login.html" class="profile">
+            <svg class="profile-icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="8.6" r="3.9" />
+                <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z" />
+            </svg>
+        </a>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Login for admin</h2>
+            <form class="form" action="/user-login" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" autocomplete="username" required>
+
+                <label for="password">Password:</label>
+                <input class="pw" type="password" id="password" name="password" autocomplete="current-password" required>
+
+                <button type="submit" class="login">Login</button>
+                <button type="button" class="admin" onclick="location.href='login.html'">User click here</button>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
