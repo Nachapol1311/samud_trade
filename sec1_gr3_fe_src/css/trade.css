@@ -1,0 +1,131 @@
+.trade-page {
+    width: 100%;
+    min-height: 650px;
+    padding: 20px 0 45px;
+
+    background-color: #fff4e6;
+    box-sizing: border-box;
+}
+
+.trade-page h1 {
+    margin: 0 0 0 20px;
+
+    color: #601d49;
+    font-size: 26px;
+    font-weight: normal;
+}
+
+.trade-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.trade-item {
+    width: 280px;
+    height: 360px;
+
+    margin-top: 45px;
+    padding: 20px;
+
+    background-color: #eeeeee;
+    border-radius: 22px;
+
+    box-sizing: border-box;
+}
+
+.trade-item img {
+    display: block;
+
+    width: 240px;
+    height: 220px;
+
+    object-fit: cover;
+
+    background-color: #aaa;
+
+    border: none;
+    border-radius: 10px;
+}
+
+.item-name {
+    margin: 15px 0 7px;
+
+    color: #601d49;
+
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.item-info {
+    margin: 0 0 12px;
+
+    color: #333;
+
+    font-size: 15px;
+    text-align: center;
+}
+
+.detail-btn {
+    display: block;
+
+    width: fit-content;
+
+    margin: 0 auto;
+    padding: 5px 14px;
+
+    background-color: #bd5579;
+    color: #ffebb8;
+
+    text-decoration: none;
+    border-radius: 15px;
+}
+
+.detail-btn:hover {
+    background-color: #601d49;
+}
+
+.trade-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 35px;
+
+    margin-top: 55px;
+    margin-bottom: 35px;
+}
+
+.trade-buttons button {
+    width: 65px;
+    height: 65px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    font-family: inherit;
+    font-size: 38px;
+
+    cursor: pointer;
+}
+
+.reject-btn {
+    background-color: #d3d3d3;
+    color: #999;
+}
+
+.accept-btn {
+    background-color: #bd5579;
+    color: #ffebb8;
+}
+
+.reject-btn:hover {
+    background-color: #bbbbbb;
+}
+
+.accept-btn:hover {
+    background-color: #601d49;
+}
