@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SAMUD TRADE - User Profile</title>
+    <link rel="stylesheet" href="../css/bar.css">
+    <link rel="stylesheet" href="../css/profile.css">
+</head>
+
+<body>
+
+    <header>
+        <link rel="stylesheet" href="../icon/icon-home.css">
+        <a href="home.html" class="home">
+            <svg class="home-icon" viewBox="0 0 24 24">
+                <path d="M12 3L2 12h3v8h5v-5h4v5h5v-8h3L12 3z" />
+            </svg>
+        </a>
+
+        <div>samud trade</div>
+
+        <div style="width:30px"></div>
+    </header>
+
+    <main>
+        <section class="profile-card">
+
+            <!-- ช่องรูปโปรไฟล์ (ว่างไว้ก่อน) -->
+            <div class="avatar" id="avatar" aria-label="profile picture"></div>
+
+            <form class="form" id="profileForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" autocomplete="username" disabled>
+
+                <label for="firstname">First name:</label>
+                <input type="text" id="firstname" name="firstname" autocomplete="given-name" disabled>
+
+                <label for="lastname">Last name:</label>
+                <input type="text" id="lastname" name="lastname" autocomplete="family-name" disabled>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" autocomplete="email" disabled>
+
+                <div class="buttons">
+                    <button type="button" id="editBtn">Edit</button>
+                    <button type="button" onclick="location.href='login.html'">Logout</button>
+                </div>
+            </form>
+
+        </section>
+    </main>
+
+    <script>
+        const editBtn = document.getElementById('editBtn');
+        const inputs = document.querySelectorAll('#profileForm input');
+        let editing = false;
+
+        editBtn.addEventListener('click', () => {
+            editing = !editing;
+            inputs.forEach(i => i.disabled = !editing);
+            editBtn.textContent = editing ? 'Save' : 'Edit';
+            if (editing) inputs[0].focus();
+        });
+    </script>
+
+</body>
+
+</html>
