@@ -4,7 +4,6 @@
 <head>
     <title>trade</title>
     <link rel="stylesheet" href="../css/bar.css">
-    <link rel="stylesheet" href="../css/trade.css">
 </head>
 
 <body>
@@ -46,144 +45,6 @@
     </nav>
 
     <article>
-
-    <!-- PAGE 1: MATCHING -->
-        <section id="matchingPage">
-
-            <h1>| Trade</h1>
-
-            <div class="matching-container">
-
-                <div class="book-card">
-
-                    <div class="book-image">
-                        <img id="matchImage" src="" alt="Book cover">
-                    </div>
-
-                    <h3 id="matchTitle">Book title</h3>
-                    <p id="matchAuthor">Author</p>
-
-                    <button class="detail-btn" onclick="showDetail()">
-                        Detail
-                    </button>
-
-                </div>
-
-                <div class="match-buttons">
-
-                    <button class="reject-btn" onclick="nextBook()">
-                        ✕
-                    </button>
-
-                    <button class="like-btn" onclick="selectBook()">
-                        ★
-                    </button>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- PAGE 2: TRADE -->
-        <section id="tradePage" style="display:none;">
-
-            <h1>| Trade</h1>
-
-            <h2>Your book</h2>
-
-            <div class="trade-container">
-
-                <!-- YOUR BOOK -->
-                <div class="your-side">
-
-                    <select id="myBook" onchange="updateMyBook()">
-                        <option value="0">book 1</option>
-                        <option value="1">book 2</option>
-                        <option value="2">book 3</option>
-                        <option value="3">book 4</option>
-                        <option value="4">book 5</option>
-                    </select>
-
-                    <div class="trade-card">
-
-                        <img id="myImage" src="" alt="My book">
-
-                        <h3 id="myTitle"></h3>
-                        <p id="myAuthor"></p>
-
-                        <button class="detail-btn" onclick="showMyDetail()">
-                            Detail
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- EXCHANGE ARROWS -->
-                <div class="exchange-icon">
-                    <span class="arrow-left">←</span>
-                    <span class="arrow-right">→</span>
-                </div>
-
-
-                <!-- OTHER PERSON'S BOOK -->
-                <div class="other-side">
-
-                    <div class="trade-card">
-
-                        <img id="otherImage" src="" alt="Other book">
-
-                        <h3 id="otherTitle"></h3>
-                        <p id="otherAuthor"></p>
-
-                        <button class="detail-btn" onclick="showOtherDetail()">
-                            Detail
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- TRADE BUTTONS -->
-            <div class="trade-actions">
-
-                <button class="cancel-btn" onclick="cancelTrade()">
-                    Cancel
-                </button>
-
-                <button class="confirm-btn" onclick="confirmTrade()">
-                    Trade
-                </button>
-
-            </div>
-
-        </section>
-
-
-        <!-- BOOK DETAIL -->
-        <div id="detailModal" class="modal">
-
-            <div class="modal-content">
-
-                <span class="close" onclick="closeDetail()">×</span>
-
-                <img id="detailImage" src="" alt="Book cover">
-
-                <h2 id="detailTitle"></h2>
-
-                <p id="detailAuthor"></p>
-
-                <p id="detailDescription"></p>
-
-            </div>
-
-        </div>
     </article>
 
     <footer>
@@ -206,8 +67,6 @@
             <p class="mahidol">Project for ITDS242</p>
         </div>
     </footer>
-
-    <script src="../js/trade.js"></script>
 
 
 </body>
