@@ -1,0 +1,99 @@
+:root {
+  --plum: #601d49;
+  --rose: #bd5579;
+  --blush: #ea9d9d;
+  --cream: #ffebb8;
+  --field: #f3dede;      
+  --admin-bg: #ea9d9d;    
+  --admin-text: #601d49;  
+  --skyblue:#dbeafe;
+}
+
+main {
+    background: var(--side);
+    padding: 0 16px;
+    min-height: calc(100vh - 50px);
+}
+
+.profile-card {
+    max-width: 625px;
+    margin: 0 auto;
+    background: var(--field);
+    padding: 12px 0 48px;
+    min-height: calc(100vh - 62px);
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 28px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px dashed var(--blush);
+    box-sizing: border-box;
+}
+
+.form {
+    width: min(367px, 80%);
+    margin: 0 auto;
+}
+
+.form label {
+    display: block;
+    color: var(--rose);
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.form input {
+    width: 100%;
+    height: 46px;
+    border: 0;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 18px;
+    padding: 0 16px;
+    margin-bottom: 26px;
+    box-sizing: border-box;
+}
+
+.form input:read-only {
+    cursor: default;
+}
+
+.form input:focus-visible,
+.form button:focus-visible {
+    outline: 3px solid var(--rose);
+    outline-offset: 2px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 36px;
+}
+
+.buttons button {
+    width: 26%;
+    min-width: 90px;
+    border: 0;
+    border-radius: 8px;
+    background: #fff;
+    color: var(--rose);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;  
+    cursor: pointer;
+    transition: background-color 0.15s, color 0.15s;
+}
+
+.buttons button:hover {
+    background-color: var(--rose);
+    color: var(--cream);
+}
+
+@media (max-width: 600px) {
+    .avatar { width: 120px; height: 120px; }
+    .form label { font-size: 18px; }
+}
