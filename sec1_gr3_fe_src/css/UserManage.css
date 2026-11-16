@@ -1,0 +1,200 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Courier New", monospace;
+    background-color: #fff3df;
+    color: #65164f;
+}
+
+.user-nav {
+    width: 100%;
+    height: 32px;
+    background-color: #bd5579;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 45px;
+}
+
+
+.user-nav .back {
+    color: #ffe8a8;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+
+.user-nav .product-link {
+    background-color: #ffe8a8;
+    color:#c54473;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 4px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.user-nav .product-link:hover {
+    background-color: #e8e6bc;
+}
+
+
+.admin-page {
+    width: 78%;
+    max-width: 1200px;
+    margin: 40px auto 0;
+}
+
+.admin-box {
+    width: 100%;
+    background-color: #eeeeee;
+    padding: 20px 20px 38px;
+    border-radius: 20px;
+}
+
+.admin-box h2 {
+    position: relative;
+    padding-left: 12px;
+    margin-bottom: 28px;
+    color: #65164f;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.admin-box h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 28px;
+    background-color: #65164f;
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #555;
+    font-size: 15px;
+}
+
+.user-table th,
+.user-table td {
+    border: 1px solid #777;
+}
+
+.user-table th {
+    height: 50px;
+    text-align: center;
+    font-weight: normal;
+    color: #666;
+}
+
+.user-table td {
+    height: 82px;
+}
+
+.id-column {
+    width: 13%;
+}
+
+.name-column {
+    width: 46%;
+}
+
+.username-column {
+    width: 18%;
+}
+
+.email-column {
+    width: 12%;
+}
+
+.manage-column {
+    width: 11%;
+}
+
+.manage-buttons {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+}
+
+.manage-buttons button {
+    width: 72px;
+    height: 22px;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 10px;
+
+    cursor: pointer;
+}
+
+
+
+.edit-btn {
+    background-color: #d3d3d3;
+
+    color: #5b5959;
+
+    border: 1px solid #999;
+
+    border-radius: 3px;
+}
+
+.remove-btn {
+    background-color: #dd5151;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 3px;
+}
+
+.add-user-container {
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+
+    margin-top: 15px;
+}
+
+
+.add-user-btn {
+    display: inline-block;
+
+    background-color: #c54473;
+
+    color: #ffe8a8;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    padding: 8px 18px;
+
+    border-radius: 16px;
+
+    cursor: pointer;
+}
+
+
+.add-user-btn:hover {
+    background-color: #a93460;
+}
