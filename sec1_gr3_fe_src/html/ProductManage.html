@@ -2,13 +2,15 @@
 <html lang="en">
 
 <head>
-    <title>home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product Manage</title>
     <link rel="stylesheet" href="../css/bar.css">
-    <link rel="stylesheet" href="../css/showitem.css">
+    <link rel="stylesheet" href="../css/UserManage.css">
+    <link rel="stylesheet" href="../css/ProductManage.css">
 </head>
 
 <body>
-
     <header>
         <link rel="stylesheet" href="../icon/icon-home.css">
         <a href="home.html" class="home">
@@ -27,4 +29,101 @@
             </svg>
         </a>
     </header>
-    
+
+    <nav class="user-nav">
+
+        <a href="javascript:history.back()" class="back">
+            ◀
+        </a>
+
+        <a href="UserManage.html" class="product-link">
+            User
+        </a>
+
+    </nav>
+
+    <main class="admin-page">
+
+        <section class="admin-box">
+
+            <h2>Product</h2>
+            <table class="user-table">
+
+                <thead>
+                    <tr>
+                        <th class="product-column">Product</th>
+                        <th class="name-column">Name</th>
+                        <th class="status-column">Status</th>
+                        <th class="manage-column">Manage</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                        <td>
+                            <div class="manage-buttons">
+                                <button class="edit-btn">Edit</button>
+                                <button class="remove-btn">Remove</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                        <td>
+                            <div class="manage-buttons">
+                                <button class="edit-btn">Edit</button>
+                                <button class="remove-btn">Remove</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                        <td>
+                            <div class="manage-buttons">
+                                <button class="edit-btn">Edit</button>
+                                <button class="remove-btn">Remove</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                        <td>
+                            <div class="manage-buttons">
+                                <button class="edit-btn">Edit</button>
+                                <button class="remove-btn">Remove</button>
+                            </div>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <div class="add-user-container">
+
+            <a href="admin-product-add.html" class="add-user-btn">
+                Add product
+            </a>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
