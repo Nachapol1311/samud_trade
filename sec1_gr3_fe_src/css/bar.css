@@ -1,8 +1,7 @@
 /*  #601d49 purple
     #bd5579 pink
     #ea9d9d 
-    #ffebb8 yellow
-    dppdjfspj*/
+    #ffebb8 yellow*/
 
 * {
     font-family: 'Courier New', Courier, monospace;
@@ -11,6 +10,7 @@
 
 body {
     margin: 0;
+    background-color: #fff4e6;
 }
 
 header,

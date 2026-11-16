@@ -7,6 +7,8 @@
 
     margin-top: 30px;
     margin-bottom: 30px;
+
+    background-color:#fff4e6;
 }
 
 .itemtitle {
@@ -18,7 +20,7 @@
 }
 
 .item {
-    background-color: #ddd;
+    background-color: #eeeeee;
     /* display: block; */
     text-align: center;
     /* width: 20%; */
@@ -26,6 +28,8 @@
     padding-bottom: 10px;
 
     overflow: hidden;
+
+    border-radius: 20px;
 }
 
 img {
@@ -34,6 +38,7 @@ img {
     height: 200px;
     width: 150px;
     overflow: hidden;
+    border-radius: 10px;
 }
 
 .itemname{
