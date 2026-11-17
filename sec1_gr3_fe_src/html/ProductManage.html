@@ -30,16 +30,14 @@
         </a>
     </header>
 
-    <nav class="user-nav">
+    <nav>
+        <div>
+            <a href="javascript:history.back()" class="nav" aria-label="go back">&#9664;</a>
+        </div>
 
-        <a href="javascript:history.back()" class="back">
-            ◀
-        </a>
-
-        <a href="UserManage.html" class="product-link">
-            User
-        </a>
-
+        <div>
+            <a href="UserManage.html" class="nav">User management</a>
+        </div>
     </nav>
 
     <main class="admin-page">
@@ -53,7 +51,7 @@
                     <tr>
                         <th class="product-column">Product ID</th>
                         <th class="name-column">Name</th>
-                        <th class="status-column">Status</th>
+                        <!-- <th class="status-column">Status</th> -->
                         <th class="manage-column">Manage</th>
                     </tr>
                 </thead>
@@ -62,43 +60,7 @@
                     <tr>
                         <td></td>
                         <td></td>
-                        <td></td>
-
-                        <td>
-                            <div class="manage-buttons">
-                                <button class="edit-btn">Edit</button>
-                                <button class="remove-btn">Remove</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-
-                        <td>
-                            <div class="manage-buttons">
-                                <button class="edit-btn">Edit</button>
-                                <button class="remove-btn">Remove</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-
-                        <td>
-                            <div class="manage-buttons">
-                                <button class="edit-btn">Edit</button>
-                                <button class="remove-btn">Remove</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <!-- <td></td> -->
 
                         <td>
                             <div class="manage-buttons">
@@ -116,7 +78,7 @@
 
         <div class="add-user-container">
 
-            <a href="admin-product-add.html" class="add-user-btn">
+            <a href="additem.html" class="add-user-btn">
                 Add product
             </a>
 
