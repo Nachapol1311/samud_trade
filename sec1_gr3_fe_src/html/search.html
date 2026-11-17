@@ -2,63 +2,52 @@
 <html lang="en">
 
 <head>
-    <title>search</title>
-    <link rel="stylesheet" href="../css/bar.css">
-    <link rel="stylesheet" href="../css/showitem.css">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Samud Trade | Search</title>
+    <link href="../css/bar.css" rel="stylesheet" />
+    <link href="../css/searchbar.css" rel="stylesheet" />
+    <link href="../css/showitem.css" rel="stylesheet" />
 </head>
 
-<body>
-
+<body class="page-search">
     <header>
-        <link rel="stylesheet" href="../icon/icon-home.css">
-        <a href="home.html" class="home">
-            <svg class="home-icon" viewBox="0 0 24 24">
-                <path d="M12 3L2 12h3v8h5v-5h4v5h5v-8h3L12 3z" />
+        <a class="home" href="home.html">
+            <svg class="home-icon" viewbox="0 0 24 24">
+                <path d="M12 3L2 12h3v8h5v-5h4v5h5v-8h3L12 3z"></path>
             </svg>
         </a>
-
         <div>samud trade</div>
-
-        <link rel="stylesheet" href="../icon/icon-profile.css">
-        <a href="login.html" class="profile">
-            <svg class="profile-icon" viewBox="0 0 24 24">
-                <circle cx="12" cy="8.6" r="3.9" />
-                <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z" />
+        <a class="profile" href="login.html">
+            <svg class="profile-icon" viewbox="0 0 24 24">
+                <circle cx="12" cy="8.6" r="3.9"></circle>
+                <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z"></path>
             </svg>
         </a>
     </header>
-
-
     <nav>
         <div>
-            <a href="javascript:history.back()" class="nav" aria-label="go back">&#9664;</a>
+            <a aria-label="go back" class="nav" data-back-navigation="true" href="#">◀</a>
         </div>
-
         <div>
-            <a href="trade.html" class="nav">trade</a>
+            <a class="nav" href="trade.html">trade</a>
             <span>|</span>
-            <a href="myitem.html" class="nav">my item</a>
+            <a class="nav" href="myitem.html">my item</a>
             <span>|</span>
-            <a href="match.html" class="nav">match</a>
+            <a class="nav" href="match.html">match</a>
         </div>
     </nav>
-
-    <article class="search">
-        <link rel="stylesheet" href="../css/searchbar.css">
-
+    <main class="search" id="search_content">
         <h2 class="searchtitle">Search</h2>
-        <form action="">
-
+        <form action="#" id="search_form" method="get">
             <div class="searchname">
                 <label for="name">Book name / Keyword</label>
-                <input type="text" id="name" placeholder="Enter name or keyword.">
+                <input id="name" name="name" placeholder="Enter name or keyword." type="text" />
             </div>
-
             <div class="searchcategory">
                 <label for="category">category</label>
                 <select id="category" name="category">
                     <option value="">--all--</option>
-
                     <option value="art-design">art &amp; design</option>
                     <option value="biography">biography</option>
                     <option value="business">business</option>
@@ -91,92 +80,76 @@
                     <option value="travel">travel</option>
                 </select>
             </div>
-
             <div class="searchprice">
                 <label for="min">Price range</label>
-                <input type="number" id="min" name="min" placeholder="Min">
-                <input type="number" id="max" name="max" placeholder="Max">
+                <input id="min" name="min" placeholder="Min" type="number" />
+                <input id="max" name="max" placeholder="Max" type="number" />
             </div>
-
             <fieldset class="searchcondition">
                 <legend>Condition</legend>
                 <div class="stars">
-                    <input type="radio" id="star5" name="condition" value="5">
-                    <label for="star5" title="5 ดาว">&#9733;</label>
-
-                    <input type="radio" id="star4" name="condition" value="4">
-                    <label for="star4" title="4 ดาว">&#9733;</label>
-
-                    <input type="radio" id="star3" name="condition" value="3">
-                    <label for="star3" title="3 ดาว">&#9733;</label>
-
-                    <input type="radio" id="star2" name="condition" value="2">
-                    <label for="star2" title="2 ดาว">&#9733;</label>
-
-                    <input type="radio" id="star1" name="condition" value="1">
-                    <label for="star1" title="1 ดาว">&#9733;</label>
+                    <input id="star5" name="condition" type="radio" value="5" />
+                    <label for="star5" title="5 ดาว">★</label>
+                    <input id="star4" name="condition" type="radio" value="4" />
+                    <label for="star4" title="4 ดาว">★</label>
+                    <input id="star3" name="condition" type="radio" value="3" />
+                    <label for="star3" title="3 ดาว">★</label>
+                    <input id="star2" name="condition" type="radio" value="2" />
+                    <label for="star2" title="2 ดาว">★</label>
+                    <input id="star1" name="condition" type="radio" value="1" />
+                    <label for="star1" title="1 ดาว">★</label>
                 </div>
             </fieldset>
-
             <div class="searchbtn">
-                <button type="reset" class="clear">Clear</button>
-                <button type="submit" class="submit">Search</button>
+                <button class="clear" type="reset">Clear</button>
+                <button class="submit" type="submit">Search</button>
             </div>
-
         </form>
-    </article>
-
-    <article class="show">
+    </main>
+    <section class="show" id="search_content">
         <div class="item">
-            <img src="../pic" alt="">
+            <img alt="Book or profile image" src="../pic" />
             <p class="itemname">name</p>
             <p class="info">info</p>
             <a href="detailitem.html">detail</a>
         </div>
-
         <div class="item">
-            <img src="../pic" alt="">
+            <img alt="Book or profile image" src="../pic" />
             <p class="itemname">name</p>
             <p class="info">info</p>
             <a href="detailitem.html">detail</a>
         </div>
-
         <div class="item">
-            <img src="../pic" alt="">
+            <img alt="Book or profile image" src="../pic" />
             <p class="itemname">name</p>
             <p class="info">info</p>
             <a href="detailitem.html">detail</a>
         </div>
-
         <div class="item">
-            <img src="../pic" alt="">
+            <img alt="Book or profile image" src="../pic" />
             <p class="itemname">name</p>
             <p class="info">info</p>
             <a href="detailitem.html">detail</a>
         </div>
-
         <div class="item">
-            <img src="../pic" alt="">
+            <img alt="Book or profile image" src="../pic" />
             <p class="itemname">name</p>
             <p class="info">info</p>
             <a href="detailitem.html">detail</a>
         </div>
-
         <div class="item">
-            <img src="../pic" alt="">
+            <img alt="Book or profile image" src="../pic" />
             <p class="itemname">name</p>
             <p class="info">info</p>
             <a href="detailitem.html">detail</a>
         </div>
-
         <div class="item">
-            <img src="../pic" alt="">
+            <img alt="Book or profile image" src="../pic" />
             <p class="itemname">name</p>
             <p class="info">info</p>
             <a href="detailitem.html">detail</a>
         </div>
-    </article>
-
+    </section>
     <footer>
         <div>
             <a href="team.html">
@@ -188,19 +161,15 @@
             <p class="team">6887105 pattamanan Pongpanich</p>
             <p class="team">6887117 Sruangmon Suksamer</p>
         </div>
-
         <div>
             thank you
         </div>
-
         <div>
             <p class="mahidol">Mahidol University</p>
             <p class="mahidol">Faculty of ICT</p>
             <p class="mahidol">Project for ITDS242</p>
         </div>
     </footer>
-
-
 </body>
 
 </html>

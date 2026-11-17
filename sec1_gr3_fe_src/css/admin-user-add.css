@@ -30,9 +30,9 @@
 
     padding: 0 12px;
 
-    background-color: #c4c4c4;
+    background-color: var(--surface-alt);
 
-    color: #65164f;
+    color: var(--plum);
 
     font-weight: bold;
     font-size: 16px;
@@ -51,14 +51,14 @@
 
     box-sizing: border-box;
 
-    background-color: #dedede;
+    background-color: #ffffff;
 
     color: #bd5579;
 
     border: none;
     outline: none;
 
-    font-family: "Courier New", monospace;
+    font-family: inherit;
 
     font-size: 15px;
 }
@@ -95,7 +95,7 @@
 
     padding: 0 18px;
 
-    font-family: "Courier New", monospace;
+    font-family: inherit;
 
     font-size: 13px;
     font-weight: bold;
@@ -116,12 +116,12 @@
 
 
 .cancel-btn:hover {
-    background-color: #c4c4c4;
+    background-color: var(--surface-alt);
 }
 
 
 .save-btn {
-    background-color: #c54473;
+    background-color: var(--rose);
 
     color: white;
 
@@ -130,7 +130,7 @@
 
 
 .save-btn:hover {
-    background-color: #a93460;
+    background-color: var(--plum);
 }
 
 

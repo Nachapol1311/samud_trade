@@ -5,9 +5,9 @@
 }
 
 body {
-    font-family: "Courier New", monospace;
-    background-color: #fff3df;
-    color: #65164f;
+    font-family: inherit;
+    background-color: var(--page-bg);
+    color: var(--plum);
 }
 
 .user-nav {
@@ -31,7 +31,7 @@ body {
 
 .user-nav .product-link {
     background-color: #ffe8a8;
-    color:#c54473;
+    color:var(--rose);
     font-size: 15px;
     font-weight: bold;
     text-decoration: none;
@@ -53,7 +53,7 @@ body {
 
 .admin-box {
     width: 100%;
-    background-color: #eeeeee;
+    background-color: var(--surface);
     padding: 20px 20px 38px;
     border-radius: 20px;
 }
@@ -62,7 +62,7 @@ body {
     position: relative;
     padding-left: 12px;
     margin-bottom: 28px;
-    color: #65164f;
+    color: var(--plum);
     font-size: 24px;
     font-weight: normal;
 }
@@ -74,7 +74,7 @@ body {
     top: 0;
     width: 3px;
     height: 28px;
-    background-color: #65164f;
+    background-color: var(--plum);
 }
 
 .user-table {
@@ -136,7 +136,7 @@ body {
     width: 72px;
     height: 22px;
 
-    font-family: "Courier New", monospace;
+    font-family: inherit;
 
     font-size: 10px;
 
@@ -178,7 +178,7 @@ body {
 .add-user-btn {
     display: inline-block;
 
-    background-color: #c54473;
+    background-color: var(--rose);
 
     color: #ffe8a8;
 
@@ -196,5 +196,5 @@ body {
 
 
 .add-user-btn:hover {
-    background-color: #a93460;
+    background-color: var(--plum);
 }

@@ -4,7 +4,7 @@
     max-width: 100%;
     margin: 20px auto;
     padding: 10px 35px 20px 10px;
-    background: #f2f2f2;
+    background: var(--surface);
 }
 
 
@@ -40,7 +40,7 @@
 .search select {
     box-sizing: border-box;
     height: 30px;
-    background: #ddd;
+    background: #ffffff;
     border: 1px solid #333;
     border-radius: 4px;
     font-size: 14px;
@@ -95,7 +95,7 @@
     box-sizing: border-box;
     align-items: center;
     padding: 0 5px;
-    background: #ddd;
+    background: #ffffff;
     border: 1px solid #333;
     border-radius: 5px;
 }

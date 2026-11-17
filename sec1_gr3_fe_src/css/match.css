@@ -1,10 +1,10 @@
 /*Background*/
 .match-container {
     width: 100%;
-    min-height: 650;
+    min-height: 650px;
     padding: 20px 0 45px;
 
-    background-color: #fff4e6;
+    background-color: var(--page-bg);
     box-sizing: border-box;
 }
 
@@ -29,7 +29,7 @@
     width: 280px;
     height: 360px;
     padding: 20px;
-    background-color: #eeeeee;
+    background-color: var(--surface);
     border-radius: 22px;
     box-sizing: border-box;
 }
@@ -67,7 +67,7 @@
     background-color: #bd5579;
     color: #ffebb8;
     text-decoration: none;
-    border-radius: 15;
+    border-radius: 15px;
 }
 
 .detail-btn:hover {
@@ -81,7 +81,7 @@
 
 .match-button {
     display: flex;
-    flex-direction: columnl;
+    flex-direction: column;
 
     justify-content: center;
     align-items: center;
@@ -116,7 +116,7 @@
     color: #999;
 }
 
-.accept:hovver {
+.accept:hover {
     background-color: #601d49;
 }
 

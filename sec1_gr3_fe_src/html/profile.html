@@ -2,69 +2,44 @@
 <html lang="th">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SAMUD TRADE - User Profile</title>
-    <link rel="stylesheet" href="../css/bar.css">
-    <link rel="stylesheet" href="../css/profile.css">
+    <title>Samud Trade | Profile</title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="../css/bar.css" rel="stylesheet" />
+    <link href="../css/profile.css" rel="stylesheet" />
 </head>
 
-<body>
-
+<body class="page-profile">
     <header>
-        <link rel="stylesheet" href="../icon/icon-home.css">
-        <a href="home.html" class="home">
-            <svg class="home-icon" viewBox="0 0 24 24">
-                <path d="M12 3L2 12h3v8h5v-5h4v5h5v-8h3L12 3z" />
+        <a class="home" href="home.html">
+            <svg class="home-icon" viewbox="0 0 24 24">
+                <path d="M12 3L2 12h3v8h5v-5h4v5h5v-8h3L12 3z"></path>
             </svg>
         </a>
-
         <div>samud trade</div>
-
-        <div style="width:30px"></div>
+        <div data-original-style="width:30px"></div>
     </header>
-
-    <main>
+    <main id="profile_content">
         <section class="profile-card">
-
             <!-- ช่องรูปโปรไฟล์ (ว่างไว้ก่อน) -->
-            <div class="avatar" id="avatar" aria-label="profile picture"></div>
-
-            <form class="form" id="profileForm">
+            <div aria-label="profile picture" class="avatar" id="avatar"></div>
+            <form action="#" class="form" id="profileForm" method="post">
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username" autocomplete="username" disabled>
-
+                <input autocomplete="username" disabled="" id="username" name="username" type="text" />
                 <label for="firstname">First name:</label>
-                <input type="text" id="firstname" name="firstname" autocomplete="given-name" disabled>
-
+                <input autocomplete="given-name" disabled="" id="firstname" name="firstname" type="text" />
                 <label for="lastname">Last name:</label>
-                <input type="text" id="lastname" name="lastname" autocomplete="family-name" disabled>
-
+                <input autocomplete="family-name" disabled="" id="lastname" name="lastname" type="text" />
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" autocomplete="email" disabled>
-
+                <input autocomplete="email" disabled="" id="email" name="email" type="email" />
                 <div class="buttons">
-                    <button type="button" id="editBtn">Edit</button>
-                    <button type="button" onclick="location.href='login.html'">Logout</button>
+                    <button id="editBtn" type="button">Edit</button>
+                    <a href="login.html">Logout</a>
                 </div>
             </form>
-
         </section>
     </main>
-
-    <script>
-        const editBtn = document.getElementById('editBtn');
-        const inputs = document.querySelectorAll('#profileForm input');
-        let editing = false;
-
-        editBtn.addEventListener('click', () => {
-            editing = !editing;
-            inputs.forEach(i => i.disabled = !editing);
-            editBtn.textContent = editing ? 'Save' : 'Edit';
-            if (editing) inputs[0].focus();
-        });
-    </script>
-
+    <script defer="" src="../js/profile.js"></script>
 </body>
 
 </html>

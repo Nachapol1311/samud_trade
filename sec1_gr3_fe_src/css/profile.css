@@ -6,11 +6,11 @@
   --field: #f3dede;      
   --admin-bg: #ea9d9d;    
   --admin-text: #601d49;  
-  --skyblue:#dbeafe;
+  --skyblue:#ffffff;
 }
 
 main {
-    background: var(--side);
+    background: var(--page-bg);
     padding: 0 16px;
     min-height: calc(100vh - 50px);
 }

@@ -2,45 +2,38 @@
 <html lang="th">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SAMUD TRADE - Login</title>
-    <link rel="stylesheet" href="../css/login.css">
-    <link rel="stylesheet" href="../css/bar.css">
+    <title>Samud Trade | Login</title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="../css/bar.css" rel="stylesheet" />
+    <link href="../css/login.css" rel="stylesheet" />
 </head>
 
-<body>
-
+<body class="page-login">
     <header>
-        <link rel="stylesheet" href="../icon/icon-home.css">
-        <a href="home.html" class="home">
-            <svg class="home-icon" viewBox="0 0 24 24">
-                <path d="M12 3L2 12h3v8h5v-5h4v5h5v-8h3L12 3z" />
+        <a class="home" href="home.html">
+            <svg class="home-icon" viewbox="0 0 24 24">
+                <path d="M12 3L2 12h3v8h5v-5h4v5h5v-8h3L12 3z"></path>
             </svg>
         </a>
-
         <div>samud trade</div>
-
-        <link rel="stylesheet" href="../icon/icon-profile.css">
-        <a href="login.html" class="profile">
-            <svg class="profile-icon" viewBox="0 0 24 24">
-                <circle cx="12" cy="8.6" r="3.9" />
-                <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z" />
+        <a class="profile" href="login.html">
+            <svg class="profile-icon" viewbox="0 0 24 24">
+                <circle cx="12" cy="8.6" r="3.9"></circle>
+                <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z"></path>
             </svg>
         </a>
     </header>
-
-    <main>
+    <main id="login_content">
         <section class="card">
             <h2>Login for user</h2>
-            <form class="form" action="/user-login" method="post">
+            <form action="/user-login" class="form" id="login_form" method="post">
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username" autocomplete="username" required>
-
+                <input autocomplete="username" id="username" name="username" required="" type="text" />
                 <label for="password">Password:</label>
-                <input class="pw" type="password" id="password" name="password" autocomplete="current-password" required>
-
-                <button type="submit" class="login">Login</button>
+                <input autocomplete="current-password" class="pw" id="password" name="password" required=""
+                    type="password" />
+                <button class="login" type="submit">Login</button>
             </form>
         </section>
     </main>

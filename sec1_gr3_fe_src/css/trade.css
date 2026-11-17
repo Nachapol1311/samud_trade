@@ -3,7 +3,7 @@
     min-height: 650px;
     padding: 20px 0 45px;
 
-    background-color: #fff4e6;
+    background-color: var(--page-bg);
     box-sizing: border-box;
 }
 
@@ -28,7 +28,7 @@
     margin-top: 45px;
     padding: 20px;
 
-    background-color: #eeeeee;
+    background-color: var(--surface);
     border-radius: 22px;
 
     box-sizing: border-box;

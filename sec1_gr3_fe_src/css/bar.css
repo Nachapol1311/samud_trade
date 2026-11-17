@@ -53,14 +53,15 @@ footer a {
     color: #ea9d9d;
     text-align: center;
 
-    p:hover {
+    /* nested hover replaced with standard selector below */
+    /* p:hover {
         background-color: #bd5579;
         color: #601d49;
         font-weight: bold;
         border-radius: 5px;
-    }
+    } */
 }
-
+footer a p:hover { background-color:#bd5579; color:#601d49; font-weight:bold; border-radius:5px; }
 
 nav {
     background-color: #bd5579;
@@ -100,3 +101,78 @@ nav span {
     transform: scale(1.2);
     color: #601d49;
 }
+
+
+
+/* Shared header icons (formerly icon-home.css and icon-profile.css) */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.home {
+    display: block;
+    width: 30px;
+    height: 30px;
+}
+
+.home-icon {
+    width: 100%;
+    height: 100%;
+    fill: #ffebb8;
+}
+.profile {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+
+  background: #bd5579;
+  overflow: hidden;
+  transition: background 0.2s;
+}
+
+
+.profile:hover {
+  background: #ea9d9d;
+}
+
+
+.profile:hover .profile-icon {
+  fill: #601d49;
+}
+
+.profile-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: #ffebb8;
+}
+
+/* SAMUD TRADE DESIGN SYSTEM - shared across all pages */
+:root {
+ --plum:#601d49; --rose:#bd5579; --blush:#ea9d9d;
+ --cream:#ffebb8; --page-bg:#fff4e6; --surface:#f2f2f2;
+ --surface-alt:#e5e0df; --text:#601d49; --muted:#6e5b65;
+ --radius:12px; --focus:#bd5579;
+}
+*,*::before,*::after { box-sizing:border-box; }
+html { font-family:'Courier New',Courier,monospace; }
+body { margin:0; min-height:100vh; background:var(--page-bg); color:var(--text); font-family:inherit; }
+button,input,select,textarea { font:inherit; }
+button, [type=submit], [type=reset] { cursor:pointer; }
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible { outline:2px solid var(--focus); outline-offset:2px; }
+header { min-height:48px; padding:8px 20px; background:var(--plum); }
+header div { color:var(--cream); }
+nav { min-height:34px; height:auto; padding:6px 15px; background:var(--rose); }
+footer { padding:16px 20px; gap:20px; flex-wrap:wrap; }
+main { color:var(--text); }
+:where(.additem,.infomation,.search,.admin-box,.card,.profile-card,.item,.match-card,.trade-item) { background:var(--surface); border-radius:var(--radius); }
+:where(input:not([type=radio]):not([type=checkbox]):not([type=file]),select,textarea) { background:#fff; color:var(--text); border:1px solid #c9b8c2; border-radius:6px; padding:8px; max-width:100%; }
+:where(.login,.save-btn,.submit,.accept,.accept-btn,.add-user-btn,.detail-btn) { background:var(--rose); color:var(--cream); }
+:where(.login,.save-btn,.submit,.accept,.accept-btn,.add-user-btn,.detail-btn):hover { background:var(--plum); color:var(--cream); }
+:where(.cancel-btn,.clear,.reject,.reject-btn,.edit-btn) { background:#d8d2d5; color:var(--plum); }
+:where(.itemname,.item-name,.searchtitle,.itemtitle,.admin-box h2,.trade-page h1,.match-container h1) { color:var(--plum); }
+@media(max-width:700px) { header div {font-size:clamp(18px,5vw,30px)}; nav {flex-wrap:wrap;gap:8px;} footer {flex-direction:column;align-items:flex-start;} }

@@ -2,140 +2,80 @@
 <html lang="en">
 
 <head>
-    <title>match</title>
-    <link rel="stylesheet" href="../css/bar.css">
+  <title>Samud Trade | Select Book</title>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <link href="../css/select-book.css" rel="stylesheet">
+  <link href="../css/bar.css" rel="stylesheet" />
 </head>
 
-<body>
-
-    <header>
-        <link rel="stylesheet" href="../icon/icon-home.css">
-        <a href="home.html" class="home">
-            <svg class="home-icon" viewBox="0 0 24 24">
-                <path d="M12 3L2 12h3v8h5v-5h4v5h5v-8h3L12 3z" />
-            </svg>
-        </a>
-
-        <div>samud trade</div>
-
-        <link rel="stylesheet" href="../icon/icon-profile.css">
-        <a href="login.html" class="profile">
-            <svg class="profile-icon" viewBox="0 0 24 24">
-                <circle cx="12" cy="8.6" r="3.9" />
-                <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z" />
-            </svg>
-        </a>
-    </header>
-
-
-    <nav>
-        <div>
-            <a href="" class="nav" aria-label="go back">&#9664;</a>
+<body class="page-select_book">
+  <header>
+    <a aria-label="Home" class="home" href="home.html"><svg class="home-icon" viewbox="0 0 24 24">
+        <path d="M12 3L2 12h3v8h5v-5h4v5h5v-8h3L12 3z"></path>
+      </svg></a>
+    <div>samud trade</div>
+    <a aria-label="Profile" class="profile" href="login.html"><svg class="profile-icon" viewbox="0 0 24 24">
+        <circle cx="12" cy="8.6" r="3.9"></circle>
+        <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z"></path>
+      </svg></a>
+  </header>
+  <nav>
+    <div><a aria-label="Go back" class="nav" data-back-navigation="true" href="#">◀</a></div>
+    <div><a class="nav" href="search.html">⌕ search</a> <span>|</span> <a class="nav" href="trade.html">trade</a>
+      <span>|</span> <a class="nav" href="myitem.html">my item</a> <span>|</span> <a class="nav"
+        href="match.html">match</a></div>
+  </nav>
+  <main class="trade-page" id="select_book_content">
+    <section aria-labelledby="trade-heading" class="trade-panel">
+      <h1 id="trade-heading">Trade</h1>
+      <div class="trade-layout">
+        <div class="book-picker"><label for="my-book">Your book</label><select id="my-book">
+            <option value="">-- Select your book --</option>
+          </select></div>
+        <div class="book-card">
+          <div class="book-cover" id="my-cover">Select a book</div>
+          <p class="book-title" id="my-title">Your book</p>
+          <p class="book-meta" id="my-author">No book selected</p><button class="detail-btn" id="my-detail"
+            type="button">Detail</button>
         </div>
-
-        <div>
-            <a href="search.html" class="nav">&#8981; search</a>
-            <span>|</span>
-            <a href="trade.html" class="nav">trade</a>
-            <span>|</span>
-            <a href="myitem.html" class="nav">my item</a>
-            <span>|</span>
-            <a href="match.html" class="nav">match</a>
+        <div aria-label="Exchange books" class="swap-icon"><span>←</span><span>→</span></div>
+        <div class="book-card">
+          <div class="book-cover" id="target-cover">Book cover</div>
+          <p class="book-title" id="target-title">The Alchemist</p>
+          <p class="book-meta" id="target-author">Paulo Coelho</p><button class="detail-btn" id="target-detail"
+            type="button">Detail</button>
         </div>
-    </nav>
-
-
-    <article>
-        <h2>Trade</h2>
-
-        <form action="#" method="post">
-            <table>
-                <tr>
-                    <td>
-                        <h3>Your book</h3>
-
-                        <select name="my_book" required>
-                            <option value="">Select your book</option>
-                            <option value="1">Book 1</option>
-                            <option value="2">Book 2</option>
-                            <option value="3">Book 3</option>
-                            <option value="4">Book 4</option>
-                            <option value="5">Book 5</option>
-                        </select>
-                    </td>
-
-                    <td>
-                        <fieldset>
-                            <legend>Your Book</legend>
-
-                            <img src="" alt="Your book" width="150" height="180">
-
-                            <p>Book Name</p>
-                            <p>Book Condition</p>
-
-                            <a href="detailitem.html">
-                                <button type="button">Detail</button>
-                            </a>
-                        </fieldset>
-                    </td>
-
-                    <td>
-                        <p>←</p>
-                        <p>→</p>
-                    </td>
-
-                    <td>
-                        <fieldset>
-                            <legend>Trade Book</legend>
-
-                            <img src="" alt="Trade book" width="150" height="180">
-
-                            <p>Book Name</p>
-                            <p>Book Condition</p>
-
-                            <a href="detailitem.html">
-                                <button type="button">Detail</button>
-                            </a>
-                        </fieldset>
-                    </td>
-                </tr>
-            </table>
-
-            <p align="right">
-                <a href="match.html">
-                    <button type="button">Cancel</button>
-                </a>
-
-                <button type="submit">Trade</button>
-            </p>
-        </form>
-    </article>
-
-
-    <footer>
-        <div>
-            <a href="team.html">
-                <p class="team">team</p>
-            </a>
-            <p class="team">6887013 Nachapol Pinsumrong</p>
-            <p class="team">6887014 Nuttapon</p>
-            <p class="team">6887093 Chayawat</p>
-            <p class="team">6887105 pattamanan</p>
-            <p class="team">6887117 Sruangmon</p>
-        </div>
-
-        <div>
-            thank you
-        </div>
-
-        <div>
-            <p class="mahidol">Mahidol University</p>
-            <p class="mahidol">Faculty of ICT</p>
-            <p class="mahidol">Project for ITDS242</p>
-        </div>
-    </footer>
-
-
+      </div>
+      <div class="trade-actions"><button class="cancel-btn" id="cancel" type="button">Cancel</button><button
+          class="trade-btn" disabled="" id="trade" type="button">Trade</button></div>
+      <p class="status" id="status" role="status"></p>
+    </section>
+  </main>
+  <dialog id="confirm-dialog">
+    <h2>Confirm trade</h2>
+    <p id="confirm-text"></p>
+    <div class="trade-actions"><button class="cancel-btn" id="close-dialog" type="button">Cancel</button><button
+        class="trade-btn" id="confirm-trade" type="button">Confirm</button></div>
+  </dialog>
+  <footer>
+    <div><a href="team.html">
+        <p class="team">team</p>
+      </a>
+      <p class="team">6887013 Nachapol Pinsumrong</p>
+      <p class="team">6887014 Nuttapon</p>
+      <p class="team">6887093 Chayawat</p>
+      <p class="team">6887105 pattamanan</p>
+      <p class="team">6887117 Sruangmon</p>
+    </div>
+    <div>thank you</div>
+    <div>
+      <p class="mahidol">Mahidol University</p>
+      <p class="mahidol">Faculty of ICT</p>
+      <p class="mahidol">Project for ITDS242</p>
+    </div>
+  </footer>
+  <script defer="" src="../js/select_book.js"></script>
 </body>
 
 </html>

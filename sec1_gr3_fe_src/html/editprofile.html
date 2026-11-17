@@ -2,38 +2,32 @@
 <html lang="en">
 
 <head>
-    <title>edit item</title>
-    <link rel="stylesheet" href="../css/bar.css">
-    <link rel="stylesheet" href="../css/additem.css">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Samud Trade | Editprofile</title>
+    <link href="../css/bar.css" rel="stylesheet" />
+    <link href="../css/profile.css" rel="stylesheet" />
 </head>
 
-<body>
-
+<body class="page-editprofile">
     <header>
-        <link rel="stylesheet" href="../icon/icon-home.css">
-        <a href="home.html" class="home">
-            <svg class="home-icon" viewBox="0 0 24 24">
-                <path d="M12 3L2 12h3v8h5v-5h4v5h5v-8h3L12 3z" />
+        <a class="home" href="home.html">
+            <svg class="home-icon" viewbox="0 0 24 24">
+                <path d="M12 3L2 12h3v8h5v-5h4v5h5v-8h3L12 3z"></path>
             </svg>
         </a>
-
         <div>samud trade</div>
-
-        <link rel="stylesheet" href="../icon/icon-profile.css">
-        <a href="login.html" class="profile">
-            <svg class="profile-icon" viewBox="0 0 24 24">
-                <circle cx="12" cy="8.6" r="3.9" />
-                <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z" />
+        <a class="profile" href="login.html">
+            <svg class="profile-icon" viewbox="0 0 24 24">
+                <circle cx="12" cy="8.6" r="3.9"></circle>
+                <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z"></path>
             </svg>
         </a>
     </header>
-
-
     <nav>
         <div>
-            <a href="javascript:history.back()" class="nav" aria-label="go back">&#9664;</a>
+            <a aria-label="go back" class="nav" data-back-navigation="true" href="#">◀</a>
         </div>
-
         <!-- <div>
             <a href="search.html" class="nav">&#8981; search</a>
             <span>|</span>
@@ -44,172 +38,70 @@
             <a href="match.html" class="nav">match</a>
         </div> -->
     </nav>
-
-
-    <main class="admin-page">
-
+    <main class="admin-page" id="editprofile_content">
         <section class="admin-box">
-
             <h2>Add user</h2>
-
-            <form class="add-user-form" id="addUserForm">
-
+            <form action="#" class="add-user-form" id="addUserForm" method="post">
                 <div class="field-row">
                     <label for="Role">Role</label>
-
-                    <select name="role" id="">
+                    <select id="editprofile_role" name="role">
                         <option value="admin">admin</option>
                         <option value="user">user</option>
                     </select>
                 </div>
-
                 <div class="field-row">
                     <label for="firstname">First Name</label>
-
-                    <input
-                        type="text"
-                        id="firstname"
-                        name="firstname"
-                        placeholder="first name"
-                        required
-                    >
+                    <input id="firstname" name="firstname" placeholder="first name" required="" type="text" />
                 </div>
-
-
                 <div class="field-row">
                     <label for="lastname">Last Name</label>
-
-                    <input
-                        type="text"
-                        id="lastname"
-                        name="lastname"
-                        placeholder="last name"
-                        required
-                    >
+                    <input id="lastname" name="lastname" placeholder="last name" required="" type="text" />
                 </div>
-
-
                 <div class="field-row">
                     <label for="username">Username</label>
-
-                    <input
-                        type="text"
-                        id="username"
-                        name="username"
-                        placeholder="username"
-                        required
-                    >
+                    <input id="username" name="username" placeholder="username" required="" type="text" />
                 </div>
-
-
                 <div class="field-row">
                     <label for="password">Password</label>
-
-                    <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        placeholder="password"
-                        required
-                    >
+                    <input id="password" name="password" placeholder="password" required="" type="password" />
                 </div>
-
-
                 <div class="field-row">
                     <label for="confirmPassword">Confirm Password</label>
-
-                    <input
-                        type="password"
-                        id="confirmPassword"
-                        name="confirmPassword"
-                        placeholder="confirm password"
-                        required
-                    >
+                    <input id="confirmPassword" name="confirmPassword" placeholder="confirm password" required=""
+                        type="password" />
                 </div>
-
-
                 <div class="form-buttons">
-
-                    <button
-                        type="button"
-                        class="cancel-btn"
-                        onclick="location.href='UserManage.html'"
-                    >
+                    <a class="cancel-btn" href="UserManage.html">
                         Cancel
-                    </button>
-
-                    <button
-                        type="submit"
-                        class="save-btn"
-                    >
+                    </a>
+                    <button class="save-btn" type="submit">
                         Add user
                     </button>
-
                 </div>
-
             </form>
-
         </section>
-
     </main>
-
-
-    <script>
-
-        const form = document.getElementById('addUserForm');
-
-        form.addEventListener('submit', (e) => {
-
-            e.preventDefault();
-
-            const password =
-                document.getElementById('password').value;
-
-            const confirmPassword =
-                document.getElementById('confirmPassword').value;
-
-
-            // ตรวจสอบว่า Password ตรงกันหรือไม่
-            if (password !== confirmPassword) {
-
-                alert('Password does not match');
-
-                return;
-            }
-
-
-            // ตอนนี้ยังไม่มี Backend
-            // เมื่อกด Add user จะกลับไปหน้า User Management
-
-            location.href = 'UserManage.html';
-
-        });
-
-    </script>
-
-
+    <script defer="" src="../js/editprofile.js"></script>
     <footer>
         <div>
-            <a href="team.html"><p class="team">team</p></a>
+            <a href="team.html">
+                <p class="team">team</p>
+            </a>
             <p class="team">6887013 Nachapol Pinsumrong</p>
             <p class="team">6887014 Nuttapon Khongdee</p>
             <p class="team">6887093 Chayawat Sricharoen</p>
             <p class="team">6887105 pattamanan Pongpanich</p>
             <p class="team">6887117 Sruangmon Suksamer</p>
         </div>
-
         <div>
             thank you
         </div>
-
         <div>
             <p class="mahidol">Mahidol University</p>
             <p class="mahidol">Faculty of ICT</p>
             <p class="mahidol">Project for ITDS242</p>
         </div>
     </footer>
-
-
 </body>
 
 </html>
