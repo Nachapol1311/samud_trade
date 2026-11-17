@@ -2,20 +2,15 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Add User</title>
-
+    <title>edit item</title>
     <link rel="stylesheet" href="../css/bar.css">
-    <link rel="stylesheet" href="../css/UserManage.css">
-    <link rel="stylesheet" href="../css/admin-user-add.css">
+    <link rel="stylesheet" href="../css/additem.css">
 </head>
 
 <body>
 
     <header>
         <link rel="stylesheet" href="../icon/icon-home.css">
-
         <a href="home.html" class="home">
             <svg class="home-icon" viewBox="0 0 24 24">
                 <path d="M12 3L2 12h3v8h5v-5h4v5h5v-8h3L12 3z" />
@@ -25,7 +20,6 @@
         <div>samud trade</div>
 
         <link rel="stylesheet" href="../icon/icon-profile.css">
-
         <a href="login.html" class="profile">
             <svg class="profile-icon" viewBox="0 0 24 24">
                 <circle cx="12" cy="8.6" r="3.9" />
@@ -35,14 +29,20 @@
     </header>
 
 
-    <nav class="user-nav">
+    <nav>
+        <div>
+            <a href="javascript:history.back()" class="nav" aria-label="go back">&#9664;</a>
+        </div>
 
-        
-
-        <a  class="product-link">
-        User
-        </a>
-
+        <!-- <div>
+            <a href="search.html" class="nav">&#8981; search</a>
+            <span>|</span>
+            <a href="trade.html" class="nav">trade</a>
+            <span>|</span>
+            <a href="myitem.html" class="nav">my item</a>
+            <span>|</span>
+            <a href="match.html" class="nav">match</a>
+        </div> -->
     </nav>
 
 
@@ -53,6 +53,15 @@
             <h2>Add user</h2>
 
             <form class="add-user-form" id="addUserForm">
+
+                <div class="field-row">
+                    <label for="Role">Role</label>
+
+                    <select name="role" id="">
+                        <option value="admin">admin</option>
+                        <option value="user">user</option>
+                    </select>
+                </div>
 
                 <div class="field-row">
                     <label for="firstname">First Name</label>
@@ -177,6 +186,29 @@
         });
 
     </script>
+
+
+    <footer>
+        <div>
+            <a href="team.html"><p class="team">team</p></a>
+            <p class="team">6887013 Nachapol Pinsumrong</p>
+            <p class="team">6887014 Nuttapon Khongdee</p>
+            <p class="team">6887093 Chayawat Sricharoen</p>
+            <p class="team">6887105 pattamanan Pongpanich</p>
+            <p class="team">6887117 Sruangmon Suksamer</p>
+        </div>
+
+        <div>
+            thank you
+        </div>
+
+        <div>
+            <p class="mahidol">Mahidol University</p>
+            <p class="mahidol">Faculty of ICT</p>
+            <p class="mahidol">Project for ITDS242</p>
+        </div>
+    </footer>
+
 
 </body>
 
