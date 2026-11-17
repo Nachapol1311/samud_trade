@@ -1,0 +1,160 @@
+.user-nav {
+    justify-content: flex-end;
+}
+
+
+
+
+.add-user-form {
+    width: 700px;
+    max-width: 100%;
+
+    margin: 30px auto 0;
+}
+
+
+
+.field-row {
+    display: grid;
+
+    grid-template-columns: 180px 1fr;
+
+    gap: 5px;
+
+    margin-bottom: 12px;
+}
+
+
+.field-row label {
+    min-height: 46px;
+
+    padding: 0 12px;
+
+    background-color: #c4c4c4;
+
+    color: #65164f;
+
+    font-weight: bold;
+    font-size: 16px;
+
+    display: flex;
+    align-items: center;
+}
+
+
+.field-row input {
+    height: 46px;
+
+    padding: 0 13px;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    background-color: #dedede;
+
+    color: #bd5579;
+
+    border: none;
+    outline: none;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 15px;
+}
+
+
+.field-row input::placeholder {
+    color: #bd5579;
+
+    opacity: 0.6;
+}
+
+
+.field-row input:focus {
+    outline: 2px solid #bd5579;
+
+    outline-offset: -2px;
+}
+
+
+
+.form-buttons {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+
+.form-buttons button {
+    height: 34px;
+
+    padding: 0 18px;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    border-radius: 2px;
+
+    cursor: pointer;
+}
+
+
+.cancel-btn {
+    background-color: #d3d3d3;
+
+    color: #888;
+
+    border: 1px solid #888;
+}
+
+
+.cancel-btn:hover {
+    background-color: #c4c4c4;
+}
+
+
+.save-btn {
+    background-color: #c54473;
+
+    color: white;
+
+    border: 1px solid #963354;
+}
+
+
+.save-btn:hover {
+    background-color: #a93460;
+}
+
+
+@media (max-width: 800px) {
+
+    .add-user-form {
+        width: 100%;
+    }
+
+    .field-row {
+        grid-template-columns: 140px 1fr;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .field-row {
+        grid-template-columns: 1fr;
+    }
+
+    .field-row label {
+        min-height: 38px;
+    }
+
+}

@@ -2,15 +2,20 @@
 <html lang="en">
 
 <head>
-    <title>home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add User</title>
+
     <link rel="stylesheet" href="../css/bar.css">
-    <link rel="stylesheet" href="../css/showitem.css">
+    <link rel="stylesheet" href="../css/UserManage.css">
+    <link rel="stylesheet" href="../css/admin-user-add.css">
 </head>
 
 <body>
 
     <header>
         <link rel="stylesheet" href="../icon/icon-home.css">
+
         <a href="home.html" class="home">
             <svg class="home-icon" viewBox="0 0 24 24">
                 <path d="M12 3L2 12h3v8h5v-5h4v5h5v-8h3L12 3z" />
@@ -20,6 +25,7 @@
         <div>samud trade</div>
 
         <link rel="stylesheet" href="../icon/icon-profile.css">
+
         <a href="login.html" class="profile">
             <svg class="profile-icon" viewBox="0 0 24 24">
                 <circle cx="12" cy="8.6" r="3.9" />
@@ -29,24 +35,148 @@
     </header>
 
 
-    <nav>
-        <div>
-            <a href="javascript:history.back()" class="nav" aria-label="go back">&#9664;</a>
-        </div>
+    <nav class="user-nav">
 
-        <div>
-            <a href="search.html" class="nav">&#8981; search</a>
-            <span>|</span>
-            <a href="trade.html" class="nav">trade</a>
-            <span>|</span>
-            <a href="myitem.html" class="nav">my item</a>
-            <span>|</span>
-            <a href="match.html" class="nav">match</a>
-        </div>
+        
+
+        <a  class="product-link">
+        User
+        </a>
+
     </nav>
 
-    <article>
-    </article>
+
+    <main class="admin-page">
+
+        <section class="admin-box">
+
+            <h2>Add user</h2>
+
+            <form class="add-user-form" id="addUserForm">
+
+                <div class="field-row">
+                    <label for="firstname">First Name</label>
+
+                    <input
+                        type="text"
+                        id="firstname"
+                        name="firstname"
+                        placeholder="first name"
+                        required
+                    >
+                </div>
+
+
+                <div class="field-row">
+                    <label for="lastname">Last Name</label>
+
+                    <input
+                        type="text"
+                        id="lastname"
+                        name="lastname"
+                        placeholder="last name"
+                        required
+                    >
+                </div>
+
+
+                <div class="field-row">
+                    <label for="username">Username</label>
+
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="username"
+                        required
+                    >
+                </div>
+
+
+                <div class="field-row">
+                    <label for="password">Password</label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="password"
+                        required
+                    >
+                </div>
+
+
+                <div class="field-row">
+                    <label for="confirmPassword">Confirm Password</label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        placeholder="confirm password"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-buttons">
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        onclick="location.href='UserManage.html'"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="save-btn"
+                    >
+                        Add user
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        const form = document.getElementById('addUserForm');
+
+        form.addEventListener('submit', (e) => {
+
+            e.preventDefault();
+
+            const password =
+                document.getElementById('password').value;
+
+            const confirmPassword =
+                document.getElementById('confirmPassword').value;
+
+
+            // ตรวจสอบว่า Password ตรงกันหรือไม่
+            if (password !== confirmPassword) {
+
+                alert('Password does not match');
+
+                return;
+            }
+
+
+            // ตอนนี้ยังไม่มี Backend
+            // เมื่อกด Add user จะกลับไปหน้า User Management
+
+            location.href = 'UserManage.html';
+
+        });
+
+    </script>
 
 </body>
 
