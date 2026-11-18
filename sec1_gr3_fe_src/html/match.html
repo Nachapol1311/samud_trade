@@ -11,12 +11,22 @@
 
 <body class="page-match">
     <header>
-        <a class="home" href="home.html">
-            <svg class="home-icon" viewbox="0 0 24 24">
-                <path d="M12 3L2 12h3v8h5v-5h4v5h5v-8h3L12 3z"></path>
-            </svg>
+        <a href="home.html">
+            <div>samud trade</div>
         </a>
-        <div>samud trade</div>
+
+        <nav>
+            <div>
+                <a class="nav" href="search.html">⌕ search</a>
+                <span>|</span>
+                <a class="nav" href="trade.html">trade</a>
+                <span>|</span>
+                <a class="nav" href="myitem.html">my item</a>
+                <span>|</span>
+                <a class="nav" href="wait.html">wait</a>
+            </div>
+        </nav>
+
         <a class="profile" href="login.html">
             <svg class="profile-icon" viewbox="0 0 24 24">
                 <circle cx="12" cy="8.6" r="3.9"></circle>
@@ -24,32 +34,11 @@
             </svg>
         </a>
     </header>
-    <nav>
-        <div>
-            <a href="javascript:history.back()" class="nav" aria-label="go back">&#9664;</a>
-        </div>
-        <div>
-            <a class="nav" href="search.html">⌕ search</a>
-            <span>|</span>
-            <a class="nav" href="trade.html">trade</a>
-            <span>|</span>
-            <a class="nav" href="myitem.html">my item</a>
-            <span>|</span>
-            <a class="nav" href="wait.html">wait</a>
-        </div>
-    </nav>
+    
     <main class="match-container" id="match_content">
         <h1>│Match</h1>
         <!--match 1-->
         <div class="match-content">
-            <!--my book-->
-            <div class="match-card">
-                <img alt="my item" src="../pic/item.jpg" />
-                <p class="itemname">My book</p>
-                <p class="info">info</p>
-                <a class="detail-btn" href="detailitem.html">detail</a>
-            </div>
-            <span class="exchange">⇄</span>
             <!--someone else's book-->
             <div class="match-card">
                 <img alt="offered item" src="../pic/item.jpg" />
@@ -57,6 +46,15 @@
                 <p class="info">info</p>
                 <a class="detail-btn" href="detailitem.html">detail</a>
             </div>
+            <span class="exchange">⇄</span>
+            <!--my book-->
+            <div class="match-card">
+                <img alt="my item" src="../pic/item.jpg" />
+                <p class="itemname">My book</p>
+                <p class="info">info</p>
+                <a class="detail-btn" href="detailitem.html">detail</a>
+            </div>
+            
             <!--accept or reject-->
             <div class="match-button">
                 <button class="accept" type="button">✓</button>
@@ -67,21 +65,11 @@
     <footer>
         <div>
             <a href="team.html">
-                <p class="team">team</p>
+                <p class="team">about us</p>
             </a>
-            <p class="team">6887013 Nachapol Pinsumrong</p>
-            <p class="team">6887014 Nuttapon Khongdee</p>
-            <p class="team">6887093 Chayawat Sricharoen</p>
-            <p class="team">6887105 pattamanan Pongpanich</p>
-            <p class="team">6887117 Sruangmon Suksamer</p>
         </div>
-        <div>
-            thank you
-        </div>
-        <div>
-            <p class="mahidol">Mahidol University</p>
-            <p class="mahidol">Faculty of ICT</p>
-            <p class="mahidol">Project for ITDS242</p>
+        <div> 
+            <p>© 2026 Samud Trade. All rights reserved.</p>
         </div>
     </footer>
 </body>
