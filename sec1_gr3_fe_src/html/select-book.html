@@ -11,21 +11,30 @@
 
 <body class="page-select_book">
   <header>
-    <a aria-label="Home" class="home" href="home.html"><svg class="home-icon" viewbox="0 0 24 24">
-        <path d="M12 3L2 12h3v8h5v-5h4v5h5v-8h3L12 3z"></path>
-      </svg></a>
-    <div>samud trade</div>
-    <a aria-label="Profile" class="profile" href="login.html"><svg class="profile-icon" viewbox="0 0 24 24">
+    <a href="home.html">
+      <div>samud trade</div>
+    </a>
+
+    <nav>
+      <div>
+        <a class="nav" href="search.html">⌕ search</a>
+        <span>|</span>
+        <a class="nav" href="trade.html">trade</a>
+        <span>|</span>
+        <a class="nav" href="myitem.html">my item</a>
+        <span>|</span>
+        <a class="nav" href="match.html">match</a>
+      </div>
+    </nav>
+
+    <a class="profile" href="login.html">
+      <svg class="profile-icon" viewbox="0 0 24 24">
         <circle cx="12" cy="8.6" r="3.9"></circle>
         <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z"></path>
-      </svg></a>
+      </svg>
+    </a>
   </header>
-  <nav>
-    <a href="javascript:history.back()" class="nav" aria-label="go back">&#9664;</a>
-    <div><a class="nav" href="search.html">⌕ search</a> <span>|</span> <a class="nav" href="trade.html">trade</a>
-      <span>|</span> <a class="nav" href="myitem.html">my item</a> <span>|</span> <a class="nav"
-        href="match.html">match</a></div>
-  </nav>
+
   <main class="trade-page" id="select_book_content">
     <section aria-labelledby="trade-heading" class="trade-panel">
       <h1 id="trade-heading">Trade</h1>
@@ -59,20 +68,13 @@
         class="trade-btn" id="confirm-trade" type="button">Confirm</button></div>
   </dialog>
   <footer>
-    <div><a href="team.html">
-        <p class="team">team</p>
-      </a>
-      <p class="team">6887013 Nachapol Pinsumrong</p>
-      <p class="team">6887014 Nuttapon</p>
-      <p class="team">6887093 Chayawat</p>
-      <p class="team">6887105 pattamanan</p>
-      <p class="team">6887117 Sruangmon</p>
-    </div>
-    <div>thank you</div>
     <div>
-      <p class="mahidol">Mahidol University</p>
-      <p class="mahidol">Faculty of ICT</p>
-      <p class="mahidol">Project for ITDS242</p>
+      <a href="team.html">
+        <p class="team">about us</p>
+      </a>
+    </div>
+    <div>
+      <p>© 2026 Samud Trade. All rights reserved.</p>
     </div>
   </footer>
   <script defer="" src="../js/select-book.js"></script>

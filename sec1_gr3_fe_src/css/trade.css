@@ -22,29 +22,31 @@
 }
 
 .trade-item {
-    width: 280px;
-    height: 360px;
+    width: 250px;
 
-    margin-top: 45px;
-    padding: 20px;
+    padding: 10px;
 
     background-color: var(--surface);
-    border-radius: 22px;
+    border: 1px solid #d6c8cf;
+    border-radius: 20px;
 
+    text-align: center;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .trade-item img {
     display: block;
 
-    width: 240px;
-    height: 220px;
+    width: 200px;
+    aspect-ratio: 3 / 4;
+
+    margin: 0 auto;
 
     object-fit: cover;
+    overflow: hidden;
 
     background-color: #aaa;
-
-    border: none;
     border-radius: 10px;
 }
 
@@ -97,7 +99,8 @@
     margin-bottom: 35px;
 }
 
-.trade-buttons button {
+.trade-buttons button,
+.trade-buttons a {
     width: 65px;
     height: 65px;
 
@@ -106,8 +109,13 @@
     border: none;
     border-radius: 50%;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     font-family: inherit;
     font-size: 38px;
+    text-decoration: none;
 
     cursor: pointer;
 }
