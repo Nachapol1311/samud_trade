@@ -10,230 +10,319 @@ body {
     color: var(--plum);
 }
 
-.user-nav {
-    width: 100%;
-    height: 32px;
-    background-color: #bd5579;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 15px;
-    padding-right: 45px;
-}
 
-
-.user-nav .back {
-    color: #ffe8a8;
-    font-size: 15px;
-    text-decoration: none;
-}
-
-
-.user-nav .product-link {
-    background-color: #ffe8a8;
-    color:var(--rose);
-    font-size: 15px;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 4px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.user-nav .product-link:hover {
-    background-color: #e8e6bc;
-}
-
+/* =========================
+   MAIN
+========================= */
 
 .admin-page {
-    width: 78%;
+    width: 90%;
     max-width: 1200px;
-    margin: 40px auto 0;
+
+    margin: 40px auto 60px;
 }
+
+
+/* =========================
+   ADMIN BOX
+========================= */
 
 .admin-box {
     width: 100%;
+
     background-color: var(--surface);
-    padding: 20px 20px 38px;
+
+    padding: 25px 30px 35px;
+
+    border: 1px solid #d6c8cf;
     border-radius: 20px;
 }
 
-.admin-box h2 {
-    position: relative;
-    padding-left: 12px;
-    margin-bottom: 28px;
-    color: var(--plum);
-    font-size: 24px;
-    font-weight: normal;
-}
 
-.admin-box h2::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 3px;
-    height: 28px;
-    background-color: var(--plum);
-}
+/* =========================
+   HEADER : TITLE + ADD USER
+========================= */
 
-.user-table {
-    width: 100%;
-    border-collapse: collapse;
-    color: #555;
-    font-size: 15px;
-}
-
-.user-table th,
-.user-table td {
-    border: 1px solid #777;
-}
-
-.user-table th {
-    height: 50px;
-    text-align: center;
-    font-weight: normal;
-    color: #666;
-}
-
-.user-table td {
-    height: 82px;
-}
-
-.id-column {
-    width: 13%;
-}
-
-.name-column {
-    width: 46%;
-}
-
-.username-column {
-    width: 18%;
-}
-
-.email-column {
-    width: 12%;
-}
-
-.manage-column {
-    width: 11%;
-}
-
-.manage-buttons {
-    height: 100%;
-
+.admin-header {
     display: flex;
-    flex-direction: column;
-
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 
-    gap: 5px;
-}
-
-.manage-buttons button {
-    width: 72px;
-    height: 22px;
-
-    font-family: inherit;
-
-    font-size: 10px;
-
-    cursor: pointer;
+    margin-bottom: 25px;
 }
 
 
+.admin-header h2 {
+    margin: 0;
 
-.edit-btn {
-    background-color: #d3d3d3;
+    color: var(--plum);
 
-    color: #5b5959;
-
-    border: 1px solid #999;
-
-    border-radius: 3px;
+    font-size: 26px;
+    font-weight: normal;
 }
 
-.remove-btn {
-    background-color: #dd5151;
 
-    color: white;
-
-    border: none;
-
-    border-radius: 3px;
-}
-
-.add-user-container {
-    width: 100%;
-
-    display: flex;
-    justify-content: flex-end;
-
-    margin-top: 15px;
-}
-
+/* Add user */
 
 .add-user-btn {
     display: inline-block;
 
-    background-color: var(--rose);
+    padding: 8px 16px;
 
-    color: #ffe8a8;
+    background-color: var(--rose);
+    color: var(--cream);
 
     text-decoration: none;
 
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 13px;
+    font-weight: normal;
 
-    padding: 8px 18px;
-
-    border-radius: 16px;
+    border-radius: 15px;
 
     cursor: pointer;
 }
 
+
 .add-user-btn:hover {
     background-color: var(--plum);
+    color: var(--cream);
 }
 
+
+/* =========================
+   SEARCH
+========================= */
 
 .user-search {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
+    display: block;
+
+    margin: 0 0 25px;
 }
+
+
+.user-search label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--plum);
+
+    font-size: 15px;
+    font-weight: bold;
+}
+
 
 .user-search form {
     display: flex;
-    width: 400px;
+
+    width: 100%;
+    max-width: 500px;
 }
+
 
 .user-search input {
     flex: 1;
+
     height: 38px;
-    padding: 0 15px;
+
+    padding: 0 12px;
+
+    background-color: #ffffff;
 
     border: 1px solid #c9b8c2;
-    border-radius: 18px 0 0 18px;
+    border-right: none;
+
+    border-radius: 8px 0 0 8px;
 
     outline: none;
+
+    font-size: 14px;
 }
+
+
+.user-search input:focus {
+    border-color: var(--rose);
+}
+
 
 .user-search button {
     width: 45px;
     height: 38px;
 
     border: none;
-    border-radius: 0 18px 18px 0;
+    border-radius: 0 8px 8px 0;
 
-    background-color: #bd5579;
-    color: #ffebb8;
+    background-color: var(--rose);
+    color: var(--cream);
 
     cursor: pointer;
 }
 
+
 .user-search button:hover {
-    background-color: #601d49;
+    background-color: var(--plum);
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+.user-table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    background-color: #ffffff;
+
+    color: #555;
+
+    font-size: 13px;
+}
+
+
+.user-table th,
+.user-table td {
+    border: 1px solid #d6c8cf;
+
+    padding: 14px 12px;
+
+    text-align: center;
+}
+
+
+.user-table th {
+    background-color: #eeeeee;
+
+    color: var(--plum);
+
+    font-weight: bold;
+}
+
+
+.user-table td {
+    height: 65px;
+}
+
+
+/* Column width */
+
+.id-column {
+    width: 15%;
+}
+
+.name-column {
+    width: 45%;
+}
+
+.username-column {
+    width: 25%;
+}
+
+.manage-column {
+    width: 15%;
+}
+
+
+/* =========================
+   MANAGE BUTTONS
+========================= */
+
+.manage-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+/* Edit + Remove */
+
+.edit-btn,
+.remove-btn {
+    display: inline-block;
+
+    min-width: 60px;
+
+    padding: 6px 10px;
+
+    border: none;
+    border-radius: 10px;
+
+    font-family: inherit;
+    font-size: 11px;
+
+    text-decoration: none;
+    text-align: center;
+
+    cursor: pointer;
+}
+
+
+/* Edit */
+
+.edit-btn {
+    background-color: #d8d2d5;
+    color: var(--plum);
+}
+
+
+.edit-btn:hover {
+    background-color: #ccc;
+}
+
+
+/* Remove */
+
+.remove-btn {
+    background-color: var(--rose);
+    color: var(--cream);
+}
+
+
+.remove-btn:hover {
+    background-color: #ea9d9d;
+    color: var(--plum);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+
+    .admin-page {
+        width: 95%;
+    }
+
+    .admin-box {
+        padding: 20px 15px;
+    }
+
+    .admin-header {
+        gap: 15px;
+    }
+
+    .admin-header h2 {
+        font-size: 22px;
+    }
+
+    .user-search form {
+        max-width: 100%;
+    }
+
+    .user-table {
+        font-size: 11px;
+    }
+
+    .user-table th,
+    .user-table td {
+        padding: 10px 5px;
+    }
+
+    .manage-buttons {
+        flex-direction: column;
+    }
 }

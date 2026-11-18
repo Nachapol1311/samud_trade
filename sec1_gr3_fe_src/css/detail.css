@@ -1,135 +1,196 @@
+.detail-title {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: 25px auto 15px;
+
+    color: #601d49;
+    font-size: 26px;
+    font-weight: normal;
+}
 
 .infomation {
     box-sizing: border-box;
-    display: grid;
-    grid-template-columns: 420px 1fr;
-    gap: 0 40px;
-    align-items: stretch;
-    width: 1400px;
-    max-width: 100%;
-    margin: 20px auto;
-    padding: 20px;
-    background: var(--surface);
-    border-radius: 10px;
-}
 
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 30px 40px;
+
+    width: 90%;
+    max-width: 1100px;
+
+    margin: 0 auto 40px;
+    padding: 30px;
+
+    background-color: var(--surface);
+
+    border: 1px solid #d6c8cf;
+    border-radius: 20px;
+}
 
 .infomation > .detail:first-child img {
     display: block;
-    width: 100%;
-    height: 480px;
+
+    width: 250px;
+    aspect-ratio: 3 / 4;
+
     object-fit: cover;
-    background: var(--surface-alt);
-    border-radius: 10px;
-}
 
+    background-color: #aaa;
 
-.infomation > .detail:nth-child(2) > div {
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    gap: 4px;
-    margin-bottom: 8px;
-}
+    border-radius: 12px;
 
-
-.infomation > .detail:nth-child(2) > div > p:first-child {
-    margin: 0;
-    padding: 8px 10px;
-    background: var(--surface-alt);
-    color: #601d49;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-
-.infomation > .detail:nth-child(2) > div > p:last-child {
-    margin: 0;
-    padding: 8px 10px;
-    background: #ffffff;
-    color: #bd5579;
-    font-size: 16px;
+    overflow: hidden;
 }
 
 
 .infomation > .detail:nth-child(2) {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px 30px;
+
+    align-content: start;
 }
 
+.infomation > .detail:nth-child(2) > div {
+    display: block;
+
+    margin: 0;
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid #d6c8cf;
+}
+
+.infomation > .detail:nth-child(2) > div > p:first-child {
+    margin: 0 0 6px;
+    padding: 0;
+
+    background: none;
+
+    color: #777;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+
+.infomation > .detail:nth-child(2) > div > p:last-child {
+    margin: 0;
+    padding: 0;
+
+    background: none;
+
+    color: #601d49;
+
+    font-size: 16px;
+}
 
 #info-detail {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    margin-bottom: 0;
+    grid-column: 1 / -1;
+
+    display: block;
+
+    padding: 15px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #d6c8cf;
+    border-radius: 10px;
 }
 
 
 #info-detail > p:first-child {
-    margin: 0 0 2px;
-    padding: 0;
-    background: none;
-    color: #601d49;
-    font-size: 18px;
+    margin: 0 0 8px;
+
+    color: #777;
+
+    font-size: 12px;
     font-weight: bold;
+
+    text-transform: uppercase;
 }
 
 
 #info-detail > p:last-child {
-    flex: 1;
-    box-sizing: border-box;
+    margin: 0;
+
+    color: #555;
+
+    font-size: 14px;
+    line-height: 1.6;
 }
 
 
 .infomation > div:last-child {
     grid-column: 1 / -1;
+
     display: flex;
     justify-content: flex-end;
-    gap: 20px;
-    margin-top: 40px;
-    
+
+    gap: 10px;
+
+    margin-top: 5px;
 }
 
 
 .infomation button {
-    padding: 6px 20px;
-    border: 0;
-    border-radius: 4px;
-    font-size: 16px;
+    padding: 8px 18px;
+
+    border: none;
+    border-radius: 15px;
+
+    font-family: inherit;
+    font-size: 13px;
+
     cursor: pointer;
 }
 
-
 .infomation button:first-child {
-    background: var(--surface-alt);
-    color: #999;
+    background-color: #d8d2d5;
+    color: #601d49;
 }
 
 
 .infomation button:first-child:hover {
-    background: #ffffff;
-    color: #666;
+    background-color: #ccc;
 }
 
-
 .infomation button:last-child {
-    background: #bd5579;
+    background-color: #bd5579;
     color: #ffebb8;
 }
 
 
 .infomation button:last-child:hover {
-    background: #ea9d9d;
-    color: #601d49;
+    background-color: #601d49;
+    color: #ffebb8;
 }
 
-/* small screens: one column */
+
 @media (max-width: 700px) {
+
     .infomation {
+        grid-template-columns: 1fr;
+
+        width: 95%;
+
+        padding: 20px;
+    }
+
+    .infomation > .detail:first-child img {
+        width: 200px;
+
+        margin: 0 auto;
+    }
+
+    .infomation > .detail:nth-child(2) {
         grid-template-columns: 1fr;
     }
 
-    .infomation > .detail:first-child {
-        margin-bottom: 15px;
+    #info-detail {
+        grid-column: 1;
     }
 }

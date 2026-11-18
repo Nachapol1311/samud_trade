@@ -59,49 +59,73 @@
 }
 
 .book-card {
-  background-color: var(--surface);
+    width: 250px;
 
+    background-color: var(--surface);
 
-  border: 1px solid #d6c8cf;
-  border-radius: 20px;
+    border: 1px solid #d6c8cf;
+    border-radius: 20px;
 
-  padding: 15px;
+    padding: 10px;
 
-  box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .book-cover {
-  background-color: #aaa;
+    width: 200px;
+    aspect-ratio: 3 / 4;
 
-  border: none;
-  border-radius: 10px;
+    margin: 0 auto;
 
-  overflow: hidden;
+    background-color: #aaa;
+
+    border: none;
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .book-title {
-  margin: 13px 0 5px;
-  font-weight: bold;
-  font-size: 15px;
-  overflow-wrap: anywhere;
+    margin: 15px 0 7px;
+
+    color: #601d49;
+    font-size: 15px;
+    font-weight: bold;
+
+    text-align: center;
+    overflow-wrap: anywhere;
 }
 
 .book-meta {
-  margin: 0 0 12px;
-  font-size: 12px;
-  color: #555;
+    margin: 0 0 12px;
+
+    color: #555;
+    font-size: 12px;
+
+    text-align: center;
 }
 
-.detail-btn,
-.trade-btn {
-  background: var(--pink);
-  border: 0;
-  color: white;
-  border-radius: 15px;
-  cursor: pointer;
-  padding: 8px 17px;
-}
+.book-card .detail-btn {
+    display: block;
 
+    width: fit-content;
+    margin: 0 auto;
+
+    padding: 4px 10px;
+
+    background-color: #bd5579;
+    color: #ffebb8;
+
+    border: 0;
+    border-radius: 12px;
+
+    font-size: 11px;
+}
 .detail-btn:hover,
 .trade-btn:hover {
   background: #a53566;
@@ -208,10 +232,6 @@ dialog .trade-actions {
   .book-card {
     min-width: 0;
     padding: 10px;
-  }
-
-  .book-cover {
-    height: 135px;
   }
 
   .trade-actions {
