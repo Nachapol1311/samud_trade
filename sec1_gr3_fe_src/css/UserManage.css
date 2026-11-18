@@ -194,7 +194,46 @@ body {
     cursor: pointer;
 }
 
-
 .add-user-btn:hover {
     background-color: var(--plum);
+}
+
+
+.user-search {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.user-search form {
+    display: flex;
+    width: 400px;
+}
+
+.user-search input {
+    flex: 1;
+    height: 38px;
+    padding: 0 15px;
+
+    border: 1px solid #c9b8c2;
+    border-radius: 18px 0 0 18px;
+
+    outline: none;
+}
+
+.user-search button {
+    width: 45px;
+    height: 38px;
+
+    border: none;
+    border-radius: 0 18px 18px 0;
+
+    background-color: #bd5579;
+    color: #ffebb8;
+
+    cursor: pointer;
+}
+
+.user-search button:hover {
+    background-color: #601d49;
 }
