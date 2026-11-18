@@ -4,6 +4,11 @@
     #ffebb8 #fff4e6;yellow
 */
 
+.header-space {
+    flex: 1;
+}
+
+
 * {
     font-family: promp;
     box-sizing: border-box;
