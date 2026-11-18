@@ -28,7 +28,7 @@ header {
 }
 
 
-header div {
+header > a:first-child > div {
     color: #ffebb8;
     font-size: 30px;
     font-weight: bold;
@@ -125,50 +125,6 @@ nav span {
     height: 100%;
     fill: #ffebb8;
 }
-
-#myitem_content {
-    width: 100%;
-    padding: 30px 0 80px;
-    margin: 0px 0 30px;
-
-    background-color: #f9e9ee;;
-    text-align: center;
-}
-
-
-/* ข้อความบรรทัดแรก */
-#myitem_content > div:first-child {
-    color: #601d49;
-    font-size: 18px;
-    font-weight: bold;
-
-    margin-bottom: 10px;
-}
-
-
-/* ปุ่ม add product บรรทัดสอง */
-#myitem_content a {
-    display: inline-block;
-
-    text-decoration: none;
-    background-color: #bd5579;
-    color: #ffebb8;
-
-    padding: 7px 15px;
-    border-radius: 15px;
-
-    font-size: 13px;
-    margin-top: 15px;
-
-}
-
-
-#myitem_content a:hover {
-    background-color: #ea9d9d;
-    color: #601d49;
-    border-radius: 15px;
-}
-
 
 footer {
     background-color: #601d49;
