@@ -11,12 +11,21 @@
 
 <body class="page-additem">
     <header>
-        <a class="home" href="home.html">
+        <a href="home.html">
             <div>samud trade</div>
         </a>
-        
-        
-        <div class="header-space"></div>
+
+        <nav>
+            <div>
+                <a class="nav" href="search.html">⌕ search</a>
+                <span>|</span>
+                <a class="nav" href="trade.html">trade</a>
+                <span>|</span>
+                <a class="nav" href="myitem.html">my item</a>
+                <span>|</span>
+                <a class="nav" href="match.html">match</a>
+            </div>
+        </nav>
 
         <a class="profile" href="login.html">
             <svg class="profile-icon" viewbox="0 0 24 24">
@@ -25,20 +34,7 @@
             </svg>
         </a>
     </header>
-    <nav>
-        <div>
-            <a href="javascript:history.back()" class="nav" aria-label="go back">&#9664;</a>
-        </div>
-        <!-- <div>
-            <a href="search.html" class="nav">&#8981; search</a>
-            <span>|</span>
-            <a href="trade.html" class="nav">trade</a>
-            <span>|</span>
-            <a href="myitem.html" class="nav">my item</a>
-            <span>|</span>
-            <a href="match.html" class="nav">match</a>
-        </div> -->
-    </nav>
+   
     <main class="additem" id="additem_content">
         <h2>Add New Book</h2>
 
@@ -122,7 +118,7 @@
                 <input type="file" accept="image/*" />
             </div>
         </div>
-        
+
         <div>
             <button type="button">cancel</button>
             <button type="button">add</button>
