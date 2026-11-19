@@ -53,7 +53,7 @@
     box-sizing: border-box;
 
     background-color: #ffffff;
-    color: #bd5579;
+    /* color: #bd5579; */
 
     border: 1px solid #c6c3c3;
     border-radius: 5px;
@@ -65,7 +65,7 @@
 
 
 .field-row input::placeholder {
-    color: #bd5579;
+    /* color: #bd5579; */
 
     opacity: 0.6;
 }

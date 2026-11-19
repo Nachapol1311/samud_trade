@@ -14,11 +14,11 @@
     font-size: 22px;
 }
 
-.additem > .detail > div {
+.additem>.detail>div {
     margin-bottom: 18px;
 }
 
-.additem > .detail > div > p:first-child {
+.additem>.detail>div>p:first-child {
     margin: 0 0 5px;
     padding: 0;
     background: none;
@@ -42,7 +42,7 @@
     font-size: 15px;
 }
 
-.additem > .detail > div > p:last-child {
+.additem>.detail>div>p:last-child {
     margin: 0;
     padding: 8px 10px;
     background: #ffffff;
@@ -93,7 +93,7 @@
 }
 
 
-#info-detail > p:first-child {
+#info-detail>p:first-child {
     margin: 0 0 2px;
     padding: 0;
     background: none;
@@ -115,7 +115,7 @@
     resize: vertical;
 }
 
-.additem > div:last-child {
+.additem>div:last-child {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -123,17 +123,29 @@
 }
 
 .additem button {
-    padding: 6px 20px;
-    border: 0;
-    border-radius: 15px;
-    font-size: 16px;
+    width: 70px;
+    height: 36px;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    border-radius: 20px;
+
+    font-family: inherit;
+    font-size: 14px;
+
     cursor: pointer;
 }
 
 
 .additem button:first-child {
-    background: var(--surface-alt);
-    color: #999;
+    width: 70px;
+
+    background: #ccc;
+    color: #666;
 }
 
 
