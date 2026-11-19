@@ -33,15 +33,6 @@
     border: 1px solid #d6c8cf;
     border-radius: 20px;
 }
-/* 
-img {
-    border-color:#000 ;
-    background-color: #aaa;
-    height: 200px;
-    width: 150px;
-    overflow: hidden;
-    border-radius: 10px;
-} */
 
 .item img {
     width: 200px;
@@ -72,12 +63,10 @@ img {
 
 }
 
-
 .info{
     color: #000;
     font-size: 12px;
 }
-
 
 .item a {
     display: inline-block;
@@ -92,18 +81,17 @@ img {
 }
 
 .item a:hover {
-    background-color: #ea9d9d;
-    color: #601d49;
+    background-color: #601d49;
+    color: #ffebb8;
 
     /* font-weight: bold; */
 }
 
-
 #editbtn {
     display: inline-block;
     text-decoration: none;
-    background-color: #aaa;
-    color: #777;
+    background-color: #d8d2d5;
+    color: #601d49;
     font-size: 11px;
     border-radius: 12px;
     overflow: hidden;
@@ -113,10 +101,10 @@ img {
 
 #editbtn:hover {
     background-color: #ccc;
-    color: #666;
+    color: #601d49;
 
-    /* font-weight: bold; */
 }
+
 .about {
     width: 100%;
     min-height: 290px;

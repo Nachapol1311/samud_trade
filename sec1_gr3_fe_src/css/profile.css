@@ -1,99 +1,291 @@
-:root {
-  --plum: #601d49;
-  --rose: #bd5579;
-  --blush: #ea9d9d;
-  --cream: #ffebb8;
-  --field: #f3dede;      
-  --admin-bg: #ea9d9d;    
-  --admin-text: #601d49;  
-  --skyblue:#ffffff;
+
+/* ---------- Main ---------- */
+#profile_content {
+    min-height: 650px;
+    padding: 45px 20px 60px;
+
+    box-sizing: border-box;
+    background-color: var(--page-bg);
 }
 
-main {
-    background: var(--page-bg);
-    padding: 0 16px;
-    min-height: calc(100vh - 50px);
-}
-
+/* ---------- Profile Card ---------- */
 .profile-card {
-    max-width: 625px;
+    width: 750px;
+    max-width: 95%;
+
     margin: 0 auto;
-    background: var(--field);
-    padding: 12px 0 48px;
-    min-height: calc(100vh - 62px);
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    background-color: var(--surface);
+
+    border: 1px solid #e0d3da;
+    border-radius: 15px;
+}
+
+/* ---------- Heading ---------- */
+.profile-heading {
+    margin-bottom: 30px;
+}
+
+.profile-heading h1 {
+    margin: 0 0 7px;
+
+    color: #601d49;
+    font-size: 25px;
+}
+
+.profile-heading p {
+    margin: 0;
+
+    color: #888;
+    font-size: 14px;
+}
+
+/* ---------- Profile Information ---------- */
+.profile-info {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 30px;
+
+    align-items: start;
+}
+
+/* Avatar */
+.profile-avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 12px;
 }
 
 .avatar {
-    width: 150px;
-    height: 150px;
-    margin: 0 auto 28px;
+    width: 125px;
+    height: 125px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    background-color: #f2e5eb;
+    border: 3px solid #ead5df;
     border-radius: 50%;
-    background: #fff;
-    border: 2px dashed var(--blush);
-    box-sizing: border-box;
+}
+
+.avatar svg {
+    width: 65px;
+    height: 65px;
+
+    fill: none;
+    stroke: #601d49;
+    stroke-width: 1.5;
+}
+
+.admin-badge {
+    padding: 5px 17px;
+
+    background-color: #601d49;
+    color: #ffebb8;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* ---------- Details ---------- */
+.profile-details h2 {
+    margin: 0 0 20px;
+
+    color: #601d49;
+    font-size: 19px;
 }
 
 .form {
-    width: min(367px, 80%);
-    margin: 0 auto;
-}
-
-.form label {
-    display: block;
-    color: var(--rose);
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 4px;
-}
-
-.form input {
     width: 100%;
-    height: 46px;
-    border: 0;
-    border-radius: 8px;
-    background: #fff;
-    font-size: 18px;
-    padding: 0 16px;
-    margin-bottom: 26px;
-    box-sizing: border-box;
 }
 
-.form input:read-only {
+.form-field {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+    margin-bottom: 18px;
+}
+
+.form-field label {
+    color: #601d49;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.form-field input {
+    width: 100%;
+    height: 43px;
+
+    padding: 0 13px;
+    box-sizing: border-box;
+
+    background-color: #f8f7f8;
+
+    border: 1px solid #d6c8cf;
+    border-radius: 6px;
+
+    outline: none;
+
+    font-family: inherit;
+    font-size: 15px;
+    color: #601d49;
+}
+
+.form-field input:disabled {
+    color: #666;
     cursor: default;
 }
 
-.form input:focus-visible,
-.form button:focus-visible {
-    outline: 3px solid var(--rose);
-    outline-offset: 2px;
+.form-field input:not(:disabled) {
+    background-color: #ffffff;
 }
 
+.form-field input:focus {
+    outline: 2px solid #bd5579;
+    outline-offset: -2px;
+}
+
+/* First name and Last name */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* ---------- Buttons ---------- */
 .buttons {
     display: flex;
-    justify-content: space-between;
-    margin-top: 36px;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 25px;
 }
 
-.buttons button {
-    width: 26%;
+.buttons button,
+.logout-btn {
+    height: 36px;
     min-width: 90px;
-    border: 0;
-    border-radius: 8px;
-    background: #fff;
-    color: var(--rose);
-    font-size: 18px;
+
+    padding: 0 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+
+    border: none;
+    border-radius: 20px;
+
+    font-family: inherit;
+    font-size: 14px;
     font-weight: bold;
-    padding: 10px;  
+
+    text-decoration: none;
     cursor: pointer;
-    transition: background-color 0.15s, color 0.15s;
 }
 
-.buttons button:hover {
-    background-color: var(--rose);
-    color: var(--cream);
+#editBtn {
+    background-color: #bd5579;
+    color: #ffebb8;
 }
 
-@media (max-width: 600px) {
-    .avatar { width: 120px; height: 120px; }
-    .form label { font-size: 18px; }
+#editBtn:hover {
+    background-color: #601d49;
+}
+
+.logout-btn {
+    background-color: #d8d2d5;
+    color: #601d49;
+}
+
+.logout-btn:hover {
+    background-color: #ccc;
+}
+
+/* ---------- Admin Management ---------- */
+.admin-management {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 35px;
+    padding: 20px;
+
+    background-color: #f8f3f6;
+
+    border: 1px solid #e4d6de;
+    border-radius: 10px;
+}
+
+.admin-management h2 {
+    margin: 0 0 6px;
+
+    color: #601d49;
+    font-size: 17px;
+}
+
+.admin-management p {
+    margin: 0;
+
+    color: #777;
+    font-size: 13px;
+}
+
+.admin-management a {
+    padding: 10px 18px;
+
+    background-color: #601d49;
+    color: #ffebb8;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.admin-management a:hover {
+    background-color: #bd5579;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 650px) {
+
+    #profile_content {
+        padding: 25px 12px;
+    }
+
+    .profile-card {
+        padding: 20px;
+    }
+
+    .profile-info {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .admin-management {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
 }

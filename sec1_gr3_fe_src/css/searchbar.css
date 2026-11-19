@@ -145,13 +145,13 @@
 }
 
 .clear {
-    background: #e0dede;
-    color: #777;
+    background-color: #d8d2d5;
+    color: #601d49;
 }
 
 .clear:hover {
-    background: #ccc;
-    color: #666;
+    background-color: #ccc;
+    color: #601d49;
 }
 
 .submit {
@@ -160,8 +160,8 @@
 }
 
 .submit:hover {
-    background-color: #ea9d9d;
-    color: #601d49;
+    background-color: #601d49;
+    color: #ffebb8;
 }
 
 /* จอเล็ก: เรียงลงมาเป็นคอลัมน์เดียว */
