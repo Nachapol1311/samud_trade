@@ -77,70 +77,56 @@
     outline-offset: -2px;
 }
 
-
-
 .form-buttons {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    margin-top: 20px;
+}
 
+.form-buttons .cancel-btn,
+.form-buttons .save-btn {
+    width: 72px;
+    height: 39px;
+    padding: 0;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
     justify-content: center;
 
-    gap: 10px;
-
-    margin-top: 20px;
-
-}
-
-
-.form-buttons button {
-    height: 34px;
-
-    padding: 0 18px;
-
     font-family: inherit;
-
     font-size: 13px;
-    font-weight: bold;
+    font-weight: normal;
 
-    border-radius: 15px;
-
+    border: none;
+    border-radius: 20px;
     cursor: pointer;
+    text-decoration: none;
 }
-
 
 .cancel-btn {
-    background-color: #d3d3d3;
+    width: 70px;
 
-    color: #888;
-
-    border: 1px solid #888;
-
-    border-radius: 15px;
-
-    text-decoration: none;
-
-    padding: 8px 25px;
-    
+    background-color: #d8d2d5;
+    color: #601d49;
 }
 
 
 .cancel-btn:hover {
-    background-color: var(--surface-alt);
+    background-color: #ccc;
 }
-
 
 .save-btn {
-    background-color: var(--rose);
-
-    color: white;
-
-    border: 1px solid #963354;
-
-    padding: 8px 25px;
+    background: #bd5579;
+    color: #ffebb8;
 }
 
-
 .save-btn:hover {
-    background-color: var(--plum);
+    background-color: #601d49;
+    color: #ffebb8;
+
 }
 
 
@@ -151,7 +137,6 @@
     }
 
 }
-
 
 @media (max-width: 500px) {
 
