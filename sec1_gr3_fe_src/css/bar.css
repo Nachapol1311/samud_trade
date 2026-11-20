@@ -337,3 +337,9 @@ main {
         align-items: flex-start;
     }
 }
+
+
+/* Hide navbar based on user role */
+[hidden] {
+    display: none !important;
+}

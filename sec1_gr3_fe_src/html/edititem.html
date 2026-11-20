@@ -5,13 +5,15 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Samud Trade | Edititem</title>
+    <script src="../js/edititem.js" defer></script>
     <link href="../css/bar.css" rel="stylesheet" />
     <link href="../css/additem.css" rel="stylesheet" />
 </head>
 
 <body class="page-edititem">
     <header>
-        <a class="home" href="home.html">
+        <!-- Logo -->
+        <a href="home.html" id="homeLink">
             <div>samud trade</div>
         </a>
 
@@ -107,8 +109,13 @@
             </div>
         </div>
         <div>
-            <a href="myitem.html" class="cancel-btn">Cancel</a>
-            <button type="button" class="save-btn">Add</button>
+            <a href="myitem.html" class="cancel-btn" id="cancelLink">
+                Cancel
+            </a>
+
+            <button type="button" class="save-btn" id="saveBtn">
+                Save
+            </button>
         </div>
     </main>
 

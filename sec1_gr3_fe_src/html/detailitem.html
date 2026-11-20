@@ -5,18 +5,21 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Samud Trade | Detailitem</title>
+    <script src="../js/detailitem-nav.js" defer></script>
     <link href="../css/bar.css" rel="stylesheet" />
     <link href="../css/detail.css" rel="stylesheet" />
 </head>
 
 <body class="page-detailitem">
+
     <header>
-        <a href="home.html">
+        <a href="home.html" id="homeLink">
             <div>samud trade</div>
         </a>
 
         <nav>
-            <div>
+            <!-- User Navbar -->
+            <div id="userNav">
                 <a class="nav" href="search.html">⌕ search</a>
                 <span>|</span>
                 <a class="nav" href="trade.html">trade</a>
@@ -25,15 +28,23 @@
                 <span>|</span>
                 <a class="nav" href="match.html">match</a>
             </div>
+
+            <!-- Admin Navbar -->
+            <div id="adminNav" hidden>
+                <a class="nav" href="admin-management.html">
+                    admin
+                </a>
+            </div>
         </nav>
 
-        <a class="profile" href="login.html">
-            <svg class="profile-icon" viewbox="0 0 24 24">
+        <a class="profile" href="profile.html" id="profileLink">
+            <svg class="profile-icon" viewBox="0 0 24 24">
                 <circle cx="12" cy="8.6" r="3.9"></circle>
                 <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z"></path>
             </svg>
         </a>
     </header>
+
 
     <h1 class="detail-title">│Book Details</h1>
 

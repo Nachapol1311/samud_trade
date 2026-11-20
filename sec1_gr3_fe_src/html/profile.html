@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Samud Trade | My Profile</title>
+
+    <link rel="stylesheet" href="../css/bar.css" />
+    <link rel="stylesheet" href="../css/profile.css" />
+</head>
+
+<body class="page-user-profile">
+
+    <!-- Header -->
+    <header>
+        <a href="home.html">
+            <div>samud trade</div>
+        </a>
+
+        <nav>
+            <div>
+                <a class="nav" href="search.html">⌕ search</a>
+                <span>|</span>
+
+                <a class="nav" href="trade.html">trade</a>
+                <span>|</span>
+
+                <a class="nav" href="myitem.html">my item</a>
+                <span>|</span>
+
+                <a class="nav" href="match.html">match</a>
+            </div>
+        </nav>
+
+        <a class="profile" href="profile.html">
+            <svg class="profile-icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="8.6" r="3.9"></circle>
+                <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z"></path>
+            </svg>
+        </a>
+    </header>
+
+    <!-- Main -->
+    <main id="profile_content">
+
+        <section class="profile-card">
+
+            <!-- Profile Heading -->
+            <div class="profile-heading">
+                <h1>My Profile</h1>
+                <p>View your account information</p>
+            </div>
+
+            <!-- Profile Information -->
+            <div class="profile-info">
+
+                <!-- Profile Image -->
+                <div class="profile-avatar">
+
+                    <div class="avatar" id="avatar">
+                        <!-- Profile image from database -->
+                    </div>
+
+                </div>
+
+                <!-- Personal Information -->
+                <div class="profile-details">
+
+                    <h2>Personal Information</h2>
+
+                    <div class="form">
+
+                        <!-- Username -->
+                        <div class="form-field">
+                            <label for="username">
+                                Username
+                            </label>
+
+                            <input id="username" name="username" type="text" readonly />
+                        </div>
+
+                        <!-- First Name / Last Name -->
+                        <div class="form-row">
+
+                            <div class="form-field">
+                                <label for="firstname">
+                                    First Name
+                                </label>
+
+                                <input id="firstname" name="firstname" type="text" readonly />
+                            </div>
+
+                            <div class="form-field">
+                                <label for="lastname">
+                                    Last Name
+                                </label>
+
+                                <input id="lastname" name="lastname" type="text" readonly />
+                            </div>
+
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-field">
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input id="email" name="email" type="email" readonly />
+                        </div>
+
+                        <!-- Logout -->
+                        <div class="buttons">
+                            <a class="logout-btn" href="login.html">
+                                Logout
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <a href="team.html">
+                <p class="team">about us</p>
+            </a>
+        </div>
+
+        <div>
+            <p>© 2026 Samud Trade. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

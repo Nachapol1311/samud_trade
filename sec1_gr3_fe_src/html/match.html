@@ -2,14 +2,18 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Samud Trade | Match</title>
-    <link href="../css/bar.css" rel="stylesheet" />
-    <link href="../css/match.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../css/bar.css">
+    <link rel="stylesheet" href="../css/showitem.css">
+    <link rel="stylesheet" href="../css/match.css">
 </head>
 
 <body class="page-match">
+
     <header>
         <a href="home.html">
             <div>samud trade</div>
@@ -27,55 +31,92 @@
             </div>
         </nav>
 
-        <a class="profile" href="login.html">
-            <svg class="profile-icon" viewbox="0 0 24 24">
+        <a class="profile" href="profile.html">
+            <svg class="profile-icon" viewBox="0 0 24 24">
                 <circle cx="12" cy="8.6" r="3.9"></circle>
                 <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z"></path>
             </svg>
         </a>
     </header>
-    
-    <main class="match-container" id="match_content">
+
+    <main class="match-page" id="match_content">
+
         <h1>│Match</h1>
-        <!--match 1-->
-        <div class="match-content">
-            <!--someone else's book-->
-            <div class="match-card">
-                <p class="match-label">Offered book</p>
 
-                <img alt="offered item" src="../pic/item.jpg" />
-                <p class="itemname">name</p>
-                <p class="info">info</p>
-                <a class="detail-btn" href="detailitem.html">detail</a>
-            </div>
-            <span class="exchange">⇄</span>
-            <!--my book-->
-            <div class="match-card">
-                <p class="match-label">Your book</p>
+        <p class="match-subtitle">
+            Review the trade proposal and decide to accept or decline.
+        </p>
 
-                <img alt="my item" src="../pic/item.jpg" />
-                <p class="itemname">My book</p>
-                <p class="info">info</p>
-                <a class="detail-btn" href="detailitem.html">detail</a>
+
+        <section class="match-container">
+
+            <!-- Trade Request 1 -->
+            <div class="match-request">
+
+                <div class="match-books">
+
+                    <!-- Offered Book -->
+                    <div class="match-book">
+                        <h2>Offered Book</h2>
+
+                        <div class="item">
+                            <img src="../pic/item.jpg" alt="Offered Book">
+                            <p class="itemname">Book Name</p>
+                            <p class="info">Book information</p>
+                            <a href="detailitem.html">detail</a>
+                        </div>
+                    </div>
+
+                    <div class="swap-icon">⇄</div>
+
+                    <!-- Your Book -->
+                    <div class="match-book">
+                        <h2>Your Book</h2>
+
+                        <div class="item">
+                            <img src="../pic/item.jpg" alt="Your Book">
+                            <p class="itemname">My Book</p>
+                            <p class="info">Book information</p>
+                            <a href="detailitem.html">detail</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Buttons -->
+                <div class="match-actions">
+                    <button class="decline-btn" type="button">
+                        × Decline
+                    </button>
+
+                    <button class="accept-btn" type="button">
+                        ✓ Accept
+                    </button>
+                </div>
+
             </div>
-            
-            <!--accept or reject-->
-            <div class="match-button">
-                <button class="reject" type="button">✕</button>
-                <button class="accept" type="button">✓</button>
-            </div>
-        </div>
+
+            <!-- Trade Request 2 -->
+            <!-- เมื่อเชื่อม Database สามารถสร้าง
+         .match-request เพิ่มตามจำนวนคำขอได้ -->
+
+        </section>
+
+
     </main>
+
     <footer>
         <div>
             <a href="team.html">
                 <p class="team">about us</p>
             </a>
         </div>
-        <div> 
+
+        <div>
             <p>© 2026 Samud Trade. All rights reserved.</p>
         </div>
     </footer>
+
 </body>
 
 </html>

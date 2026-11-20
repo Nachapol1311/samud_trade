@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,17 +15,18 @@
 
     <!-- Header -->
     <header>
-        <a href="home-admin.html">
+        <a href="admin-home.html">
             <div>samud trade</div>
         </a>
-
         <nav>
             <div>
-              <a class="nav" href="search.html">⌕ search</a>
+                <a class="nav" href="admin-management.html">
+                    management
+                </a>
             </div>
         </nav>
 
-        <a class="profile" href="addmin-profile.html">
+        <a class="profile" href="admin-profile.html">
             <svg class="profile-icon" viewBox="0 0 24 24">
                 <circle cx="12" cy="8.6" r="3.9"></circle>
                 <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z"></path>
@@ -45,13 +45,11 @@
         <div class="management-container">
 
             <!-- Product Management -->
-            <a href="ProductManage.html"
-               class="management-card">
+            <a href="ProductManage.html" class="management-card">
 
                 <div class="management-icon">
-                    <span>▤</span>
+                    <i data-lucide="book-open"></i>
                 </div>
-
                 <h2>Product Management</h2>
 
                 <p>
@@ -65,11 +63,10 @@
             </a>
 
             <!-- User Management -->
-            <a href="UserManage.html"
-               class="management-card">
+            <a href="UserManage.html" class="management-card">
 
                 <div class="management-icon">
-                    <span>♙</span>
+                    <i data-lucide="users-round"></i>
                 </div>
 
                 <h2>User Management</h2>
@@ -101,5 +98,12 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+
+    <script>
+        lucide.createIcons();
+    </script>
+
 </body>
+
 </html>

@@ -14,12 +14,12 @@
 
     <!-- Header -->
     <header>
-        <a class="home" href="home-admin.html">
+        <a class="home" href="admin-home.html">
             <div>samud trade</div>
         </a>
 
         <nav>
-            <a class="nav" href="management-admin.html">
+            <a class="nav" href="admin-management.html">
                 Management
             </a>
         </nav>
@@ -46,16 +46,21 @@
             <!-- Profile Information -->
             <div class="profile-info">
 
+
                 <div class="profile-avatar">
+
                     <div class="avatar" id="avatar">
-                        <svg viewBox="0 0 24 24">
-                            <circle cx="12" cy="8" r="4"></circle>
-                            <path d="M4 21c0-4.5 3.5-7 8-7s8 2.5 8 7"></path>
-                        </svg>
+                        <img id="profileImage" alt="Profile Image" hidden>
                     </div>
 
-                    <span class="admin-badge">ADMIN</span>
+                    <label for="uploadProfile" class="edit-photo-btn">
+                        Edit Photo
+                    </label>
+
+                    <input type="file" id="uploadProfile" name="profileImage" accept="image/*" hidden>
+
                 </div>
+
 
                 <div class="profile-details">
 
