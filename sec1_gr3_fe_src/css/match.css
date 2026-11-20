@@ -1,125 +1,162 @@
-/*Background*/
-.match-container {
+
+/* ---------- Main ---------- */
+.match-page {
     width: 100%;
     min-height: 650px;
-    padding: 20px 0 45px;
-
-    background-color: var(--page-bg);
+    padding: 30px 25px 60px;
     box-sizing: border-box;
+    background-color: var(--page-bg);
 }
 
-/*Match*/
-.match-container h1{
-    margin: 0 0 0 20px;
-
+.match-page h1 {
+    margin: 0 0 8px;
     color: #601d49;
     font-size: 26px;
     font-weight: normal;
 }
 
-.match-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    margin-top: 45px;
+.match-subtitle {
+    margin: 0 0 30px;
+    color: #777;
+    font-size: 15px;
 }
 
-.match-card {
-    width: 280px;
-    height: 360px;
-    padding: 20px;
+/* ---------- Container ---------- */
+.match-container {
+    max-width: 1050px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* ---------- Each Trade Request ---------- */
+.match-request {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    gap: 35px;
+    padding: 30px 25px;
+
     background-color: var(--surface);
-    border-radius: 22px;
+    border: 1px solid #d6c8cf;
+    border-radius: 20px;
+
     box-sizing: border-box;
 }
 
-.match-card img {
-    display: block;
-    width: 240px;
-    height: 220px;
-    object-fit: cover;
-    background-color: #aaa;
-    border: none;
-    border-radius: 10px;
+/* ---------- Books ---------- */
+.match-books {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
 }
 
-.itemname {
-    margin: 15px 0 7px;
+.match-book {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.match-book h2 {
+    margin: 0 0 12px;
     color: #601d49;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 18px;
     text-align: center;
 }
 
-.info {
-    margin:0 0 12px;
-    color: #333;
-    font-size: 15px;
-    text-align: center;
+/* ใช้ Show Item */
+.match-book .item {
+    width: 250px;
+    box-sizing: border-box;
 }
 
-.detail-btn {
-    display: block;
-    width: fit-content;
-    margin: 0 auto;
-    padding: 5px 14px;
-    background-color: #bd5579;
-    color: #ffebb8;
-    text-decoration: none;
-    border-radius: 15px;
-}
-
-.detail-btn:hover {
-    background-color: #601d49;
-}
-
-.exchange {
+/* ---------- Swap ---------- */
+.swap-icon {
     color: #601d49;
-    font-size: 45px; 
+    font-size: 40px;
 }
 
-.match-button {
+
+/* ---------- Match Buttons ---------- */
+.match-actions {
     display: flex;
     flex-direction: column;
-
     justify-content: center;
     align-items: center;
 
-    gap: 25px;
-
-    margin-left: 30px;
+    gap: 15px;
+    margin: 0;
+    order: 1;
 }
 
-.match-button {
-    width: 65px;
-    height: 65px;
-
+.match-actions button {
+    width: 110px;
+    height: 36px;
     padding: 0;
 
     border: none;
-    border-radius: 50%;
+    border-radius: 20px;
 
     font-family: inherit;
-    font-size: 38px;
-    
+    font-size: 14px;
     cursor: pointer;
 }
 
-.accept {
+/* Decline */
+.decline-btn {
+    background-color: #d8d2d5;
+    color: #601d49;
+}
+
+.decline-btn:hover {
+    background-color: #ccc;
+}
+
+/* Accept */
+.accept-btn {
     background-color: #bd5579;
     color: #ffebb8;
 }
 
-.reject {
-    background-color: #d3d3d3;
-    color: #999;
-}
-
-.accept:hover {
+.accept-btn:hover {
     background-color: #601d49;
+    color: #ffebb8;
 }
 
-.reject {
-    background-color: #bbbbbb;
+/* ---------- Responsive ---------- */
+@media (max-width: 850px) {
+
+    .match-request {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .match-actions {
+        order: 0;
+        flex-direction: row;
+    }
+
+    .match-books {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .match-books {
+        flex-direction: column;
+    }
+
+    .swap-icon {
+        transform: rotate(90deg);
+    }
+
+    .match-book,
+    .match-book .item {
+        max-width: 100%;
+    }
 }

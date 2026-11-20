@@ -21,3 +21,55 @@
     display: block;
     margin: 0 auto;
 }
+
+.product-search {
+    display: block;
+    margin: 0 0 25px;
+}
+
+.product-search label {
+    display: block;
+    margin-bottom: 7px;
+
+    color: #601d49;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.product-search form {
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+}
+
+.product-search input {
+    flex: 1;
+    height: 38px;
+    padding: 0 12px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #c9b8c2;
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+
+    outline: none;
+    font-size: 14px;
+}
+
+.product-search button {
+    width: 45px;
+    height: 38px;
+
+    border: none;
+    border-radius: 0 8px 8px 0;
+
+    background-color: #bd5579;
+    color: #ffebb8;
+
+    cursor: pointer;
+}
+
+.product-search button:hover {
+    background-color: #601d49;
+}

@@ -5,67 +5,77 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Samud Trade | Detailitem</title>
+    <script src="../js/detailitem-nav.js" defer></script>
     <link href="../css/bar.css" rel="stylesheet" />
     <link href="../css/detail.css" rel="stylesheet" />
 </head>
 
 <body class="page-detailitem">
+
     <header>
-        <a class="home" href="home.html">
-            <svg class="home-icon" viewbox="0 0 24 24">
-                <path d="M12 3L2 12h3v8h5v-5h4v5h5v-8h3L12 3z"></path>
-            </svg>
+        <a href="home.html" id="homeLink">
+            <div>samud trade</div>
         </a>
-        <div>samud trade</div>
-        <a class="profile" href="login.html">
-            <svg class="profile-icon" viewbox="0 0 24 24">
+
+        <nav>
+            <!-- User Navbar -->
+            <div id="userNav">
+                <a class="nav" href="search.html">⌕ search</a>
+                <span>|</span>
+                <a class="nav" href="trade.html">trade</a>
+                <span>|</span>
+                <a class="nav" href="myitem.html">my item</a>
+                <span>|</span>
+                <a class="nav" href="match.html">match</a>
+            </div>
+
+            <!-- Admin Navbar -->
+            <div id="adminNav" hidden>
+                <a class="nav" href="admin-management.html">
+                    admin
+                </a>
+            </div>
+        </nav>
+
+        <a class="profile" href="profile.html" id="profileLink">
+            <svg class="profile-icon" viewBox="0 0 24 24">
                 <circle cx="12" cy="8.6" r="3.9"></circle>
                 <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z"></path>
             </svg>
         </a>
     </header>
-    <nav>
-        <div>
-            <a href="javascript:history.back()" class="nav" aria-label="go back">&#9664;</a>
-        </div>
-        <div>
-            <a class="nav" href="search.html">⌕ search</a>
-            <span>|</span>
-            <a class="nav" href="trade.html">trade</a>
-            <span>|</span>
-            <a class="nav" href="myitem.html">my item</a>
-            <span>|</span>
-            <a class="nav" href="match.html">match</a>
-        </div>
-    </nav>
+
+
+    <h1 class="detail-title">│Book Details</h1>
+
     <main class="infomation" id="detailitem_content">
         <div class="detail">
-            <img alt="Book or profile image" src="" />
+            <img alt="Book or profile image" src="../pic" />
         </div>
         <div class="detail">
             <div>
-                <p>Book</p>
-                <p>info-bookname</p>
+                <p>Book:</p>
+                <p>xxx</p>
             </div>
             <div>
-                <p>Category</p>
-                <p>info-category</p>
+                <p>Category:</p>
+                <p>xxx</p>
             </div>
             <div>
-                <p>Price</p>
-                <p>info-price</p>
+                <p>Price:</p>
+                <p>xxx</p>
             </div>
             <div>
-                <p>Condition</p>
-                <p>onfo-condition</p>
+                <p>Condition:</p>
+                <p>xxx</p>
             </div>
             <div>
-                <p>Owner</p>
-                <p>info-owner</p>
+                <p>Owner:</p>
+                <p>xxx</p>
             </div>
             <div id="info-detail">
                 <p>detail</p>
-                <p>info-detail</p>
+                <p></p>
             </div>
         </div>
         <div>
@@ -73,24 +83,15 @@
             <button type="button">interest</button>
         </div>
     </main>
+
     <footer>
         <div>
             <a href="team.html">
-                <p class="team">team</p>
+                <p class="team">about us</p>
             </a>
-            <p class="team">6887013 Nachapol Pinsumrong</p>
-            <p class="team">6887014 Nuttapon Khongdee</p>
-            <p class="team">6887093 Chayawat Sricharoen</p>
-            <p class="team">6887105 pattamanan Pongpanich</p>
-            <p class="team">6887117 Sruangmon Suksamer</p>
         </div>
         <div>
-            thank you
-        </div>
-        <div>
-            <p class="mahidol">Mahidol University</p>
-            <p class="mahidol">Faculty of ICT</p>
-            <p class="mahidol">Project for ITDS242</p>
+            <p>© 2026 Samud Trade. All rights reserved.</p>
         </div>
     </footer>
 </body>

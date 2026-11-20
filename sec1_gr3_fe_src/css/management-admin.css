@@ -1,0 +1,144 @@
+
+/* ---------- Main ---------- */
+.management-page {
+    width: 100%;
+    min-height: 650px;
+
+    box-sizing: border-box;
+
+    padding: 45px 25px 60px;
+
+    background-color: var(--page-bg);
+}
+
+.management-page h1 {
+    margin: 0;
+
+    color: #601d49;
+    font-size: 26px;
+    font-weight: normal;
+
+    text-align: center;
+}
+
+.management-subtitle {
+    margin: 10px 0 35px;
+
+    color: #777;
+    font-size: 15px;
+    text-align: center;
+}
+
+/* ---------- Management Cards ---------- */
+.management-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.management-card {
+    width: 280px;
+    min-height: 230px;
+
+    padding: 25px;
+
+    box-sizing: border-box;
+
+    background-color: var(--surface);
+
+    border: 1px solid #d6c8cf;
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+.management-card:hover {
+    background-color: #f2e8ed;
+    border-color: #bd5579;
+
+    transform: translateY(-4px);
+}
+
+
+/* ---------- Management Icons ---------- */
+.management-icon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #f2e5eb;
+    border-radius: 50%;
+
+    color: #601d49;
+}
+
+.management-icon svg {
+    width: 34px;
+    height: 34px;
+    stroke-width: 1.8;
+}
+
+/* ---------- Text ---------- */
+.management-card h2 {
+    margin: 18px 0 8px;
+
+    color: #601d49;
+    font-size: 18px;
+}
+
+.management-card p {
+    margin: 0 0 18px;
+
+    color: #666;
+    font-size: 14px;
+}
+
+/* ---------- Manage Link ---------- */
+.management-link {
+    padding: 7px 22px;
+
+    background-color: #bd5579;
+    color: #ffebb8;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+}
+
+.management-card:hover .management-link {
+    background-color: #601d49;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 650px) {
+
+    .management-page {
+        padding: 30px 15px;
+    }
+
+    .management-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .management-card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+}

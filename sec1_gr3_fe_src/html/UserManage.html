@@ -11,59 +11,72 @@
 
 <body class="page-usermanage">
     <header>
-        <a class="home" href="home.html">
-            <svg class="home-icon" viewbox="0 0 24 24">
-                <path d="M12 3L2 12h3v8h5v-5h4v5h5v-8h3L12 3z"></path>
-            </svg>
+        <a href="admin-home.html">
+            <div>samud trade</div>
         </a>
-        <div>samud trade</div>
-        <a class="profile" href="login.html">
+
+        <nav>
+            <div>
+                <a class="nav" href="ProductManage.html">
+                    Product management
+                </a>
+            </div>
+        </nav>
+
+        <a class="profile" href="admin-profile.html">
             <svg class="profile-icon" viewbox="0 0 24 24">
                 <circle cx="12" cy="8.6" r="3.9"></circle>
                 <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z"></path>
             </svg>
         </a>
     </header>
-    <nav>
-        <div>
-            <a href="javascript:history.back()" class="nav" aria-label="go back">&#9664;</a>
-        </div>
-        <div>
-            <a class="nav" href="ProductManage.html">Product management</a>
-        </div>
-    </nav>
+
     <main class="admin-page" id="UserManage_content">
         <section class="admin-box">
-            <h2>Admin</h2>
+            <div class="admin-header">
+                <h2>│User Management</h2>
+                <a class="add-user-btn" href="admin-user-add.html">
+                    Add user
+                </a>
+            </div>
+
+            <section class="user-search">
+                <label>Search</label>
+
+                <form action="Get">
+                    <input type="text" placeholder="username">
+                    <button type="submit">⌕</button>
+                </form>
+            </section>
+
             <table class="user-table">
                 <thead>
                     <tr>
                         <th class="id-column">Role</th>
-                        <th class="name-column">FirstName - LastName</th>
                         <th class="username-column">Username</th>
+                        <th class="name-column">FirstName - LastName</th>
                         <th class="manage-column">Manage</th>
                     </tr>
                 </thead>
+
                 <tbody>
                     <tr>
                         <td></td>
                         <td></td>
                         <td></td>
+
                         <td>
                             <div class="manage-buttons">
-                                <a class="edit-btn" href="edititem.html">Edit</a>
-                                <button class="remove-btn" type="button">Remove</button>
+                                <a class="edit-btn" href="edituser.html">Edit</a>
+                                <button class="remove-btn" type="button">
+                                    Remove
+                                </button>
                             </div>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </section>
-        <div class="add-user-container">
-            <a class="add-user-btn" href="admin-user-add.html">
-                Add user
-            </a>
-        </div>
     </main>
 </body>
 

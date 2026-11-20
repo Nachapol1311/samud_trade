@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Samud Trade | Admin Profile</title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <link href="../css/bar.css" rel="stylesheet" />
+    <link href="../css/profile.css" rel="stylesheet" />
+</head>
+
+<body class="page-profile">
+
+    <!-- Header -->
+    <header>
+        <a class="home" href="admin-home.html">
+            <div>samud trade</div>
+        </a>
+
+        <nav>
+            <a class="nav" href="admin-management.html">
+                Management
+            </a>
+        </nav>
+
+        <a class="profile" href="addmin-profile.html">
+            <svg class="profile-icon" viewBox="0 0 24 24">
+                <circle cx="12" cy="8.6" r="3.9"></circle>
+                <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z"></path>
+            </svg>
+        </a>
+    </header>
+
+    <!-- Main -->
+    <main id="profile_content">
+
+        <section class="profile-card">
+
+            <!-- Profile Heading -->
+            <div class="profile-heading">
+                <h1>Admin Profile</h1>
+                <p>Manage your administrator account</p>
+            </div>
+
+            <!-- Profile Information -->
+            <div class="profile-info">
+
+
+                <div class="profile-avatar">
+
+                    <div class="avatar" id="avatar">
+                        <img id="profileImage" alt="Profile Image" hidden>
+                    </div>
+
+                    <label for="uploadProfile" class="edit-photo-btn">
+                        Edit Photo
+                    </label>
+
+                    <input type="file" id="uploadProfile" name="profileImage" accept="image/*" hidden>
+
+                </div>
+
+
+                <div class="profile-details">
+
+                    <h2>Personal Information</h2>
+
+                    <form action="#" class="form" id="profileForm" method="post">
+
+                        <div class="form-field">
+                            <label for="username">Username</label>
+                            <input autocomplete="username" disabled id="username" name="username" type="text" />
+                        </div>
+
+                        <div class="form-row">
+
+                            <div class="form-field">
+                                <label for="firstname">First Name</label>
+                                <input autocomplete="given-name" disabled id="firstname" name="firstname" type="text" />
+                            </div>
+
+                            <div class="form-field">
+                                <label for="lastname">Last Name</label>
+                                <input autocomplete="family-name" disabled id="lastname" name="lastname" type="text" />
+                            </div>
+
+                        </div>
+
+                        <div class="form-field">
+                            <label for="email">Email Address</label>
+                            <input autocomplete="email" disabled id="email" name="email" type="email" />
+                        </div>
+
+                        <div class="buttons">
+                            <button id="editBtn" type="button">
+                                Edit Profile
+                            </button>
+
+                            <a class="logout-btn" href="login.html">
+                                Logout
+                            </a>
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            <!-- Admin Management -->
+            <div class="admin-management">
+
+                <div>
+                    <h2>Administration</h2>
+                    <p>Manage products and user accounts.</p>
+                </div>
+
+                <a href="management-admin.html">
+                    Management Admin
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <div>
+            <a href="team.html">
+                <p class="team">about us</p>
+            </a>
+        </div>
+
+        <div>
+            <p>© 2026 Samud Trade. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script defer src="../js/profile.js"></script>
+
+</body>
+
+</html>

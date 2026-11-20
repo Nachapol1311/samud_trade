@@ -1,3 +1,5 @@
+
+/* ---------- Trade Page ---------- */
 .trade-page {
     width: 100%;
     min-height: 650px;
@@ -7,6 +9,7 @@
     box-sizing: border-box;
 }
 
+/* ---------- Title ---------- */
 .trade-page h1 {
     margin: 0 0 0 20px;
 
@@ -15,117 +18,96 @@
     font-weight: normal;
 }
 
+/* ---------- Trade Content ---------- */
 .trade-content {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.trade-item {
-    width: 280px;
-    height: 360px;
-
-    margin-top: 45px;
-    padding: 20px;
-
-    background-color: var(--surface);
-    border-radius: 22px;
-
+/* ---------- Book Card ---------- */
+.trade-content .item {
+    width: 250px;
+    flex-shrink: 0;
     box-sizing: border-box;
 }
 
-.trade-item img {
-    display: block;
+/* ---------- Book Card ---------- */
+/* ใช้ .item จาก showitem.css */
 
-    width: 240px;
-    height: 220px;
-
-    object-fit: cover;
-
-    background-color: #aaa;
-
-    border: none;
-    border-radius: 10px;
-}
-
-.item-name {
-    margin: 15px 0 7px;
-
-    color: #601d49;
-
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-}
-
-.item-info {
-    margin: 0 0 12px;
-
-    color: #333;
-
-    font-size: 15px;
-    text-align: center;
-}
-
-.detail-btn {
-    display: block;
-
-    width: fit-content;
-
-    margin: 0 auto;
-    padding: 5px 14px;
-
-    background-color: #bd5579;
-    color: #ffebb8;
-
-    text-decoration: none;
-    border-radius: 15px;
-}
-
-.detail-btn:hover {
-    background-color: #601d49;
-}
-
+/* ---------- Trade Buttons ---------- */
 .trade-buttons {
     display: flex;
     justify-content: center;
     align-items: center;
 
     gap: 35px;
-
     margin-top: 55px;
     margin-bottom: 35px;
 }
 
-.trade-buttons button {
+.trade-buttons button,
+.trade-buttons a {
     width: 65px;
     height: 65px;
-
     padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     border: none;
     border-radius: 50%;
 
     font-family: inherit;
     font-size: 38px;
+    text-decoration: none;
 
     cursor: pointer;
 }
 
+/* ---------- Reject ---------- */
 .reject-btn {
     background-color: #d3d3d3;
     color: #999;
-}
-
-.accept-btn {
-    background-color: #bd5579;
-    color: #ffebb8;
 }
 
 .reject-btn:hover {
     background-color: #bbbbbb;
 }
 
+/* ---------- Accept ---------- */
+.accept-btn {
+    background-color: #bd5579;
+    color: #ffebb8;
+}
+
 .accept-btn:hover {
     background-color: #601d49;
+    color: #ffebb8;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+
+    .trade-page {
+        padding: 20px 15px 40px;
+    }
+
+    .trade-page h1 {
+        margin-left: 0;
+        font-size: 24px;
+    }
+
+    .trade-buttons {
+        gap: 25px;
+        margin-top: 40px;
+    }
+
+    .trade-buttons button,
+    .trade-buttons a {
+        width: 58px;
+        height: 58px;
+        font-size: 32px;
+    }
 }

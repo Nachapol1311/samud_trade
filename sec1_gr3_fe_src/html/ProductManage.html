@@ -2,69 +2,88 @@
 <html lang="en">
 
 <head>
-    <title>Samud Trade | Productmanage</title>
+    <title>Samud Trade | Product Management</title>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
+
     <link href="../css/bar.css" rel="stylesheet" />
     <link href="../css/UserManage.css" rel="stylesheet" />
     <link href="../css/ProductManage.css" rel="stylesheet" />
 </head>
 
 <body class="page-productmanage">
+
     <header>
-        <a class="home" href="home.html">
-            <svg class="home-icon" viewbox="0 0 24 24">
-                <path d="M12 3L2 12h3v8h5v-5h4v5h5v-8h3L12 3z"></path>
-            </svg>
+        <a href="admin-home.html">
+            <div>samud trade</div>
         </a>
-        <div>samud trade</div>
-        <a class="profile" href="login.html">
-            <svg class="profile-icon" viewbox="0 0 24 24">
+
+        <nav>
+            <div>
+                <a class="nav" href="UserManage.html">User management</a>
+            </div>
+        </nav>
+
+        <a class="profile" href="admin-profile.html">
+            <svg class="profile-icon" viewBox="0 0 24 24">
                 <circle cx="12" cy="8.6" r="3.9"></circle>
                 <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z"></path>
             </svg>
         </a>
     </header>
-    <nav>
-        <div>
-            <a href="javascript:history.back()" class="nav" aria-label="go back">&#9664;</a>
-        </div>
-        <div>
-            <a class="nav" href="UserManage.html">User management</a>
-        </div>
-    </nav>
+
+
     <main class="admin-page" id="ProductManage_content">
+
         <section class="admin-box">
-            <h2>Product</h2>
+
+            <div class="admin-header">
+                <h2>│Product Management</h2>
+
+                <a class="add-user-btn" href="admin-product-add.html">
+                    Add product
+                </a>
+            </div>
+
+
+            <section class="product-search">
+                <label>Search product</label>
+                <form method="get">
+                    <input type="text" placeholder="book name">
+                    <button type="submit">⌕</button>
+                </form>
+            </section>
+
+
             <table class="user-table">
+
                 <thead>
                     <tr>
                         <th class="product-column">Product ID</th>
                         <th class="name-column">Name</th>
-                        <!-- <th class="status-column">Status</th> -->
                         <th class="manage-column">Manage</th>
                     </tr>
                 </thead>
+
                 <tbody>
                     <tr>
                         <td></td>
                         <td></td>
-                        <!-- <td></td> -->
+
                         <td>
                             <div class="manage-buttons">
-                                <a class="edit-btn" href="edititem.html">Edit</a>
-                                <button class="remove-btn" type="button">Remove</button>
+                                <a class="edit-btn" href="edititem.html">
+                                    Edit
+                                </a>
+                                <button class="remove-btn" type="button">
+                                    Remove
+                                </button>
                             </div>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </section>
-        <div class="add-user-container">
-            <a class="add-user-btn" href="additem.html">
-                Add product
-            </a>
-        </div>
     </main>
 </body>
 
