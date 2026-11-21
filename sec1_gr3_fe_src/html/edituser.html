@@ -15,19 +15,19 @@
 <body class="page-admin-user-edit">
 
     <header>
-        <a href="UserManage.html">
+        <a href="/user-manage">
             <div>samud trade</div>
         </a>
 
         <nav>
             <div>
-                <a class="nav" href="ProductManage.html">
+                <a class="nav" href="/product-manage">
                     Product management
                 </a>
             </div>
         </nav>
 
-        <a class="profile" href="admin-profile.html">
+        <a class="profile" href="/admin-profile">
             <svg class="profile-icon" viewbox="0 0 24 24">
                 <circle cx="12" cy="8.6" r="3.9"></circle>
                 <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z"></path>
@@ -40,7 +40,7 @@
         <h2>Edit User</h2>
 
         <form class="edit-user-form" id="editUserForm"
-              action="#" method="post">
+              >
 
             <!-- Profile Image -->
             <div class="profile-upload">
@@ -150,7 +150,7 @@
             <!-- Buttons -->
             <div class="form-buttons">
 
-                <a href="UserManage.html" class="cancel-btn">
+                <a href="/user-manage" class="cancel-btn">
                     Cancel
                 </a>
 
@@ -166,7 +166,7 @@
 
     <footer>
         <div>
-            <a href="team.html">
+            <a href="/team">
                 <p class="team">about us</p>
             </a>
         </div>
@@ -176,5 +176,7 @@
         </div>
     </footer>
 
+    <script src="../js/api.js" defer></script>
+    <script src="../js/edituser.js" defer></script>
 </body>
 </html>

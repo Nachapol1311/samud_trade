@@ -11,19 +11,19 @@
 
 <body class="page-usermanage">
     <header>
-        <a href="admin-home.html">
+        <a href="/admin-home">
             <div>samud trade</div>
         </a>
 
         <nav>
             <div>
-                <a class="nav" href="ProductManage.html">
+                <a class="nav" href="/product-manage">
                     Product management
                 </a>
             </div>
         </nav>
 
-        <a class="profile" href="admin-profile.html">
+        <a class="profile" href="/admin-profile">
             <svg class="profile-icon" viewbox="0 0 24 24">
                 <circle cx="12" cy="8.6" r="3.9"></circle>
                 <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z"></path>
@@ -35,7 +35,7 @@
         <section class="admin-box">
             <div class="admin-header">
                 <h2>│User Management</h2>
-                <a class="add-user-btn" href="admin-user-add.html">
+                <a class="add-user-btn" href="/admin-user-add">
                     Add user
                 </a>
             </div>
@@ -43,8 +43,8 @@
             <section class="user-search">
                 <label>Search</label>
 
-                <form action="Get">
-                    <input type="text" placeholder="username">
+                <form id="userSearchForm">
+                    <input id="userSearchInput" type="text" placeholder="username / name / email">
                     <button type="submit">⌕</button>
                 </form>
             </section>
@@ -59,25 +59,12 @@
                     </tr>
                 </thead>
 
-                <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-
-                        <td>
-                            <div class="manage-buttons">
-                                <a class="edit-btn" href="edituser.html">Edit</a>
-                                <button class="remove-btn" type="button">
-                                    Remove
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
+                <tbody id="userTableBody"></tbody>
             </table>
         </section>
     </main>
+    <script src="../js/api.js" defer></script>
+    <script src="../js/usermanage.js" defer></script>
 </body>
 
 </html>

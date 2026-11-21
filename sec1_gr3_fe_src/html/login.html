@@ -11,7 +11,7 @@
 
 <body class="page-login">
     <header>
-        <a href="home.html">
+        <a href="/home">
             <div>samud trade</div>
         </a>
         
@@ -25,7 +25,7 @@
     <main id="login_content">
         <section class="card">
             <h2>Login for user</h2>
-            <form action="/user-login" class="form" id="login_form" method="post">
+            <form class="form" id="login_form" method="post">
                 <label for="username">Username:</label>
                 <input autocomplete="username" id="username" name="username" required="" type="text" />
                 <label for="password">Password:</label>
@@ -35,6 +35,8 @@
             </form>
         </section>
     </main>
+    <script src="../js/api.js" defer></script>
+    <script src="../js/login.js" defer></script>
 </body>
 
 </html>

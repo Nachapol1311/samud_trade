@@ -11,23 +11,25 @@
 
 <body class="page-additem">
     <header>
-        <a href="home.html">
+        <a href="/home">
             <div>samud trade</div>
         </a>
 
         <nav>
             <div>
-                <a class="nav" href="search.html">⌕ search</a>
+                <a class="nav" href="/search">⌕ search</a>
                 <span>|</span>
-                <a class="nav" href="trade.html">trade</a>
+                <a class="nav" href="/trade">trade</a>
                 <span>|</span>
-                <a class="nav" href="myitem.html">my item</a>
+                <a class="nav" href="/my-item">my item</a>
                 <span>|</span>
-                <a class="nav" href="match.html">match</a>
+                <a class="nav" href="/match">match</a>
+                <span>|</span>
+                <a class="nav" href="/wait">wait</a>
             </div>
         </nav>
 
-        <a class="profile" href="login.html">
+        <a class="profile" href="/login">
             <svg class="profile-icon" viewbox="0 0 24 24">
                 <circle cx="12" cy="8.6" r="3.9"></circle>
                 <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z"></path>
@@ -42,13 +44,13 @@
 
             <div>
                 <p>Book</p>
-                <input placeholder="Enter book" type="text" />
+                <input id="book_name" maxlength="100" placeholder="Enter book" type="text" />
             </div>
 
             <div>
                 <p>Catagory</p>
                 <select id="category" name="category">
-                    <option value="">--all--</option>
+                    <option value="">-- select category --</option>
                     <option value="art-design">art &amp; design</option>
                     <option value="biography">biography</option>
                     <option value="business">business</option>
@@ -84,7 +86,7 @@
 
             <div>
                 <p>Price</p>
-                <input placeholder="Price" type="text" />
+                <input id="book_price" min="0" placeholder="Price" type="number" />
             </div>
 
             <div>
@@ -105,28 +107,28 @@
 
             <div>
                 <p>Owner</p>
-                <p>info-owner</p>
+                <p id="book_owner">info-owner</p>
             </div>
 
             <div id="info-detail">
                 <p>Detail</p>
-                <textarea id="" name="deteil"></textarea>
+                <textarea id="book_detail" maxlength="255" name="deteil"></textarea>
             </div>
 
             <div>
                 <p>Book Image</p>
-                <input type="file" accept="image/*" />
+                <input id="book_image" type="file" accept="image/*" />
             </div>
         </div>
 
         <div>
-            <a href="myitem.html" class="cancel-btn">Cancel</a>
-            <button type="button" class="save-btn">Add</button>
+            <a href="/my-item" class="cancel-btn">Cancel</a>
+            <button type="button" class="save-btn" id="saveBtn">Add</button>
         </div>
     </main>
     <footer>
         <div>
-            <a href="team.html">
+            <a href="/team">
                 <p class="team">about us</p>
             </a>
         </div>
@@ -134,6 +136,8 @@
             <p>© 2026 Samud Trade. All rights reserved.</p>
         </div>
     </footer>
+    <script src="../js/api.js" defer></script>
+    <script src="../js/additem.js" defer></script>
 </body>
 
 </html>

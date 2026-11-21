@@ -14,17 +14,17 @@
 <body class="page-productmanage">
 
     <header>
-        <a href="admin-home.html">
+        <a href="/admin-home">
             <div>samud trade</div>
         </a>
 
         <nav>
             <div>
-                <a class="nav" href="UserManage.html">User management</a>
+                <a class="nav" href="/user-manage">User management</a>
             </div>
         </nav>
 
-        <a class="profile" href="admin-profile.html">
+        <a class="profile" href="/admin-profile">
             <svg class="profile-icon" viewBox="0 0 24 24">
                 <circle cx="12" cy="8.6" r="3.9"></circle>
                 <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z"></path>
@@ -40,7 +40,7 @@
             <div class="admin-header">
                 <h2>│Product Management</h2>
 
-                <a class="add-user-btn" href="admin-product-add.html">
+                <a class="add-user-btn" href="/admin-product-add">
                     Add product
                 </a>
             </div>
@@ -48,8 +48,8 @@
 
             <section class="product-search">
                 <label>Search product</label>
-                <form method="get">
-                    <input type="text" placeholder="book name">
+                <form id="productSearchForm">
+                    <input id="productSearchInput" type="text" placeholder="book name / keyword">
                     <button type="submit">⌕</button>
                 </form>
             </section>
@@ -65,26 +65,12 @@
                     </tr>
                 </thead>
 
-                <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-
-                        <td>
-                            <div class="manage-buttons">
-                                <a class="edit-btn" href="edititem.html">
-                                    Edit
-                                </a>
-                                <button class="remove-btn" type="button">
-                                    Remove
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
+                <tbody id="productTableBody"></tbody>
             </table>
         </section>
     </main>
+    <script src="../js/api.js" defer></script>
+    <script src="../js/productmanage.js" defer></script>
 </body>
 
 </html>
