@@ -1,7 +1,7 @@
-CREATE DATABASE IF NOT EXISTS db_test
+CREATE DATABASE IF NOT EXISTS samud_trade
   DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-USE db_test;
+USE samud_trade;
 
 -- ---------- ตาราง ----------
 CREATE TABLE IF NOT EXISTS user_Account (
