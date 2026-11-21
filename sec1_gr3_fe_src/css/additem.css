@@ -165,3 +165,8 @@
     background-color: #601d49;
     color: #ffebb8;
 }
+
+#book_preview{
+    width: 100%;
+    overflow: hidden;
+}

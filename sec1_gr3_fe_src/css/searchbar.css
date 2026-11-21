@@ -185,3 +185,11 @@
         margin-left: 0;
     }
 }
+
+/* จำนวนผลลัพธ์การค้นหา */
+.search-status {
+    margin: 10px 0 0;
+    text-align: center;
+    color: #601d49;
+    font-size: 14px;
+}
