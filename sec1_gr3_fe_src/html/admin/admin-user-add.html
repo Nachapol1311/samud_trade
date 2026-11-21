@@ -5,26 +5,26 @@
     <title>Samud Trade | Admin User Add</title>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="../css/bar.css" rel="stylesheet" />
-    <link href="../css/UserManage.css" rel="stylesheet" />
-    <link href="../css/admin-user-add.css" rel="stylesheet" />
+    <link href="/css/bar.css" rel="stylesheet" />
+    <link href="/css/UserManage.css" rel="stylesheet" />
+    <link href="/css/admin-user-add.css" rel="stylesheet" />
 </head>
 
 <body class="page-admin-user-add">
     <header>
-        <a href="UserManage.html">
+        <a href="/admin/userManagement">
             <div>samud trade</div>
         </a>
 
         <nav>
         
         <div>
-            <a class="nav" href="ProductManage.html">Product management</a>
+            <a class="nav" href="/admin/productManagement">Product management</a>
         </div>
         </nav>
 
-        <a class="profile" href="login.html">
-            <svg class="profile-icon" viewbox="0 0 24 24">
+        <a class="profile" href="/admin/profile">
+            <svg class="profile-icon" viewBox="0 0 24 24">
                 <circle cx="12" cy="8.6" r="3.9"></circle>
                 <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z"></path>
             </svg>
@@ -36,7 +36,7 @@
             <h2>Add user</h2>
             <form action="#" class="add-user-form" id="addUserForm" method="post">
                 <div class="field-row">
-                    <label for="Role">Role</label>
+                    <label for="admin_user_add_role">Role</label>
                     <select id="admin_user_add_role" name="role">
                         <option value="admin">admin</option>
                         <option value="user">user</option>
@@ -64,7 +64,7 @@
                         type="password" />
                 </div>
                 <div class="form-buttons">
-                    <a class="cancel-btn" href="UserManage.html">
+                    <a class="cancel-btn" href="/admin/userManagement">
                         Cancel
                     </a>
                     <button class="save-btn" type="submit">
@@ -77,7 +77,7 @@
 
     <footer>
         <div>
-            <a href="team.html">
+            <a href="/user/team">
                 <p class="team">about us</p>
             </a>
         </div>
@@ -85,6 +85,8 @@
             <p>© 2026 Samud Trade. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- <script defer src="/js/admin-user-add.js"></script>    For Add data to data base-->
 </body>
 
 </html>

@@ -5,23 +5,23 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Samud Trade | Additem</title>
-    <link href="../css/bar.css" rel="stylesheet" />
-    <link href="../css/additem.css" rel="stylesheet" />
+    <link href="/css/bar.css" rel="stylesheet" />
+    <link href="/css/additem.css" rel="stylesheet" />
 </head>
 
 <body class="page-additem">
     <header>
-        <a href="admin-home.html">
+        <a href="/admin">
             <div>samud trade</div>
         </a>
 
         <nav>
             <div>
-                <a class="nav" href="UserManage.html">User management</a>
+                <a class="nav" href="/admin/userManagement">User management</a>
             </div>
         </nav>
 
-        <a class="profile" href="admin-profile.html">
+        <a class="profile" href="/admin/profile">
             <svg class="profile-icon" viewbox="0 0 24 24">
                 <circle cx="12" cy="8.6" r="3.9"></circle>
                 <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z"></path>
@@ -78,7 +78,7 @@
 
             <div>
                 <p>Price</p>
-                <input placeholder="Price" type="text" />
+                <input id="price" name="price" placeholder="Price" type="number" min="0" />/>
             </div>
 
             <div>
@@ -104,23 +104,23 @@
 
             <div id="info-detail">
                 <p>Detail</p>
-                <textarea id="" name="deteil"></textarea>
+                <textarea id="detail" name="deteil"></textarea>
             </div>
 
             <div>
                 <p>Book Image</p>
-                <input type="file" accept="image/*" />
+                <input id="bookImage" name="bookImage" type="file" accept="image/*" />
             </div>
         </div>
 
         <div>
-            <a href="ProductManage.html" class="cancel-btn">Cancel</a>
+            <a href="/admin/productManagement" class="cancel-btn">Cancel</a>
             <button type="button" class="save-btn">Add</button>
         </div>
     </main>
     <footer>
         <div>
-            <a href="team.html">
+            <a href="/user/team">
                 <p class="team">about us</p>
             </a>
         </div>
