@@ -47,6 +47,17 @@
                 <input id="book_name" maxlength="100" placeholder="Enter book" type="text" />
             </div>
 
+            <!-- ค้นหาข้อมูลหนังสือจาก Public Web Service: Open Library -->
+            <div id="ol-search">
+                <p>Find book info</p>
+                <button type="button" id="olBtn">Search Open Library</button>
+                <p id="olStatus" class="ol-status"></p>
+                <ul id="olResults"></ul>
+                <small>Book data and covers from
+                    <a href="https://openlibrary.org" target="_blank" rel="noopener">Open Library</a>
+                    (openlibrary.org)</small>
+            </div>
+
             <div>
                 <p>Catagory</p>
                 <select id="category" name="category">
@@ -138,6 +149,7 @@
     </footer>
     <script src="../js/api.js" defer></script>
     <script src="../js/additem.js" defer></script>
+    <script src="../js/openlibrary.js" defer></script>
 </body>
 
 </html>

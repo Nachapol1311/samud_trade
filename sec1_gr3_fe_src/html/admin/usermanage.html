@@ -6,10 +6,11 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Samud Trade | Usermanage</title>
     <link href="../css/bar.css" rel="stylesheet" />
-    <link href="../css/UserManage.css" rel="stylesheet" />
+    <link href="../css/usermanage.css" rel="stylesheet" />
 </head>
 
 <body class="page-usermanage">
+    <!-- ส่วนหัวหน้าของผู้ดูแลระบบ: โลโก้ลิงก์ไป admin-home, nav ไปหน้า Product management และไอคอนโปรไฟล์ลิงก์ไป admin-profile -->
     <header>
         <a href="/admin-home">
             <div>samud trade</div>
@@ -31,6 +32,7 @@
         </a>
     </header>
 
+    <!-- เนื้อหาหลัก: หน้าจัดการบัญชีผู้ใช้ (User management) สำหรับผู้ดูแลระบบ ได้แก่ ค้นหา / เพิ่ม / แก้ไข / ลบ -->
     <main class="admin-page" id="UserManage_content">
         <section class="admin-box">
             <div class="admin-header">
@@ -40,15 +42,23 @@
                 </a>
             </div>
 
+            <!-- ฟอร์มค้นหาบัญชี: usermanage.js ส่งเกณฑ์ไป GET /accounts?keyword=...&role=... (ไม่เลือกเกณฑ์ = แสดงทั้งหมด) -->
             <section class="user-search">
                 <label>Search</label>
 
                 <form id="userSearchForm">
+                    <!-- เกณฑ์ที่ 1: role / เกณฑ์ที่ 2: คำค้น (username, ชื่อ, นามสกุล, อีเมล) -->
+                    <select id="userRoleFilter">
+                        <option value="">All roles</option>
+                        <option value="admin">admin</option>
+                        <option value="user">user</option>
+                    </select>
                     <input id="userSearchInput" type="text" placeholder="username / name / email">
                     <button type="submit">⌕</button>
                 </form>
             </section>
 
+            <!-- ตารางผลลัพธ์: usermanage.js เติมแถวลงใน tbody พร้อมปุ่ม Edit และ Remove (Remove เรียก DELETE /accounts/:id) -->
             <table class="user-table">
                 <thead>
                     <tr>
@@ -63,6 +73,7 @@
             </table>
         </section>
     </main>
+    <!-- สคริปต์: api.js = เรียก web service, usermanage.js = ค้นหา / ลบบัญชีผู้ใช้ -->
     <script src="../js/api.js" defer></script>
     <script src="../js/usermanage.js" defer></script>
 </body>

@@ -90,6 +90,19 @@ async function applyRoleNav() {
     document.querySelectorAll("a.profile").forEach((a) => {
         a.href = me ? (isAdmin ? "/admin-profile" : "/profile") : "/login";
     });
+
+    // login แล้วและมีรูปโปรไฟล์: เปลี่ยนไอคอนคนที่มุมขวาบนเป็นรูปของบัญชีนั้น
+    if (me && me.picture) {
+        document.querySelectorAll("header .profile").forEach((box) => {
+            const icon = box.querySelector(".profile-icon");
+            if (!icon) return;
+            const photo = el("img", "profile-photo");
+            photo.alt = "profile";
+            // เปลี่ยนจากไอคอนเป็นรูปก็ต่อเมื่อโหลดรูปสำเร็จ (ถ้าโหลดไม่ได้ ยังเห็นไอคอนเดิม)
+            photo.addEventListener("load", () => icon.replaceWith(photo));
+            photo.src = imgSrc(me.picture);
+        });
+    }
 }
 document.addEventListener("DOMContentLoaded", applyRoleNav);
 

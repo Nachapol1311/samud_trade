@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const body = document.getElementById("userTableBody");
     const form = document.getElementById("userSearchForm");
     const input = document.getElementById("userSearchInput");
+    const roleFilter = document.getElementById("userRoleFilter");
 
     function row(acc) {
         const tr = el("tr");
@@ -39,7 +40,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     async function load() {
         try {
-            const accounts = await api("/accounts?username=" + encodeURIComponent(input.value.trim()));
+            // ส่งเกณฑ์ค้นหาไปที่ web service: keyword (ค้นจากทุกช่อง) และ role (ถ้าเลือก)
+            const params = new URLSearchParams();
+            if (input.value.trim()) params.set("keyword", input.value.trim());
+            if (roleFilter.value) params.set("role", roleFilter.value);
+            const accounts = await api("/accounts?" + params.toString());
             if (!accounts.length) {
                 const td = el("td", null, "No users found.");
                 td.colSpan = 4;

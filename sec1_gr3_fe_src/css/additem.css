@@ -170,3 +170,87 @@
     width: 100%;
     overflow: hidden;
 }
+/* ---------- ค้นหาข้อมูลจาก Open Library ---------- */
+#ol-search>p:first-child {
+    margin: 0 0 5px;
+    padding: 0;
+    background: none;
+    color: #601d49;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+#olBtn {
+    height: 34px;
+    padding: 0 16px;
+    border: none;
+    border-radius: 20px;
+    background-color: #bd5579;
+    color: #ffebb8;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#olBtn:hover {
+    background-color: #601d49;
+}
+
+#olBtn:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.additem .ol-status {
+    margin: 8px 0 0;
+    padding: 0;
+    background: none;
+    color: #601d49;
+    font-size: 13px;
+}
+
+#olResults {
+    margin: 6px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+#olResults .ol-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 6px;
+    padding: 6px 8px;
+    box-sizing: border-box;
+    border: 1px solid #c6c3c3;
+    border-radius: 5px;
+    background: #fff;
+    color: #601d49;
+    font-family: inherit;
+    font-size: 14px;
+    text-align: left;
+    cursor: pointer;
+}
+
+#olResults .ol-item:hover {
+    border-color: #bd5579;
+    background: #fff6f9;
+}
+
+#olResults .ol-item img {
+    flex: none;
+    object-fit: cover;
+    background: #d9d2d6;
+}
+
+#ol-search>small {
+    display: block;
+    margin-top: 6px;
+    color: #777;
+    font-size: 12px;
+}
+
+#ol-search>small a {
+    color: #bd5579;
+}

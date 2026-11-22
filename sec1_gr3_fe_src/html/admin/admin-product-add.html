@@ -4,42 +4,52 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Samud Trade | Edititem</title>
-    <script src="../js/api.js" defer></script>
-    <script src="../js/edititem.js" defer></script>
+    <title>Samud Trade | Additem</title>
     <link href="../css/bar.css" rel="stylesheet" />
     <link href="../css/additem.css" rel="stylesheet" />
 </head>
 
-<body class="page-edititem">
+<body class="page-additem">
     <header>
-        <!-- Logo -->
-        <a href="/home" id="homeLink">
+        <a href="/admin-home">
             <div>samud trade</div>
         </a>
 
+        <nav>
+            <div>
+                <a class="nav" href="/user-manage">User management</a>
+            </div>
+        </nav>
 
-        <div class="header-space"></div>
-
-        <a class="profile" href="/login">
+        <a class="profile" href="/admin-profile">
             <svg class="profile-icon" viewbox="0 0 24 24">
                 <circle cx="12" cy="8.6" r="3.9"></circle>
                 <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z"></path>
             </svg>
         </a>
-
     </header>
 
-    <main class="additem" id="edititem_content">
-        <h2>Edit Book</h2>
+    <main class="additem" id="additem_content">
+        <h2>Add New Book</h2>
+
         <div class="detail">
-            <img alt="Book or profile image" id="book_preview" src="" />
-        </div>
-        <div class="detail">
+
             <div>
                 <p>Book</p>
                 <input id="book_name" maxlength="100" placeholder="Enter book" type="text" />
             </div>
+
+            <!-- ค้นหาข้อมูลหนังสือจาก Public Web Service: Open Library -->
+            <div id="ol-search">
+                <p>Find book info</p>
+                <button type="button" id="olBtn">Search Open Library</button>
+                <p id="olStatus" class="ol-status"></p>
+                <ul id="olResults"></ul>
+                <small>Book data and covers from
+                    <a href="https://openlibrary.org" target="_blank" rel="noopener">Open Library</a>
+                    (openlibrary.org)</small>
+            </div>
+
             <div>
                 <p>Catagory</p>
                 <select id="category" name="category">
@@ -76,10 +86,12 @@
                     <option value="travel">travel</option>
                 </select>
             </div>
+
             <div>
                 <p>Price</p>
                 <input id="book_price" min="0" placeholder="Price" type="number" />
             </div>
+
             <div>
                 <p>Condition</p>
                 <div class="stars">
@@ -95,12 +107,14 @@
                     <label for="star1" title="1 ดาว">★</label>
                 </div>
             </div>
+
             <div>
                 <p>Owner</p>
                 <p id="book_owner">info-owner</p>
             </div>
+
             <div id="info-detail">
-                <p>detail</p>
+                <p>Detail</p>
                 <textarea id="book_detail" maxlength="255" name="deteil"></textarea>
             </div>
 
@@ -109,28 +123,25 @@
                 <input id="book_image" type="file" accept="image/*" />
             </div>
         </div>
-        <div>
-            <a href="/my-item" class="cancel-btn" id="cancelLink">
-                Cancel
-            </a>
 
-            <button type="button" class="save-btn" id="saveBtn">
-                Save
-            </button>
+        <div>
+            <a href="/product-manage" class="cancel-btn">Cancel</a>
+            <button type="button" class="save-btn" id="saveBtn">Add</button>
         </div>
     </main>
-
     <footer>
         <div>
             <a href="/team">
                 <p class="team">about us</p>
             </a>
         </div>
-
         <div>
             <p>© 2026 Samud Trade. All rights reserved.</p>
         </div>
     </footer>
+    <script src="../js/api.js" defer></script>
+    <script src="../js/additem.js" defer></script>
+    <script src="../js/openlibrary.js" defer></script>
 </body>
 
 </html>

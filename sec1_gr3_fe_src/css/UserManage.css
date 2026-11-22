@@ -145,6 +145,30 @@ body {
 }
 
 
+/* dropdown เลือก role อยู่ซ้ายสุดของฟอร์มค้นหา */
+.user-search select {
+    height: 38px;
+
+    padding: 0 8px;
+
+    background-color: #ffffff;
+    color: var(--plum);
+
+    border: 1px solid #c9b8c2;
+    border-right: none;
+
+    border-radius: 8px 0 0 8px;
+
+    outline: none;
+
+    font-size: 14px;
+}
+
+.user-search select + input {
+    border-radius: 0;
+}
+
+
 .user-search button {
     width: 45px;
     height: 38px;

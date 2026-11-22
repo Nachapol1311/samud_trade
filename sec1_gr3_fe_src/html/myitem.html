@@ -10,6 +10,7 @@
 </head>
 
 <body class="page-myitem">
+    <!-- ส่วนหัวหน้า (header): โลโก้ลิงก์กลับหน้าแรก, แถบนำทาง (nav) และไอคอนโปรไฟล์ลิงก์ไปหน้า login และลิงก์ + add product -->
     <header>
         <a href="/home">
             <div>samud trade</div>
@@ -24,8 +25,6 @@
                 <a class="nav" href="/match">match</a>
                 <span>|</span>
                 <a class="nav" href="/wait">wait</a>
-                <span>|</span>
-                <a class="nav" href="/add-item">+ add product</a>
             </div>
         </nav>
 
@@ -38,6 +37,7 @@
 
     </header>
 
+    <!-- หัวข้อหน้าและปุ่มไปหน้าเพิ่มหนังสือ (add product) -->
     <main id="myitem_content">
         <div>
             <h2>Manage Your Books</h2>
@@ -49,6 +49,8 @@
         </div>
     </main>
 
+    <!-- รายการหนังสือของผู้ใช้ที่ login อยู่: myitem.js เรียก GET /books/mine แล้วสร้างการ์ดพร้อมปุ่ม edit และ remove -->
+    <!-- (remove เรียก DELETE /books/:id) การ์ดข้างล่างเป็นโครงตัวอย่าง -->
     <h1 class="itemtitle">│My Items</h1>
 
     <section class="show" id="myitem_list">
@@ -60,6 +62,7 @@
             <p>remove</p>
         </div>
     </section>
+    <!-- ส่วนท้ายหน้า (footer): ลิงก์ไปหน้า About us และข้อความลิขสิทธิ์ -->
     <footer>
         <div>
             <a href="/team">
@@ -70,6 +73,7 @@
             <p>© 2026 Samud Trade. All rights reserved.</p>
         </div>
     </footer>
+    <!-- สคริปต์: api.js = เรียก web service, myitem.js = โหลดและลบหนังสือของตัวเอง -->
     <script src="../js/api.js" defer></script>
     <script src="../js/myitem.js" defer></script>
 </body>

@@ -10,6 +10,7 @@
 </head>
 
 <body class="page-home">
+    <!-- ส่วนหัวหน้า (header): โลโก้ลิงก์กลับหน้าแรก, แถบนำทาง (nav) และไอคอนโปรไฟล์ลิงก์ไปหน้า login -->
     <header>
         <a href="/home">
             <div>samud trade</div>
@@ -37,6 +38,7 @@
         </a>
     </header>
 
+    <!-- ส่วนแนะนำธุรกิจ: อธิบายว่า Samud Trade คือแพลตฟอร์มแลกเปลี่ยนหนังสือมือสอง พร้อมรูปภาพประกอบ -->
     <section class="about">
         <div class="about-text">
             <h2>About Samud Trade</h2>
@@ -57,6 +59,8 @@
         </div>
     </section>
 
+    <!-- รายการหนังสือล่าสุด: home.js เรียก GET /books?limit=12 จาก web service แล้วสร้างการ์ดหนังสือมาแสดงในส่วนนี้ -->
+    <!-- (การ์ดข้างล่างเป็นโครงตัวอย่าง รูปในการ์ดมีลิงก์ 'detail' ไปหน้ารายละเอียดหนังสือ) -->
     <main class="show" id="home_content">
         <div class="item">
             <img alt="Book or profile image" src="../pic" />
@@ -66,6 +70,7 @@
         </div>
     </main>
 
+    <!-- ส่วนท้ายหน้า (footer): ลิงก์ไปหน้า About us และข้อความลิขสิทธิ์ -->
     <footer>
         <div>
             <a href="/team">
@@ -76,6 +81,7 @@
             <p>© 2026 Samud Trade. All rights reserved.</p>
         </div>
     </footer>
+    <!-- สคริปต์: api.js = ฟังก์ชันกลางสำหรับเรียก web service, home.js = โหลดรายการหนังสือของหน้านี้ -->
     <script src="../js/api.js" defer></script>
     <script src="../js/home.js" defer></script>
 </body>

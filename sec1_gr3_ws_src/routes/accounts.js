@@ -35,19 +35,68 @@ function duplicateMessage(err) {
 }
 
 // ---------------------------------------------------------------
-// ค้นหาบัญชี (ไม่ใส่ username = ทั้งหมด) ค้นแบบบางส่วนจาก username / ชื่อ / นามสกุล / อีเมล
-// Testing 1: method: get  URL: http://localhost:3000/accounts
-// Testing 2: method: get  URL: http://localhost:3000/accounts?username=som
+// ค้นหาบัญชี: ไม่ใส่เกณฑ์ = ทั้งหมด / ใส่ได้ทุกเกณฑ์พร้อมกันหรือบางส่วน (เงื่อนไขทุกข้อต้องตรงพร้อมกัน)
+// เกณฑ์การค้นหา (query string, ไม่บังคับทุกตัว):
+//   username = ค้นบางส่วนจากชื่อผู้ใช้
+//   name     = ค้นบางส่วนจากชื่อจริงหรือนามสกุล
+//   email    = ค้นบางส่วนจากอีเมล
+//   role     = admin หรือ user (ตรงทั้งคำ)
+//   keyword  = ค้นบางส่วนจากทุกช่องข้างต้นพร้อมกัน (ใช้กับช่องค้นหาในหน้า user-manage)
+// Testing 1: ค้นหาทั้งหมด
+// method: get
+// URL: http://localhost:3000/accounts
+//
+// Testing 2: ค้นหาด้วยบางเกณฑ์ (ชื่อผู้ใช้มีคำว่า som)
+// method: get
+// URL: http://localhost:3000/accounts?username=som
+//
+// Testing 3: ค้นหาด้วยหลายเกณฑ์พร้อมกัน (เป็น user และอีเมลมีคำว่า gmail)
+// method: get
+// URL: http://localhost:3000/accounts?role=user&email=gmail
+//
+// Testing 4: ค้นหาด้วยชื่อหรือนามสกุล + role
+// method: get
+// URL: http://localhost:3000/accounts?name=kim&role=user
+// (ต้อง login เป็น admin ก่อน ด้วย POST /auth/login)
 // ---------------------------------------------------------------
 router.get("/", asyncHandler(async (req, res) => {
-  const keyword = String(req.query.username || "").trim();
-  const params = [];
-  let where = "";
-  if (keyword) {
-    const like = "%" + escapeLike(keyword) + "%";
-    where = "WHERE u.acc_username LIKE ? OR i.acc_name LIKE ? OR i.acc_surname LIKE ? OR i.acc_email LIKE ?";
-    params.push(like, like, like, like);
+  const text = (value) => String(value || "").trim();
+  const username = text(req.query.username);
+  const name = text(req.query.name);
+  const email = text(req.query.email);
+  const role = text(req.query.role);
+  const keyword = text(req.query.keyword);
+
+  if (role && !["admin", "user"].includes(role)) {
+    return res.status(400).json({ message: "role must be admin or user" });
   }
+
+  const conditions = [];
+  const params = [];
+  const like = (value) => "%" + escapeLike(value) + "%";
+
+  if (username) {
+    conditions.push("u.acc_username LIKE ?");
+    params.push(like(username));
+  }
+  if (name) {
+    conditions.push("(i.acc_name LIKE ? OR i.acc_surname LIKE ?)");
+    params.push(like(name), like(name));
+  }
+  if (email) {
+    conditions.push("i.acc_email LIKE ?");
+    params.push(like(email));
+  }
+  if (role) {
+    conditions.push("u.acc_role = ?");
+    params.push(role);
+  }
+  if (keyword) {
+    conditions.push("(u.acc_username LIKE ? OR i.acc_name LIKE ? OR i.acc_surname LIKE ? OR i.acc_email LIKE ?)");
+    params.push(like(keyword), like(keyword), like(keyword), like(keyword));
+  }
+
+  const where = conditions.length ? "WHERE " + conditions.join(" AND ") : "";
   const [rows] = await db.query(`SELECT ${ACC_COLS} ${ACC_FROM} ${where} ORDER BY u.acc_id`, params);
   res.json(rows);
 }));

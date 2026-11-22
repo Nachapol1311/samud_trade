@@ -29,24 +29,23 @@ const pages = {
   "/profile": "profile.html",
   "/team": "team.html",
 
-  // หน้า admin
-  "/admin-home": "admin-home.html",
-  "/admin-management": "admin-management.html",
-  "/admin-profile": "admin-profile.html",
-  "/admin-product-add": "admin-product-add.html",
-  "/admin-user-add": "admin-user-add.html",
-  "/product-manage": "ProductManage.html",
-  "/user-manage": "UserManage.html",
-  "/edit-user": "edituser.html",
+  // หน้า admin (ไฟล์อยู่ใน html/admin/)
+  "/admin-home": "admin/admin-home.html",
+  "/admin-management": "admin/admin-management.html",
+  "/admin-profile": "admin/admin-profile.html",
+  "/admin-product-add": "admin/admin-product-add.html",
+  "/admin-user-add": "admin/admin-user-add.html",
+  "/product-manage": "admin/productmanage.html",
+  "/user-manage": "admin/usermanage.html",
+  "/edit-user": "admin/edituser.html",
 };
 
 const htmlDir = path.join(__dirname, "html");
 
 // ไฟล์ static (HTML อ้างด้วย ../css/..., ../js/..., ../pic/... ซึ่งจะกลายเป็น /css/..., /js/..., /pic/...)
 app.use("/css", express.static(path.join(__dirname, "css")));
-// Browser scripts are stored in the web-service project, but served on the front-end origin.
-// Only expose public/js; never expose server-side source, .env, or dependencies.
-app.use("/js", express.static(path.resolve(__dirname, "../sec1_gr3_ws_src/public/js")));
+// JavaScript ฝั่งเบราว์เซอร์ (เรียก web service ด้วย fetch) อยู่ในโฟลเดอร์ js/ ของ front-end นี้
+app.use("/js", express.static(path.join(__dirname, "js")));
 app.use("/pic", express.static(path.join(__dirname, "pic")));
 
 // หน้าแรก -> /home
@@ -61,7 +60,7 @@ Object.entries(pages).forEach(([route, file]) => {
 app.get("/:name.html", (req, res, next) => {
   const wanted = req.params.name.toLowerCase();
   const route = Object.keys(pages).find(
-    (r) => pages[r].replace(".html", "").toLowerCase() === wanted
+    (r) => path.basename(pages[r], ".html").toLowerCase() === wanted
   );
   return route ? res.redirect(301, route) : next();
 });

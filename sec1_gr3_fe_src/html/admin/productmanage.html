@@ -7,12 +7,13 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
 
     <link href="../css/bar.css" rel="stylesheet" />
-    <link href="../css/UserManage.css" rel="stylesheet" />
-    <link href="../css/ProductManage.css" rel="stylesheet" />
+    <link href="../css/usermanage.css" rel="stylesheet" />
+    <link href="../css/productmanage.css" rel="stylesheet" />
 </head>
 
 <body class="page-productmanage">
 
+    <!-- ส่วนหัวหน้าของผู้ดูแลระบบ: โลโก้ลิงก์ไป admin-home, nav ไปหน้า User management และไอคอนโปรไฟล์ลิงก์ไป admin-profile -->
     <header>
         <a href="/admin-home">
             <div>samud trade</div>
@@ -33,6 +34,7 @@
     </header>
 
 
+    <!-- เนื้อหาหลัก: หน้าจัดการหนังสือ (Product management) สำหรับผู้ดูแลระบบ ได้แก่ ค้นหา / เพิ่ม / แก้ไข / ลบ -->
     <main class="admin-page" id="ProductManage_content">
 
         <section class="admin-box">
@@ -46,6 +48,7 @@
             </div>
 
 
+            <!-- ฟอร์มค้นหาหนังสือ: productmanage.js ส่งคำค้นไป GET /books?name=... (ไม่ใส่คำค้น = แสดงหนังสือทั้งหมด) -->
             <section class="product-search">
                 <label>Search product</label>
                 <form id="productSearchForm">
@@ -55,6 +58,7 @@
             </section>
 
 
+            <!-- ตารางผลลัพธ์: productmanage.js เติมแถวลงใน tbody พร้อมปุ่ม Edit และ Remove (Remove เรียก DELETE /books/:id) -->
             <table class="user-table">
 
                 <thead>
@@ -69,6 +73,7 @@
             </table>
         </section>
     </main>
+    <!-- สคริปต์: api.js = เรียก web service, productmanage.js = ค้นหา / ลบหนังสือ -->
     <script src="../js/api.js" defer></script>
     <script src="../js/productmanage.js" defer></script>
 </body>

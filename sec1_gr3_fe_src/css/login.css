@@ -118,10 +118,6 @@ button {
 }
 
 
-.page-login header .profile {
-    margin-left: auto;
-}
-
 .page-login .profile:hover {
     background: #bd5579;
 }
