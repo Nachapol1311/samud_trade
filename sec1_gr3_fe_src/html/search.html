@@ -8,37 +8,40 @@
     <link href="../css/bar.css" rel="stylesheet" />
     <link href="../css/searchbar.css" rel="stylesheet" />
     <link href="../css/showitem.css" rel="stylesheet" />
-    <script src="../js/search-nav.js" defer></script>
+    <script src="../js/api.js" defer></script>
+    <script src="../js/search.js" defer></script>
 </head>
 
 <body class="page-search">
 
     <header>
-        <a href="home.html" id="homeLink">
+        <a href="/home" id="homeLink">
             <div>samud trade</div>
         </a>
 
         <nav>
             <!-- User Navbar -->
             <div id="userNav">
-                <a class="nav" href="trade.html">trade</a>
+                <a class="nav" href="/trade">trade</a>
                 <span>|</span>
 
-                <a class="nav" href="myitem.html">my item</a>
+                <a class="nav" href="/my-item">my item</a>
                 <span>|</span>
 
-                <a class="nav" href="match.html">match</a>
+                <a class="nav" href="/match">match</a>
+                <span>|</span>
+                <a class="nav" href="/wait">wait</a>
             </div>
 
             <!-- Admin Navbar -->
             <div id="adminNav" hidden>
-                <a class="nav" href="admin-management.html">
+                <a class="nav" href="/admin-management">
                     Management
                 </a>
             </div>
         </nav>
 
-        <a class="profile" href="profile.html" id="profileLink">
+        <a class="profile" href="/profile" id="profileLink">
             <svg class="profile-icon" viewBox="0 0 24 24">
                 <circle cx="12" cy="8.6" r="3.9"></circle>
                 <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z"></path>
@@ -115,54 +118,55 @@
                 <button class="submit" type="submit">Search</button>
             </div>
         </form>
+        <p class="search-status" id="search_status"></p>
     </main>
-    <section class="show" id="search_content">
+    <section class="show" id="search_results">
         <div class="item">
             <img alt="Book or profile image" src="../pic" />
             <p class="itemname">name</p>
             <p class="info">info</p>
-            <a href="detailitem.html">detail</a>
+            <a href="/detail-item">detail</a>
         </div>
         <div class="item">
             <img alt="Book or profile image" src="../pic" />
             <p class="itemname">name</p>
             <p class="info">info</p>
-            <a href="detailitem.html">detail</a>
+            <a href="/detail-item">detail</a>
         </div>
         <div class="item">
             <img alt="Book or profile image" src="../pic" />
             <p class="itemname">name</p>
             <p class="info">info</p>
-            <a href="detailitem.html">detail</a>
+            <a href="/detail-item">detail</a>
         </div>
         <div class="item">
             <img alt="Book or profile image" src="../pic" />
             <p class="itemname">name</p>
             <p class="info">info</p>
-            <a href="detailitem.html">detail</a>
+            <a href="/detail-item">detail</a>
         </div>
         <div class="item">
             <img alt="Book or profile image" src="../pic" />
             <p class="itemname">name</p>
             <p class="info">info</p>
-            <a href="detailitem.html">detail</a>
+            <a href="/detail-item">detail</a>
         </div>
         <div class="item">
             <img alt="Book or profile image" src="../pic" />
             <p class="itemname">name</p>
             <p class="info">info</p>
-            <a href="detailitem.html">detail</a>
+            <a href="/detail-item">detail</a>
         </div>
         <div class="item">
             <img alt="Book or profile image" src="../pic" />
             <p class="itemname">name</p>
             <p class="info">info</p>
-            <a href="detailitem.html">detail</a>
+            <a href="/detail-item">detail</a>
         </div>
     </section>
     <footer>
         <div>
-            <a href="team.html">
+            <a href="/team">
                 <p class="team">about us</p>
             </a>
         </div>

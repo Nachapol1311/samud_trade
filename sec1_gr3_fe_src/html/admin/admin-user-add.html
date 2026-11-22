@@ -11,19 +11,20 @@
 </head>
 
 <body class="page-admin-user-add">
+    <!-- ส่วนหัวหน้าของผู้ดูแลระบบ: โลโก้ลิงก์กลับหน้า user-manage, nav ไปหน้า Product management -->
     <header>
-        <a href="UserManage.html">
+        <a href="/user-manage">
             <div>samud trade</div>
         </a>
 
         <nav>
         
         <div>
-            <a class="nav" href="ProductManage.html">Product management</a>
+            <a class="nav" href="/product-manage">Product management</a>
         </div>
         </nav>
 
-        <a class="profile" href="login.html">
+        <a class="profile" href="/login">
             <svg class="profile-icon" viewbox="0 0 24 24">
                 <circle cx="12" cy="8.6" r="3.9"></circle>
                 <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z"></path>
@@ -31,10 +32,11 @@
         </a>
     </header>
     
+    <!-- ฟอร์มเพิ่มบัญชีผู้ใช้ใหม่: adduser.js ตรวจว่ารหัสผ่านกับ Confirm Password ตรงกัน แล้วส่งข้อมูลไป POST /accounts -->
     <main class="admin-page" id="admin_user_add_content">
         <section class="admin-box">
             <h2>Add user</h2>
-            <form action="#" class="add-user-form" id="addUserForm" method="post">
+            <form class="add-user-form" id="addUserForm" method="post">
                 <div class="field-row">
                     <label for="Role">Role</label>
                     <select id="admin_user_add_role" name="role">
@@ -55,6 +57,10 @@
                     <input id="username" name="username" placeholder="username" required="" type="text" />
                 </div>
                 <div class="field-row">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" placeholder="email@example.com" required type="email" />
+                </div>
+                <div class="field-row">
                     <label for="password">Password</label>
                     <input id="password" name="password" placeholder="password" required="" type="password" />
                 </div>
@@ -64,7 +70,7 @@
                         type="password" />
                 </div>
                 <div class="form-buttons">
-                    <a class="cancel-btn" href="UserManage.html">
+                    <a class="cancel-btn" href="/user-manage">
                         Cancel
                     </a>
                     <button class="save-btn" type="submit">
@@ -75,9 +81,10 @@
         </section>
     </main>
 
+    <!-- ส่วนท้ายหน้า (footer): ลิงก์ไปหน้า About us และข้อความลิขสิทธิ์ -->
     <footer>
         <div>
-            <a href="team.html">
+            <a href="/team">
                 <p class="team">about us</p>
             </a>
         </div>
@@ -85,6 +92,9 @@
             <p>© 2026 Samud Trade. All rights reserved.</p>
         </div>
     </footer>
+    <!-- สคริปต์: api.js = เรียก web service, adduser.js = ส่งฟอร์มเพิ่มบัญชี -->
+    <script src="../js/api.js" defer></script>
+    <script src="../js/adduser.js" defer></script>
 </body>
 
 </html>

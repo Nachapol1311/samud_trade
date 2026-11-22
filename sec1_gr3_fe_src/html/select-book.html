@@ -10,24 +10,27 @@
 </head>
 
 <body class="page-select_book">
+  <!-- ส่วนหัวหน้า (header): โลโก้ลิงก์กลับหน้าแรก, แถบนำทาง (nav) และไอคอนโปรไฟล์ลิงก์ไปหน้า login -->
   <header>
-    <a href="home.html">
+    <a href="/home">
       <div>samud trade</div>
     </a>
 
     <nav>
       <div>
-        <a class="nav" href="search.html">⌕ search</a>
+        <a class="nav" href="/search">⌕ search</a>
         <span>|</span>
-        <a class="nav" href="trade.html">trade</a>
+        <a class="nav" href="/trade">trade</a>
         <span>|</span>
-        <a class="nav" href="myitem.html">my item</a>
+        <a class="nav" href="/my-item">my item</a>
         <span>|</span>
-        <a class="nav" href="match.html">match</a>
+        <a class="nav" href="/match">match</a>
+                <span>|</span>
+                <a class="nav" href="/wait">wait</a>
       </div>
     </nav>
 
-    <a class="profile" href="login.html">
+    <a class="profile" href="/login">
       <svg class="profile-icon" viewbox="0 0 24 24">
         <circle cx="12" cy="8.6" r="3.9"></circle>
         <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z"></path>
@@ -35,6 +38,8 @@
     </a>
   </header>
 
+  <!-- หน้าเลือกหนังสือเพื่อแลก: เลือกหนังสือของเรา (dropdown) ฝั่งซ้าย เทียบกับหนังสือที่สนใจ (?want=id) ฝั่งขวา -->
+  <!-- select-book.js โหลดข้อมูลจาก GET /books/:id และ GET /books/mine เมื่อกด Trade จะส่ง POST /trades -->
   <main class="trade-page" id="select_book_content">
     <section aria-labelledby="trade-heading" class="trade-panel">
       <h1 id="trade-heading">Trade</h1>
@@ -61,15 +66,17 @@
       <p class="status" id="status" role="status"></p>
     </section>
   </main>
+  <!-- หน้าต่างยืนยันก่อนส่งคำขอแลกหนังสือ (กด Confirm เพื่อส่งจริง) -->
   <dialog id="confirm-dialog">
     <h2>Confirm trade</h2>
     <p id="confirm-text"></p>
     <div class="trade-actions"><button class="cancel-btn" id="close-dialog" type="button">Cancel</button><button
         class="trade-btn" id="confirm-trade" type="button">Confirm</button></div>
   </dialog>
+  <!-- ส่วนท้ายหน้า (footer): ลิงก์ไปหน้า About us และข้อความลิขสิทธิ์ -->
   <footer>
     <div>
-      <a href="team.html">
+      <a href="/team">
         <p class="team">about us</p>
       </a>
     </div>
@@ -77,6 +84,8 @@
       <p>© 2026 Samud Trade. All rights reserved.</p>
     </div>
   </footer>
+  <!-- สคริปต์: api.js = เรียก web service, select-book.js = ควบคุมการเลือกหนังสือและส่งคำขอแลก -->
+  <script defer="" src="../js/api.js"></script>
   <script defer="" src="../js/select-book.js"></script>
 </body>
 

@@ -10,18 +10,19 @@
 </head>
 
 <body class="page-home">
+    <!-- ส่วนหัวหน้าของผู้ดูแลระบบ: โลโก้ลิงก์กลับ admin-home, nav ไปหน้า management และไอคอนโปรไฟล์ลิงก์ไป admin-profile -->
     <header>
-        <a href="admin-home.html">
+        <a href="/admin-home">
             <div>samud trade</div>
         </a>
 
         <nav>
             <div>
-                <a class="nav" href="admin-management.html">management</a>
+                <a class="nav" href="/admin-management">management</a>
             </div>
         </nav>
 
-        <a class="profile" href="admin-profile.html">
+        <a class="profile" href="/admin-profile">
             <svg class="profile-icon" viewbox="0 0 24 24">
                 <circle cx="12" cy="8.6" r="3.9"></circle>
                 <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z"></path>
@@ -29,6 +30,7 @@
         </a>
     </header>
 
+    <!-- ส่วนแนะนำธุรกิจ: อธิบายเว็บ Samud Trade พร้อมรูปภาพประกอบ (เนื้อหาเดียวกับหน้า home) -->
     <section class="about">
         <div class="about-text">
             <h2>About Samud Trade</h2>
@@ -49,18 +51,20 @@
         </div>
     </section>
 
+    <!-- รายการหนังสือล่าสุด: ใช้ home.js ร่วมกับหน้า home เรียก GET /books?limit=12 แล้วสร้างการ์ดหนังสือ -->
     <main class="show" id="home_content">
         <div class="item">
             <img alt="Book or profile image" src="../pic" />
             <p class="itemname">name</p>
             <p class="info">info</p>
-            <a href="detailitem.html">detail</a>
+            <a href="/detail-item">detail</a>
         </div>
     </main>
 
+    <!-- ส่วนท้ายหน้า (footer): ลิงก์ไปหน้า About us และข้อความลิขสิทธิ์ -->
     <footer>
         <div>
-            <a href="team.html">
+            <a href="/team">
                 <p class="team">about us</p>
             </a>
         </div>
@@ -68,6 +72,9 @@
             <p>© 2026 Samud Trade. All rights reserved.</p>
         </div>
     </footer>
+    <!-- สคริปต์: api.js = เรียก web service, home.js = โหลดรายการหนังสือ -->
+    <script src="../js/api.js" defer></script>
+    <script src="../js/home.js" defer></script>
 </body>
 
 </html>

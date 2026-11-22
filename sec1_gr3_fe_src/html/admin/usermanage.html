@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Samud Trade | Usermanage</title>
+    <link href="../css/bar.css" rel="stylesheet" />
+    <link href="../css/UserManage.css" rel="stylesheet" />
+</head>
+
+<body class="page-usermanage">
+    <!-- ส่วนหัวหน้าของผู้ดูแลระบบ: โลโก้ลิงก์ไป admin-home, nav ไปหน้า Product management และไอคอนโปรไฟล์ลิงก์ไป admin-profile -->
+    <header>
+        <a href="/admin-home">
+            <div>samud trade</div>
+        </a>
+
+        <nav>
+            <div>
+                <a class="nav" href="/product-manage">
+                    Product management
+                </a>
+            </div>
+        </nav>
+
+        <a class="profile" href="/admin-profile">
+            <svg class="profile-icon" viewbox="0 0 24 24">
+                <circle cx="12" cy="8.6" r="3.9"></circle>
+                <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z"></path>
+            </svg>
+        </a>
+    </header>
+
+    <!-- เนื้อหาหลัก: หน้าจัดการบัญชีผู้ใช้ (User management) สำหรับผู้ดูแลระบบ ได้แก่ ค้นหา / เพิ่ม / แก้ไข / ลบ -->
+    <main class="admin-page" id="UserManage_content">
+        <section class="admin-box">
+            <div class="admin-header">
+                <h2>│User Management</h2>
+                <a class="add-user-btn" href="/admin-user-add">
+                    Add user
+                </a>
+            </div>
+
+            <!-- ฟอร์มค้นหาบัญชี: usermanage.js ส่งเกณฑ์ไป GET /accounts?keyword=...&role=... (ไม่เลือกเกณฑ์ = แสดงทั้งหมด) -->
+            <section class="user-search">
+                <label>Search</label>
+
+                <form id="userSearchForm">
+                    <!-- เกณฑ์ที่ 1: role / เกณฑ์ที่ 2: คำค้น (username, ชื่อ, นามสกุล, อีเมล) -->
+                    <select id="userRoleFilter">
+                        <option value="">All roles</option>
+                        <option value="admin">admin</option>
+                        <option value="user">user</option>
+                    </select>
+                    <input id="userSearchInput" type="text" placeholder="username / name / email">
+                    <button type="submit">⌕</button>
+                </form>
+            </section>
+
+            <!-- ตารางผลลัพธ์: usermanage.js เติมแถวลงใน tbody พร้อมปุ่ม Edit และ Remove (Remove เรียก DELETE /accounts/:id) -->
+            <table class="user-table">
+                <thead>
+                    <tr>
+                        <th class="id-column">Role</th>
+                        <th class="username-column">Username</th>
+                        <th class="name-column">FirstName - LastName</th>
+                        <th class="manage-column">Manage</th>
+                    </tr>
+                </thead>
+
+                <tbody id="userTableBody"></tbody>
+            </table>
+        </section>
+    </main>
+    <!-- สคริปต์: api.js = เรียก web service, usermanage.js = ค้นหา / ลบบัญชีผู้ใช้ -->
+    <script src="../js/api.js" defer></script>
+    <script src="../js/usermanage.js" defer></script>
+</body>
+
+</html>

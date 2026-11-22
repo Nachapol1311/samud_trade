@@ -13,18 +13,19 @@
 
 <body class="page-productmanage">
 
+    <!-- ส่วนหัวหน้าของผู้ดูแลระบบ: โลโก้ลิงก์ไป admin-home, nav ไปหน้า User management และไอคอนโปรไฟล์ลิงก์ไป admin-profile -->
     <header>
-        <a href="admin-home.html">
+        <a href="/admin-home">
             <div>samud trade</div>
         </a>
 
         <nav>
             <div>
-                <a class="nav" href="UserManage.html">User management</a>
+                <a class="nav" href="/user-manage">User management</a>
             </div>
         </nav>
 
-        <a class="profile" href="admin-profile.html">
+        <a class="profile" href="/admin-profile">
             <svg class="profile-icon" viewBox="0 0 24 24">
                 <circle cx="12" cy="8.6" r="3.9"></circle>
                 <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z"></path>
@@ -33,6 +34,7 @@
     </header>
 
 
+    <!-- เนื้อหาหลัก: หน้าจัดการหนังสือ (Product management) สำหรับผู้ดูแลระบบ ได้แก่ ค้นหา / เพิ่ม / แก้ไข / ลบ -->
     <main class="admin-page" id="ProductManage_content">
 
         <section class="admin-box">
@@ -40,21 +42,23 @@
             <div class="admin-header">
                 <h2>│Product Management</h2>
 
-                <a class="add-user-btn" href="admin-product-add.html">
+                <a class="add-user-btn" href="/admin-product-add">
                     Add product
                 </a>
             </div>
 
 
+            <!-- ฟอร์มค้นหาหนังสือ: productmanage.js ส่งคำค้นไป GET /books?name=... (ไม่ใส่คำค้น = แสดงหนังสือทั้งหมด) -->
             <section class="product-search">
                 <label>Search product</label>
-                <form method="get">
-                    <input type="text" placeholder="book name">
+                <form id="productSearchForm">
+                    <input id="productSearchInput" type="text" placeholder="book name / keyword">
                     <button type="submit">⌕</button>
                 </form>
             </section>
 
 
+            <!-- ตารางผลลัพธ์: productmanage.js เติมแถวลงใน tbody พร้อมปุ่ม Edit และ Remove (Remove เรียก DELETE /books/:id) -->
             <table class="user-table">
 
                 <thead>
@@ -65,26 +69,13 @@
                     </tr>
                 </thead>
 
-                <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-
-                        <td>
-                            <div class="manage-buttons">
-                                <a class="edit-btn" href="edititem.html">
-                                    Edit
-                                </a>
-                                <button class="remove-btn" type="button">
-                                    Remove
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
+                <tbody id="productTableBody"></tbody>
             </table>
         </section>
     </main>
+    <!-- สคริปต์: api.js = เรียก web service, productmanage.js = ค้นหา / ลบหนังสือ -->
+    <script src="../js/api.js" defer></script>
+    <script src="../js/productmanage.js" defer></script>
 </body>
 
 </html>

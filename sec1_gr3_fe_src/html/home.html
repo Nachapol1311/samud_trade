@@ -10,24 +10,27 @@
 </head>
 
 <body class="page-home">
+    <!-- ส่วนหัวหน้า (header): โลโก้ลิงก์กลับหน้าแรก, แถบนำทาง (nav) และไอคอนโปรไฟล์ลิงก์ไปหน้า login -->
     <header>
-        <a href="home.html">
+        <a href="/home">
             <div>samud trade</div>
         </a>
 
         <nav>
             <div>
-                <a class="nav" href="search.html">⌕ search</a>
+                <a class="nav" href="/search">⌕ search</a>
                 <span>|</span>
-                <a class="nav" href="trade.html">trade</a>
+                <a class="nav" href="/trade">trade</a>
                 <span>|</span>
-                <a class="nav" href="myitem.html">my item</a>
+                <a class="nav" href="/my-item">my item</a>
                 <span>|</span>
-                <a class="nav" href="match.html">match</a>
+                <a class="nav" href="/match">match</a>
+                <span>|</span>
+                <a class="nav" href="/wait">wait</a>
             </div>
         </nav>
 
-        <a class="profile" href="login.html">
+        <a class="profile" href="/login">
             <svg class="profile-icon" viewbox="0 0 24 24">
                 <circle cx="12" cy="8.6" r="3.9"></circle>
                 <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z"></path>
@@ -35,6 +38,7 @@
         </a>
     </header>
 
+    <!-- ส่วนแนะนำธุรกิจ: อธิบายว่า Samud Trade คือแพลตฟอร์มแลกเปลี่ยนหนังสือมือสอง พร้อมรูปภาพประกอบ -->
     <section class="about">
         <div class="about-text">
             <h2>About Samud Trade</h2>
@@ -51,22 +55,25 @@
         </div>
 
         <div class="about-image">
-            <img src="../pic/about.jpg" alt="Samud Trade book exchange">
+            <img src="../pic/nachapol.jpg" alt="Samud Trade book exchange">
         </div>
     </section>
 
+    <!-- รายการหนังสือล่าสุด: home.js เรียก GET /books?limit=12 จาก web service แล้วสร้างการ์ดหนังสือมาแสดงในส่วนนี้ -->
+    <!-- (การ์ดข้างล่างเป็นโครงตัวอย่าง รูปในการ์ดมีลิงก์ 'detail' ไปหน้ารายละเอียดหนังสือ) -->
     <main class="show" id="home_content">
         <div class="item">
             <img alt="Book or profile image" src="../pic" />
             <p class="itemname">name</p>
             <p class="info">info</p>
-            <a href="detailitem.html">detail</a>
+            <a href="/detail-item">detail</a>
         </div>
     </main>
 
+    <!-- ส่วนท้ายหน้า (footer): ลิงก์ไปหน้า About us และข้อความลิขสิทธิ์ -->
     <footer>
         <div>
-            <a href="team.html">
+            <a href="/team">
                 <p class="team">about us</p>
             </a>
         </div>
@@ -74,6 +81,9 @@
             <p>© 2026 Samud Trade. All rights reserved.</p>
         </div>
     </footer>
+    <!-- สคริปต์: api.js = ฟังก์ชันกลางสำหรับเรียก web service, home.js = โหลดรายการหนังสือของหน้านี้ -->
+    <script src="../js/api.js" defer></script>
+    <script src="../js/home.js" defer></script>
 </body>
 
 </html>

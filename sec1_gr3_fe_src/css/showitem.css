@@ -242,3 +242,45 @@
         width: 100%;
     }
 }
+
+/* ปุ่ม edit / remove ในหน้า my item (ใช้ class เพราะมีหลายการ์ด) */
+/* จัดให้ปุ่ม edit (ลิงก์) และ remove (ปุ่ม) อยู่ระดับเดียวกัน:
+   ลิงก์ที่ใช้ overflow: hidden กับ button มีเส้นฐาน (baseline) ต่างกัน จึงต้องกำหนด vertical-align เหมือนกัน */
+.item a.editbtn,
+.item .removebtn {
+    vertical-align: middle;
+    box-sizing: border-box;
+    height: 22px;
+    line-height: 14px;
+}
+
+.item a.editbtn {
+    background-color: #d8d2d5;
+    color: #601d49;
+}
+
+.item a.editbtn:hover {
+    background-color: #ccc;
+    color: #601d49;
+}
+
+.item .removebtn {
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 11px;
+    border-radius: 12px;
+    padding: 4px 10px;
+    background-color: #bd5579;
+    color: #ffebb8;
+}
+
+.item .removebtn:hover {
+    background-color: #601d49;
+}
+
+.item .removebtn:disabled {
+    opacity: 0.5;
+    cursor: default;
+}

@@ -131,6 +131,14 @@ nav span {
     fill: #ffebb8;
 }
 
+/* รูปโปรไฟล์จริงของบัญชีที่ login อยู่ (แทนไอคอนคนใน header) */
+.profile-photo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 footer {
     background-color: #601d49;
     position: relative;

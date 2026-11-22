@@ -10,11 +10,19 @@
 </head>
 
 <body class="page-login">
+    <!-- ส่วนหัวหน้า (header): โลโก้ลิงก์กลับหน้าแรก (Home Page) และแถบนำทาง (nav) -->
     <header>
-        <a href="home.html">
+        <a href="/home">
             <div>samud trade</div>
         </a>
-        
+
+        <!-- แถบนำทาง (Navigation bar): ยังไม่ได้ login จึงแสดงเฉพาะ search เพราะเมนูอื่นจะพากลับมาหน้านี้อยู่ดี -->
+        <nav>
+            <div>
+                <a class="nav" href="/search">⌕ search</a>
+            </div>
+        </nav>
+
         <div class="profile">
             <svg class="profile-icon" viewbox="0 0 24 24">
                 <circle cx="12" cy="8.6" r="3.9"></circle>
@@ -23,9 +31,11 @@
         </div>
     </header>
     <main id="login_content">
+        <!-- ฟอร์ม Log-in: login.js ส่ง username / password ไป POST /auth/login -->
+        <!-- สำเร็จแล้ว admin ไปหน้า /admin-home ส่วน user ไปหน้า /home -->
         <section class="card">
             <h2>Login for user</h2>
-            <form action="/user-login" class="form" id="login_form" method="post">
+            <form class="form" id="login_form" method="post">
                 <label for="username">Username:</label>
                 <input autocomplete="username" id="username" name="username" required="" type="text" />
                 <label for="password">Password:</label>
@@ -35,6 +45,9 @@
             </form>
         </section>
     </main>
+    <!-- สคริปต์: api.js = เรียก web service, login.js = ส่งฟอร์ม login และเปลี่ยนหน้าหลังเข้าสู่ระบบ -->
+    <script src="../js/api.js" defer></script>
+    <script src="../js/login.js" defer></script>
 </body>
 
 </html>
