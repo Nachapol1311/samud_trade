@@ -144,6 +144,7 @@ footer {
     position: relative;
 
     display: flex;
+    justify-content: space-between;
     align-items: center;
 
     width: 100%;
@@ -151,9 +152,9 @@ footer {
 }
 
 
-footer div:first-child {
+/* footer div:first-child {
     margin-right: auto;
-}
+} */
 
 /* copyright อยู่กลาง footer */
 footer div:last-child {
