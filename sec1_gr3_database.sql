@@ -103,16 +103,16 @@ INSERT INTO user_Account (acc_id, acc_role, acc_username, acc_passwd) VALUES
   (10, 'user', 'job', SHA2('User@1234', 256));
 
 INSERT INTO information_Account (acc_email, acc_name, acc_surname, acc_picture_link, acc_id) VALUES
-  ('aomsinn@samudtrade.com', 'polly', 'pin', '/uploads/acc01.jpg', 01),
-  ('dada@samudtrade.com', 'patta', 'pong', '/uploads/acc02.jpg', 02),
-  ('kim@gmail.com', 'nutty', 'kong', '/uploads/acc03.jpg', 03),
-  ('chai@gmail.com', 'chaiyaaa', 'naja', '/uploads/acc04.jpg', 04),
-  ('mai@gmail.com', 'suksog', 'yunee', '/uploads/acc05.jpg', 05),
-  ('north@hotmail.com', 'Napat', 'Phanit', '/uploads/acc02.jpg', 06),
-  ('fang@gmail.com', 'monny', 'Sirikul', '/uploads/acc02.jpg', 07),
-  ('bebe@gmail.com', 'bebabe', 'Kaewmanee', '/uploads/acc02.jpg', 08),
-  ('gun@gmail.com', 'gunt', 'Thongdee', '/uploads/acc09.jpg', 09),
-  ('job@gmail.com', 'tana', 'Lertwit', '/uploads/acc02.jpg', 10);
+  ('aomsinn@samudtrade.com', 'polly', 'pin', '/account/acc01.jpg', 01),
+  ('dada@samudtrade.com', 'patta', 'pong', '/account/acc02.jpg', 02),
+  ('kim@gmail.com', 'nutty', 'kong', '/account/acc03.jpg', 03),
+  ('chai@gmail.com', 'chaiyaaa', 'naja', '/account/acc04.jpg', 04),
+  ('mai@gmail.com', 'suksog', 'yunee', '/account/acc05.jpg', 05),
+  ('north@hotmail.com', 'Napat', 'Phanit', '/account/acc06.jpg', 06),
+  ('fang@gmail.com', 'monny', 'Sirikul', '/account/acc07.jpg', 07),
+  ('bebe@gmail.com', 'bebabe', 'Kaewmanee', '/account/acc08.jpg', 08),
+  ('gun@gmail.com', 'gunt', 'Thongdee', '/account/acc09.jpg', 09),
+  ('job@gmail.com', 'tana', 'Lertwit', '/account/acc10.jpg', 10);
 
 -- ---------- ข้อมูลจำลอง: book (5 เล่ม x 10 account = 50) ----------
 INSERT INTO book (book_id, book_name, book_cat, book_price, book_detail, book_condition, book_owner, book_lick_pic, acc_id) VALUES
