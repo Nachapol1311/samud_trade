@@ -49,7 +49,27 @@ router.get("/", asyncHandler(async (req, res) => {
   let score = "0";
 
   const keyword = String(req.query.name || "").trim();
-  if (keyword) {
+  
+// ทำให้ search ชื่อหนังสือ กับ id
+  if (keyword && req.query.scope === "manage") {
+    // โหมดหน้า product-manage: ค้นเฉพาะชื่อหนังสือ และ product id
+    const tokens = keyword.split(/\s+/).slice(0, 8);
+    const nameCond = tokens.map(() => "b.book_name LIKE ?").join(" AND "); // ทุกคำต้องอยู่ในชื่อ
+    const nameParams = tokens.map((t) => "%" + escapeLike(t) + "%");
+
+    if (/^\d{1,9}$/.test(keyword)) {
+      // พิมพ์ตัวเลขล้วน: ตรงกับ id เป๊ะ หรือชื่อมีเลขนั้น
+      where.push(`(b.book_id = ? OR (${nameCond}))`);
+      whereParams.push(Number(keyword), ...nameParams);
+      score = "(b.book_id = ?)";           // ให้เล่มที่ id ตรงขึ้นก่อน
+      scoreParams.push(Number(keyword));
+    } else {
+      where.push(`(${nameCond})`);
+      whereParams.push(...nameParams);
+    }
+  }
+
+  else if (keyword) {
     const tokens = keyword.split(/\s+/).slice(0, 8);
     const cond = [];
     const scoreParts = [];
