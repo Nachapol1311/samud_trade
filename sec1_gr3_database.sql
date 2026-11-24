@@ -146,11 +146,11 @@ INSERT INTO book (book_id, book_name, book_cat, book_price, book_detail, book_co
   (24, 'กลิ่นแดดไอทะเลและลาดไหล่สีคาราเมล', 'novel', 200, 'สภาพดีมาก ไม่มีรอยขีดข่วน', 5, 'mai', '/uploads/b24.jpg', 05),
   (25, 'Her เธอคนที่ 1440', 'novel', 185, 'สภาพดีมาก', 5, 'mai', '/uploads/b25.jpg', 05),
 
-  (26, 'Murder on Orient', 'mystery', 160, 'Agatha Christie. Paperback with clean pages.', 4, 'north', '/uploads/b26.jpg', 06),
-  (27, 'Sherlock Holmes', 'mystery', 240, 'Complete short stories, thick edition. Spine worn.', 3, 'north', '/uploads/b27.jpg', 06),
-  (28, 'Gone Girl', 'thriller', 190, 'Gillian Flynn. Read once.', 4, 'north', '/uploads/b28.jpg', 06),
-  (29, 'The Da Vinci Code', 'thriller', 180, 'Dan Brown. Cover peeling slightly.', 3, 'north', '/uploads/b29.jpg', 06),
-  (30, 'The Silent Patient', 'thriller', 210, 'Alex Michaelides. Like new.', 5, 'north', '/uploads/b30.jpg', 06),
+  (26, 'five feet apsrt', 'novel', 265, 'no damage', 5, 'north', '/uploads/b26.jpg', 06),
+  (27, 'A Christmas Carol', 'novel', 250, 'มีรอยนิดหน่อย', 4, 'north', '/uploads/b27.jpg', 06),
+  (28, 'not the best but still good', 'novel', 319, 'งอนิดหน่อย', 4, 'north', '/uploads/b28.jpg', 06),
+  (29, 'เป็นนางร้ายมันเสี่ยงเลยลองเล้ยงลาสต์บอส 2', 'manga', 165, 'สภาพดี', 5, 'north', '/uploads/b29.jpg', 06),
+  (30, 'ปีศาจตัวนั้นคือฉันเอง', 'other', 379, 'สภาพดี', 5, 'north', '/uploads/b30.jpg', 06),
 
   (31, 'Salt Fat Acid Heat', 'cooking', 550, 'Samin Nosrat. Hardcover, no kitchen stains.', 5, 'fang', '/uploads/b31.jpg', 07),
   (32, 'Thai Street Food', 'cooking', 420, 'David Thompson. Colour photos, minor shelf wear.', 4, 'fang', '/uploads/b32.jpg', 07),
