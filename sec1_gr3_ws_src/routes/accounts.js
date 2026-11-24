@@ -97,7 +97,16 @@ router.get("/", asyncHandler(async (req, res) => {
   }
 
   const where = conditions.length ? "WHERE " + conditions.join(" AND ") : "";
-  const [rows] = await db.query(`SELECT ${ACC_COLS} ${ACC_FROM} ${where} ORDER BY u.acc_id`, params);
+
+  // เรียง: ตรงเป๊ะ -> ขึ้นต้นด้วยคำค้น -> มีคำค้นอยู่ในชื่อ
+  let orderBy = "ORDER BY u.acc_id";
+  const orderParams = [];
+  if (username) {
+    orderBy = "ORDER BY (u.acc_username = ?) DESC, (u.acc_username LIKE ?) DESC, u.acc_id";
+    orderParams.push(username, escapeLike(username) + "%");
+  }
+
+  const [rows] = await db.query(`SELECT ${ACC_COLS} ${ACC_FROM} ${where} ${orderBy}`, [...params, ...orderParams]);
   res.json(rows);
 }));
 

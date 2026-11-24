@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     async function load() {
         try {
-            const books = await api("/books?limit=500&name=" + encodeURIComponent(input.value.trim()));
+            const books = await api("/books?limit=500&scope=manage&name=" + encodeURIComponent(input.value.trim()));
             if (!books.length) {
                 const td = el("td", null, "No books found.");
                 td.colSpan = 3;
