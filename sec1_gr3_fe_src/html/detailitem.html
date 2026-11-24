@@ -5,6 +5,11 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Samud Trade | Detailitem</title>
+     <!--
+        api.js ใช้จัดการการเรียก API เพื่อสื่อสารกับ Backend
+        detailitem.js ใช้ควบคุมการแสดงข้อมูลหนังสือและปุ่มต่าง ๆ
+        defer ทำให้ Script ทำงานหลัง HTML ถูกอ่านเสร็จ
+    -->
     <script src="../js/api.js" defer></script>
     <script src="../js/detailitem.js" defer></script>
     <link href="../css/bar.css" rel="stylesheet" />
@@ -58,6 +63,11 @@
         <div class="detail">
             <div>
                 <p>Book:</p>
+
+                <!--
+                    id="d_name" ใช้แสดงชื่อหนังสือ
+                    xxx เป็นข้อความเริ่มต้น
+                -->
                 <p id="d_name">xxx</p>
             </div>
             <div>

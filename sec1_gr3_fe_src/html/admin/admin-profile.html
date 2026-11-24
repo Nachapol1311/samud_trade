@@ -25,6 +25,7 @@
         </nav>
 
         <a class="profile" href="/admin-profile">
+            <!-- SVG ใช้สร้างไอคอนรูปคน -->
             <svg class="profile-icon" viewBox="0 0 24 24">
                 <circle cx="12" cy="8.6" r="3.9"></circle>
                 <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z"></path>
@@ -34,7 +35,7 @@
 
     <!-- Main -->
     <main id="profile_content">
-
+        <!-- กรอบสำหรับแสดงข้อมูล Profile ทั้งหมด -->
         <section class="profile-card">
 
             <!-- Profile Heading -->
@@ -48,6 +49,12 @@
 
 
                 <div class="profile-avatar">
+                    
+                    <!--
+                        แสดงรูปโปรไฟล์
+                        id="profileImage" ใช้ให้ JavaScript เข้าถึงรูป
+                        hidden คือซ่อนรูปไว้ก่อน
+                    -->
 
                     <div class="avatar" id="avatar">
                         <img id="profileImage" alt="Profile Image" hidden>
