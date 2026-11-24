@@ -152,29 +152,29 @@ INSERT INTO book (book_id, book_name, book_cat, book_price, book_detail, book_co
   (29, 'เป็นนางร้ายมันเสี่ยงเลยลองเล้ยงลาสต์บอส 2', 'manga', 165, 'สภาพดี', 5, 'north', '/uploads/b29.jpg', 06),
   (30, 'ปีศาจตัวนั้นคือฉันเอง', 'other', 379, 'สภาพดี', 5, 'north', '/uploads/b30.jpg', 06),
 
-  (31, 'Salt Fat Acid Heat', 'cooking', 550, 'Samin Nosrat. Hardcover, no kitchen stains.', 5, 'fang', '/uploads/b31.jpg', 07),
-  (32, 'Thai Street Food', 'cooking', 420, 'David Thompson. Colour photos, minor shelf wear.', 4, 'fang', '/uploads/b32.jpg', 07),
-  (33, 'Bento Box Basics', 'cooking', 260, 'Japanese lunch recipes. Some pages dog-eared.', 3, 'fang', '/uploads/b33.jpg', 07),
-  (34, 'Mindful Eating', 'health', 230, 'Guide to healthy eating habits. Clean copy.', 4, 'fang', '/uploads/b34.jpg', 07),
-  (35, 'Why We Sleep', 'health', 290, 'Matthew Walker. Brand new condition.', 5, 'fang', '/uploads/b35.jpg', 07),
+  (31, 'ขอใช้ชีวิตที่เหลือเพื่อตัวเองนะ', 'other', 329, 'ยังซีนอยู่ไม่มีรอยแกะ', 5, 'fang', '/uploads/b31.jpg', 07),
+  (32, 'โอบกอดความไม่สมบูรณ์แบบของเธอ', 'other', 279, 'ปกงอนนิดหน่อบย', 4, 'fang', '/uploads/b32.jpg', 07),
+  (33, 'ยินดีต้อนรับและขอบคุณที่กลับมา', 'other', 359, 'สภาพใช้งาน', 3, 'fang', '/uploads/b33.jpg', 07),
+  (34, 'Ghostly Brews', 'other', 390, 'อ่านสนุกมีรอยเขียนเล็กน้อย', 4, 'fang', '/uploads/b34.jpg', 07),
+  (35, 'สำเร็จนอกกรอบ', 'self-help', 250, 'มีลายเซ็น', 5, 'fang', '/uploads/b35.jpg', 07),
 
-  (36, 'One Piece Vol.1', 'manga', 120, 'English edition, Romance Dawn. Good condition.', 4, 'bebe', '/uploads/b36.jpg', 08),
-  (37, 'One Piece Vol.2', 'manga', 120, 'English edition. Small crease on cover.', 4, 'bebe', '/uploads/b37.jpg', 08),
-  (38, 'Naruto Vol.1', 'manga', 110, 'English edition. Pages slightly yellowed.', 3, 'bebe', '/uploads/b38.jpg', 08),
-  (39, 'Attack on Titan 1', 'manga', 130, 'English edition. Practically new.', 5, 'bebe', '/uploads/b39.jpg', 08),
-  (40, 'Slam Dunk Vol.1', 'comic', 150, 'Thai edition. Cover has light scratches.', 3, 'bebe', '/uploads/b40.jpg', 08),
+  (36, 'มั่งคั่งทั้งชีวิต MONEY MASTERY', 'self-help', 250, 'Good condition.', 4, 'bebe', '/uploads/b36.jpg', 08),
+  (37, 'My Return to the Walter boys', 'novel', 299, 'มีรอยพับหน้า', 4, 'bebe', '/uploads/b37.jpg', 08),
+  (38, 'ประมวลกฎหมายแพ่งและพาณิชย์ บรรพ 1 - 6', 'law', 300, 'มีรอยเขียนโน๊ต', 3, 'bebe', '/uploads/b38.jpg', 08),
+  (39, 'ร้านขายเวลา', 'novel', 200, 'good', 4, 'bebe', '/uploads/b39.jpg', 08),
+  (40, 'คลื่นเสียงข้ามเวลา', 'novel', 260, 'ขอบหนังสือยับนิดหน่อย มีที่คั่นหนังสือให้', 2, 'bebe', '/uploads/b40.jpg', 08),
 
-  (41, 'English Grammar Use', 'language', 320, 'Raymond Murphy. A few exercises filled in pencil.', 4, 'gun', '/uploads/b41.jpg', 09),
-  (42, 'TOEIC Prep 2024', 'exam-prep', 350, 'Unused, includes practice tests.', 5, 'gun', '/uploads/b42.jpg', 09),
-  (43, 'IELTS Cambridge 16', 'exam-prep', 380, 'Practice tests unused, audio code intact.', 4, 'gun', '/uploads/b43.jpg', 09),
-  (44, 'Japanese N5 Kanji', 'language', 240, 'Kanji workbook, half completed in pencil.', 3, 'gun', '/uploads/b44.jpg', 09),
-  (45, 'Korean for Beginner', 'language', 260, 'Textbook with workbook, good condition.', 4, 'gun', '/uploads/b45.jpg', 09),
+  (41, 'เพียงชั่วเวลากาแฟยังอุ่น', 'novel', 245, 'มุมหนังสือยับนิดหน่อย มีที่คั่นหนังสือให้', 3, 'gun', '/uploads/b41.jpg', 09),
+  (42, 'ตราบใดที่ฉันยังอยู่เธอจะถูกรักอยู่เสมอ', 'novel', 220, 'สภาพดีมาก', 5, 'gun', '/uploads/b42.jpg', 09),
+  (43, 'เมษาลาตะวัน', 'novel', 250, 'สีตรงมุมหนังสือถลอกนิดหน่อย', 4, 'gun', '/uploads/b43.jpg', 09),
+  (44, '52 เฮิรตซ์ คลื่นเสียงที่ไม่มีใครได้ยิน', 'novel', 265, 'มีที่คั่นหนังสือให้ภายในเล่ม มุมหนังสือยับนิดหน่อย', 4, 'gun', '/uploads/b44.jpg', 09),
+  (45, 'อย่าเป็นคนเก่งที่คุยไม่เป็น', 220, 'ขอบหนังสือยับนิดหน่อย', 4, 'gun', '/uploads/b45.jpg', 09),
 
-  (46, 'Spirited Away Art', 'art-design', 650, 'Art book, hardcover. Kept in plastic cover.', 5, 'job', '/uploads/b46.jpg', 10),
-  (47, 'Don''t Make Me Think', 'technology', 330, 'Steve Krug on web usability. Clean.', 4, 'job', '/uploads/b47.jpg', 10),
-  (48, 'The Design of Every', 'art-design', 360, 'Don Norman. Corners slightly bent.', 3, 'job', '/uploads/b48.jpg', 10),
-  (49, 'Lonely Planet Japan', 'travel', 290, 'Travel guide, 2022 edition. Some pages marked.', 3, 'job', '/uploads/b49.jpg', 10),
-  (50, 'Into the Wild', 'biography', 170, 'Jon Krakauer. Good paperback.', 4, 'job', '/uploads/b50.jpg', 10);
+  (46, 'หลักธรรมคำสอนของพระพุทธเจ้ากับประเทศไทย 4.0', 'psychology', 0, 'พระให้มา สภาพดี', 5, 'job', '/uploads/b46.jpg', 10),
+  (47, 'รักกันได้จริงด้วยบางสิ่งที่ไม่ใช่รัก', 'self-help', 389, 'สะอาด สภาพดี', 5, 'job', '/uploads/b47.jpg', 10),
+  (48, 'สร้างพอร์ตการเงินด้วยตัวคุณเอง', 'finance', 150, 'สภาพดี', 5, 'job', '/uploads/b48.jpg', 10),
+  (49, 'Four Thousand Weeks', 'self-help', 265, 'มีรอยเปื้อนที่หน้าปกหน้าและหนังนิดหน่อย', 3, 'job', '/uploads/b49.jpg', 10),
+  (50, 'mindset ใช้ความคิดเอาชนะโชคชะตา', 'psychology', 275, 'หน้าปกยับนิดหน่อย', 4, 'job', '/uploads/b50.jpg', 10);
 
 -- ---------- ข้อมูลจำลอง: คำขอแลกเปลี่ยน ----------
 -- account 3 (somchai) จะมี 2 คำขอเข้า (หน้า match) และส่งคำขอออก 2 รายการ (หน้า wait)
