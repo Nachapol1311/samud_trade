@@ -30,3 +30,16 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     });
 });
+
+// Testing Insert a new account
+// method: post
+// http://localhost:3000/accounts
+// body: raw JSON
+// {
+//   "role": "admin",
+//   "firstname": "kim",
+//   "lastname": "lnw",
+//   "username": "kimlnw",
+//   "email": "test.user@gmail.com",
+//   "password": "Admin@1234"
+// }
