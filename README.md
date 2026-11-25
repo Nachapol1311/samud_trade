@@ -8,7 +8,7 @@ UX/UI design: [Figma](https://www.figma.com/site/xTVThcl4ufSjm26Wln06Aw/samud-tr
 
 | โฟลเดอร์ / ไฟล์ | หน้าที่ | Port |
 | --- | --- | --- |
-| `sec1_gr3_fe_src/` | Front-end: หน้า HTML (`html/`, หน้าของผู้ดูแลระบบอยู่ใน `html/admin/`), CSS (`css/`), JavaScript ที่เรียก web service (`js/`), รูปภาพ (`pic/`) ส่งให้เบราว์เซอร์ผ่าน Express | **3030** |
+| `sec1_gr3_fe_src/` | Front-end: หน้า HTML (`html/`, หน้าของผู้ดูแลระบบอยู่ใน `html/admin/`), CSS (`css/`), JavaScript ที่เรียก web service (`js/`), รูปภาพ (`pic/`) ส่งให้เบราว์เซอร์ผ่าน Express | **3030** (ตั้งได้ใน `.env`) |
 | `sec1_gr3_ws_src/` | Back-end: Web service (Node.js + Express) ต่อฐานข้อมูล MySQL | **3000** |
 | `sec1_gr3_database.sql` | ฐานข้อมูล MySQL (โครงสร้างตาราง + ข้อมูลตัวอย่าง) | 3306 |
 
@@ -85,12 +85,38 @@ npm start
 ```
 cd sec1_gr3_fe_src
 npm install
+```
+
+สร้างไฟล์ `.env` ของ front-end จากไฟล์ตัวอย่าง (แยกจาก `.env` ของ web service)
+
+```
+copy .env.example .env      (Windows)
+cp .env.example .env        (Mac / Linux)
+```
+
+ไฟล์ `.env.example` ของ front-end มีค่าเดียว
+
+```dotenv
+# พอร์ตของ front-end
+PORT=3030
+```
+
+| ตัวแปร | ความหมาย | ตัวอย่าง |
+| --- | --- | --- |
+| `PORT` | port ของ front-end | `3030` |
+
+ขั้นตอนคัดลอก `.env` นี้ไม่บังคับ ถ้าไม่ทำ front-end จะใช้ port 3030 เป็นค่าเริ่มต้น
+
+จากนั้นรัน
+
+```
 npm start
 ```
 
 เปิดเบราว์เซอร์ที่ **http://localhost:3030**
 
 > ต้องเข้าผ่านพอร์ต 3030 (หรือ `127.0.0.1:3030`) เพราะ web service อนุญาต CORS เฉพาะ origin นี้
+> ถ้าเปลี่ยน `PORT` ของ front-end ต้องแก้ `FRONTEND_ORIGIN` ใน `.env` ของ web service ให้ตรงด้วย (เช่น `http://localhost:4000,http://127.0.0.1:4000`) แล้วรัน web service ใหม่
 > ถ้าเปลี่ยน port ของ web service ต้องแก้ `WS_URL` ใน `sec1_gr3_fe_src/js/api.js` ด้วย
 
 ## บัญชีสำหรับทดลองใช้
@@ -153,7 +179,7 @@ Base URL: `http://localhost:3000` (ตัวอย่างข้อมูลส
 | `/health/db` ขึ้น error | เช็ค `DB_USER` / `DB_PASSWORD` ใน `.env` และเปิด MySQL แล้วหรือยัง |
 | `Cannot find module 'express'` | ยังไม่ได้รัน `npm install` ในโฟลเดอร์นั้น |
 | หน้าเว็บขึ้นแต่ login ไม่ได้ / `Cannot connect to the web service` | web service (port 3000) ยังไม่ได้รันหรือล้ม ดูข้อความในเทอร์มินัลของ web service |
-| `EADDRINUSE` (port ถูกใช้อยู่) | ปิดโปรแกรมที่ใช้ port นั้น หรือตั้ง `PORT` ใหม่ (ถ้าเปลี่ยน port 3000 ต้องแก้ `WS_URL` ใน `api.js` ด้วย) |
+| `EADDRINUSE` (port ถูกใช้อยู่) | ปิดโปรแกรมที่ใช้ port นั้น หรือตั้ง `PORT` ใหม่ใน `.env` ของฝั่งนั้น (ถ้าเปลี่ยน port 3000 ต้องแก้ `WS_URL` ใน `api.js` ด้วย ถ้าเปลี่ยน port 3030 ต้องแก้ `FRONTEND_ORIGIN` ใน `.env` ของ web service ด้วย) |
 | รูปหนังสือ / โปรไฟล์ไม่ขึ้น | ตรวจว่ามีโฟลเดอร์ `sec1_gr3_ws_src/uploads/` และ web service รันอยู่ |
 
 ## ข้อความเปิดเผยการใช้เทคโนโลยีปัญญาประดิษฐ์
