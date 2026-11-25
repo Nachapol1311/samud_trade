@@ -284,3 +284,23 @@
     opacity: 0.5;
     cursor: default;
 }
+
+/* team */
+
+/* ระยะห่างหัวข้อ */
+.page-team .team-heading {
+    text-align: center;
+    padding-top: 35px;
+    margin-bottom: 40px;
+}
+
+/* ทำให้ Footer อยู่ล่างสุด */
+.page-team {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-team #team_content {
+    flex: 1;
+}
