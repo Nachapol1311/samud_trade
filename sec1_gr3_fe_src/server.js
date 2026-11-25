@@ -6,6 +6,7 @@
 // ============================================================
 const express = require("express");
 const path = require("path");
+require("dotenv").config(); // โหลดค่าจากไฟล์ .env (ถ้ามี) เข้า process.env
 
 const app = express();
 const PORT = process.env.PORT || 3030;
