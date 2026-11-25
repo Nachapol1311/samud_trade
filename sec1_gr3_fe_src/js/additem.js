@@ -39,14 +39,3 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 });
 
-// Testing Insert a new book
-// method: post
-// URL: http://localhost:3000/books
-// body: raw JSON
-// {
-//   "name": "testbook",
-//   "category": "novel",
-//   "price": 120,
-//   "condition": 4,
-//   "detail": "Book for Postman testing"
-// }

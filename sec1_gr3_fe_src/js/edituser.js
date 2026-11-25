@@ -48,19 +48,3 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 });
 
-// Testing Update user
-// method: put
-// http://localhost:3000/accounts/id
-// body: raw JSON
-// {
-//   "role": "admin",
-//   "firstname": "kimupdate",
-//   "lastname": "lnw",
-//   "username": "kimlnw",
-//   "email": "test.user@gmail.com",
-//   "password": "Admin@1234"
-// }
-
-// Testing Delete user
-// method: delete
-// http://localhost:3000/accounts/id
