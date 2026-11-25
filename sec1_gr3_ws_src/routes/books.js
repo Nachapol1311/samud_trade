@@ -30,17 +30,19 @@ function validateBook(body) {
 }
 
 // ---------------------------------------------------------------
-// ค้นหาหนังสือ (ไม่ต้อง login)  ค้นหาแบบไม่มีเกณฑ์ = ได้หนังสือทั้งหมด
-// keyword (name) ใช้ค้นแบบบางส่วนในชื่อ/หมวดหมู่/รายละเอียด/ชื่อเจ้าของ
-// ไม่ต้องครบทุกคำ คำไหนตรงก็แสดง และเรียงตามจำนวนคำที่ตรง
-// เกณฑ์อื่น: category, min, max (ราคา), condition (ตั้งแต่กี่ดาวขึ้นไป), limit
-// Testing 1: ค้นหาทั้งหมด
-// method: get
+// ค้นหาหนังสือ (ไม่ต้อง login)
+// Testing 1: ค้นหาหนังสือทั้งหมด
+// method: GET
 // URL: http://localhost:3000/books
-//
-// Testing 2: ค้นหาด้วยคำบางส่วน + เกณฑ์
-// method: get
-// URL: http://localhost:3000/books?name=prog harry&category=programming&min=200&max=500&condition=4
+
+// Testing 2: ค้นหาหนังสือด้วยชื่อ
+// method: GET
+// URL: http://localhost:3000/books?name=Kim
+// Params:
+//   Key: name
+//   Value: Kim
+// Expected: 200 OK
+// Result: แสดงรายการหนังสือที่ตรงกับคำค้นหา เช่น Kim Jiyoung, Born 1982 
 // ---------------------------------------------------------------
 router.get("/", asyncHandler(async (req, res) => {
   const where = [];
@@ -104,9 +106,13 @@ router.get("/", asyncHandler(async (req, res) => {
 
 // ---------------------------------------------------------------
 // หนังสือของตัวเองทั้งหมด (หน้า my item, select-book)
-// Testing 1 / 2 (login ด้วย somchai และ mali_reads ก่อน)
-// method: get
+// Testing 1: ดูหนังสือทั้งหมดของบัญชีที่ login อยู่
+// Login: admin_aomsin
+// method: GET
 // URL: http://localhost:3000/books/mine
+// Body: none
+// Expected: 200 OK
+// Result: แสดงรายการหนังสือทั้งหมดของบัญชีที่ login อยู่
 // ---------------------------------------------------------------
 router.get("/mine", requireLogin, asyncHandler(async (req, res) => {
   const [rows] = await db.query(`SELECT ${BOOK_COLS} ${BOOK_FROM} WHERE b.acc_id = ? ORDER BY b.book_id DESC`, [
@@ -115,13 +121,7 @@ router.get("/mine", requireLogin, asyncHandler(async (req, res) => {
   res.json(rows);
 }));
 
-// ---------------------------------------------------------------
-// หนังสือของคนอื่น 1 เล่มแบบสุ่ม (หน้า trade)
-// seen = id ที่เคยกดไม่สนใจแล้ว (คั่นด้วย ,) จะไม่แสดงซ้ำ
-// ไม่แสดงหนังสือที่เราส่งคำขอแลกค้างอยู่แล้ว
-// Testing 1: method: get  URL: http://localhost:3000/books/next
-// Testing 2: method: get  URL: http://localhost:3000/books/next?seen=16,17,18
-// -> { "book": {...} } หรือ { "book": null } เมื่อไม่มีเล่มเหลือ
+
 // ---------------------------------------------------------------
 router.get("/next", requireLogin, asyncHandler(async (req, res) => {
   const seen = String(req.query.seen || "").split(",").map(toInt).filter((n) => n !== null);
@@ -140,9 +140,11 @@ router.get("/next", requireLogin, asyncHandler(async (req, res) => {
 }));
 
 // ---------------------------------------------------------------
-// ดูรายละเอียดหนังสือ 1 เล่ม (ไม่ต้อง login)
-// Testing 1: method: get  URL: http://localhost:3000/books/1
-// Testing 2: method: get  URL: http://localhost:3000/books/16
+// ดูรายละเอียดหนังสือ 1 เล่ม
+// Testing 1: ดูรายละเอียดหนังสือ 1 เล่ม
+// method: get  
+// URL: http://localhost:3000/books/"id"
+
 // ---------------------------------------------------------------
 router.get("/:id", optionalLogin, asyncHandler(async (req, res) => {
   const [rows] = await db.query(`SELECT ${BOOK_COLS} ${BOOK_FROM} WHERE b.book_id = ?`, [req.params.id]);
@@ -151,19 +153,20 @@ router.get("/:id", optionalLogin, asyncHandler(async (req, res) => {
 }));
 
 // ---------------------------------------------------------------
-// เพิ่มหนังสือ (เจ้าของ = บัญชีที่ login อยู่ ทั้ง user และ admin)
-// Testing 1: เพิ่มโดยไม่มีรูป
-// method: post
+// เพิ่มหนังสือ (ต้อง login ก่อน)
+// Testing 1: เพิ่มหนังสือโดยไม่มีรูปภาพ
+// method: POST
 // URL: http://localhost:3000/books
-// body: form-data
-//   name = Test Book, category = novel, price = 120, condition = 4, detail = Good condition
-//
-// Testing 2: เพิ่มพร้อมรูป
-// method: post
-// URL: http://localhost:3000/books
-// body: form-data
-//   name = Dune Messiah, category = sci-fi, price = 250, condition = 5,
-//   detail = Like new, image = (เลือกไฟล์รูป)
+// Body: raw -> JSON
+// {
+//   "name": "testbook",
+//   "category": "novel",
+//   "price": 120,
+//   "condition": 4,
+//   "detail": "Book for Postman testing"
+// }
+// Expected: 201 Created
+// Result: { "message": "Book added", "id": ... }
 // ---------------------------------------------------------------
 router.post("/", requireLogin, upload.single("image"), asyncHandler(async (req, res) => {
   const { error, data } = validateBook(req.body);
@@ -181,12 +184,20 @@ router.post("/", requireLogin, upload.single("image"), asyncHandler(async (req, 
 }));
 
 // ---------------------------------------------------------------
-// แก้ไขหนังสือ (เจ้าของหรือ admin เท่านั้น) ถ้าไม่ส่งรูปใหม่จะใช้รูปเดิม
-// Testing 1: method: put  URL: http://localhost:3000/books/11
-//   body: form-data  name = Harry Potter 1 (2nd), category = fantasy, price = 220, condition = 4, detail = Updated
-// Testing 2: method: put  URL: http://localhost:3000/books/12
-//   body: form-data  name = Harry Potter 2, category = fantasy, price = 190, condition = 3, detail = Cover worn,
-//   image = (เลือกไฟล์รูป)
+// แก้ไขหนังสือ (เจ้าของหนังสือหรือ admin เท่านั้น)
+// Testing 1: แก้ไขข้อมูลหนังสือ ID 56
+// method: PUT
+// URL: http://localhost:3000/books/56
+// Body: raw -> JSON
+// {
+//   "name": "newtestBook",
+//   "category": "novel",
+//   "price": 250,
+//   "condition": 2,
+//   "detail": "good"
+// }
+// Expected: 200 OK
+// Result: { "message": "Book updated" }
 // ---------------------------------------------------------------
 router.put("/:id", requireLogin, upload.single("image"), asyncHandler(async (req, res) => {
   const newFile = req.file ? "/uploads/" + req.file.filename : null;
@@ -214,9 +225,13 @@ router.put("/:id", requireLogin, upload.single("image"), asyncHandler(async (req
 }));
 
 // ---------------------------------------------------------------
-// ลบหนังสือ (เจ้าของหรือ admin เท่านั้น) คำขอแลกที่เกี่ยวข้องจะถูกลบตามอัตโนมัติ
-// Testing 1: method: delete  URL: http://localhost:3000/books/14
-// Testing 2: method: delete  URL: http://localhost:3000/books/15
+// ลบหนังสือ (เจ้าของหนังสือหรือ admin เท่านั้น)
+// Testing 1: ลบหนังสือ ID 56
+// method: DELETE
+// URL: http://localhost:3000/books/56
+// Body: none
+// Expected: 200 OK
+// Result: { "message": "Book removed" }
 // ---------------------------------------------------------------
 router.delete("/:id", requireLogin, asyncHandler(async (req, res) => {
   const [rows] = await db.query("SELECT acc_id, book_lick_pic FROM book WHERE book_id = ?", [req.params.id]);

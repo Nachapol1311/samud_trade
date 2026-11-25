@@ -35,29 +35,13 @@ function duplicateMessage(err) {
 }
 
 // ---------------------------------------------------------------
-// ค้นหาบัญชี: ไม่ใส่เกณฑ์ = ทั้งหมด / ใส่ได้ทุกเกณฑ์พร้อมกันหรือบางส่วน (เงื่อนไขทุกข้อต้องตรงพร้อมกัน)
-// เกณฑ์การค้นหา (query string, ไม่บังคับทุกตัว):
-//   username = ค้นบางส่วนจากชื่อผู้ใช้
-//   name     = ค้นบางส่วนจากชื่อจริงหรือนามสกุล
-//   email    = ค้นบางส่วนจากอีเมล
-//   role     = admin หรือ user (ตรงทั้งคำ)
-//   keyword  = ค้นบางส่วนจากทุกช่องข้างต้นพร้อมกัน (ใช้กับช่องค้นหาในหน้า user-manage)
-// Testing 1: ค้นหาทั้งหมด
-// method: get
+// ค้นหาบัญชีผู้ใช้ทั้งหมด (เฉพาะ admin)
+// Testing 1: แสดงบัญชีผู้ใช้ทั้งหมด
+// method: GET
 // URL: http://localhost:3000/accounts
-//
-// Testing 2: ค้นหาด้วยบางเกณฑ์ (ชื่อผู้ใช้มีคำว่า som)
-// method: get
-// URL: http://localhost:3000/accounts?username=som
-//
-// Testing 3: ค้นหาด้วยหลายเกณฑ์พร้อมกัน (เป็น user และอีเมลมีคำว่า gmail)
-// method: get
-// URL: http://localhost:3000/accounts?role=user&email=gmail
-//
-// Testing 4: ค้นหาด้วยชื่อหรือนามสกุล + role
-// method: get
-// URL: http://localhost:3000/accounts?name=kim&role=user
-// (ต้อง login เป็น admin ก่อน ด้วย POST /auth/login)
+// Body: none
+// Expected: 200 OK
+// Result: แสดงรายการบัญชีผู้ใช้ทั้งหมดในรูปแบบ JSON
 // ---------------------------------------------------------------
 router.get("/", asyncHandler(async (req, res) => {
   const text = (value) => String(value || "").trim();
@@ -111,9 +95,13 @@ router.get("/", asyncHandler(async (req, res) => {
 }));
 
 // ---------------------------------------------------------------
-// ดูบัญชี 1 รายการ
-// Testing 1: method: get  URL: http://localhost:3000/accounts/3
-// Testing 2: method: get  URL: http://localhost:3000/accounts/1
+// ดูรายละเอียดบัญชีผู้ใช้ 1 รายการ (เฉพาะ admin)
+// Testing 1: ดูข้อมูลบัญชี ID 12
+// method: GET
+// URL: http://localhost:3000/accounts/12
+// Body: none
+// Expected: 200 OK
+// Result: แสดงข้อมูลบัญชี ID 12 ในรูปแบบ JSON
 // ---------------------------------------------------------------
 router.get("/:id", asyncHandler(async (req, res) => {
   const [rows] = await db.query(`SELECT ${ACC_COLS} ${ACC_FROM} WHERE u.acc_id = ?`, [req.params.id]);
@@ -122,16 +110,21 @@ router.get("/:id", asyncHandler(async (req, res) => {
 }));
 
 // ---------------------------------------------------------------
-// เพิ่มบัญชี (รหัสผ่านเก็บเป็น SHA-256)
-// Testing 1: method: post  URL: http://localhost:3000/accounts
-// body: raw JSON
-// { "role": "user", "firstname": "Test", "lastname": "User", "username": "test_user",
-//   "email": "test.user@gmail.com", "password": "User@1234" }
-//
-// Testing 2: method: post  URL: http://localhost:3000/accounts
-// body: raw JSON
-// { "role": "admin", "firstname": "Second", "lastname": "Admin", "username": "admin_two",
-//   "email": "admin.two@samudtrade.com", "password": "Admin@1234" }
+// เพิ่มบัญชีผู้ใช้ (เฉพาะ admin)
+// Testing 1: เพิ่มบัญชีผู้ใช้ใหม่
+// method: POST
+// URL: http://localhost:3000/accounts
+// Body: raw JSON
+// {
+//   "role": "admin",
+//   "firstname": "kim",
+//   "lastname": "lnw",
+//   "username": "kimlnw",
+//   "email": "test.user@gmail.com",
+//   "password": "Admin@1234"
+// }
+// Expected: 201 Created
+// Result: { "message": "Account added", "id": 12 }
 // ---------------------------------------------------------------
 router.post("/", asyncHandler(async (req, res) => {
   const { error, data } = validateAccount(req.body, true);
@@ -160,15 +153,21 @@ router.post("/", asyncHandler(async (req, res) => {
 }));
 
 // ---------------------------------------------------------------
-// แก้ไขบัญชี (ไม่ใส่ password = ไม่เปลี่ยนรหัสผ่าน, image ไม่บังคับ)
-// Testing 1: method: put  URL: http://localhost:3000/accounts/4
-// body: form-data
-//   role = user, firstname = Mali, lastname = Rakdee, username = mali_reads, email = mali.r@gmail.com
-//
-// Testing 2: method: put  URL: http://localhost:3000/accounts/5
-// body: form-data
-//   role = user, firstname = Krit, lastname = Wongsawat, username = krit_dev,
-//   email = krit.w@gmail.com, password = NewPass@123, image = (เลือกไฟล์รูป)
+// แก้ไขบัญชีผู้ใช้ (เฉพาะ admin)
+// Testing 1: แก้ไขข้อมูลบัญชี ID 12
+// method: PUT
+// URL: http://localhost:3000/accounts/12
+// Body: raw JSON
+// {
+//   "role": "admin",
+//   "firstname": "kimupdate",
+//   "lastname": "lnw",
+//   "username": "kimlnw",
+//   "email": "test.user@gmail.com",
+//   "password": "Admin@1234"
+// }
+// Expected: 200 OK
+// Result: { "message": "Account updated" }
 // ---------------------------------------------------------------
 router.put("/:id", upload.single("image"), asyncHandler(async (req, res) => {
   const newFile = req.file ? "/uploads/" + req.file.filename : null;
@@ -225,9 +224,13 @@ router.put("/:id", upload.single("image"), asyncHandler(async (req, res) => {
 }));
 
 // ---------------------------------------------------------------
-// ลบบัญชี (หนังสือ ประวัติ login และคำขอแลกของบัญชีนั้นจะถูกลบตามอัตโนมัติ) ลบบัญชีตัวเองไม่ได้
-// Testing 1: method: delete  URL: http://localhost:3000/accounts/10
-// Testing 2: method: delete  URL: http://localhost:3000/accounts/9
+// ลบบัญชีผู้ใช้ (เฉพาะ admin)
+// Testing 1: ลบบัญชีผู้ใช้ ID 12
+// method: DELETE
+// URL: http://localhost:3000/accounts/12
+// Body: none
+// Expected: 200 OK
+// Result: { "message": "Account removed" }
 // ---------------------------------------------------------------
 router.delete("/:id", asyncHandler(async (req, res) => {
   if (Number(req.params.id) === req.user.id) {

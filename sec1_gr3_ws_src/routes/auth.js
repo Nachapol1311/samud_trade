@@ -10,18 +10,15 @@ const router = express.Router();
 // ---------------------------------------------------------------
 // Login: ตรวจ username/password แล้วตั้ง cookie
 // Testing 1: admin login (Postman จะเก็บ cookie ให้อัตโนมัติ)
-// method: post
+// method: POST
 // URL: http://localhost:3000/auth/login
 // body: raw JSON
-// { "username": "admin_ploy", "password": "Admin@1234" }
-// -> { "role": "admin", "redirect": "/admin-home" }
-//
-// Testing 2: user login
-// method: post
-// URL: http://localhost:3000/auth/login
-// body: raw JSON
-// { "username": "somchai", "password": "User@1234" }
-// -> { "role": "user", "redirect": "/home" }
+// {
+//   "username": "admin_aomsin",
+//   "password": "Admin@1234"
+// }
+// Expected: 200 OK
+// Result: { "role": "admin", "redirect": "/admin-home" }
 // ---------------------------------------------------------------
 router.post("/login", asyncHandler(async (req, res) => {
   const username = String(req.body.username || "").trim();
@@ -46,11 +43,12 @@ router.post("/login", asyncHandler(async (req, res) => {
 
 // ---------------------------------------------------------------
 // Logout: ลบ cookie และบันทึกเวลาออกจากระบบ
-// Testing 1 / 2 (ต้อง login ก่อน 1 ครั้ง)
-// method: post
+// Testing 1: logout หลังจาก login สำเร็จ
+// method: POST
 // URL: http://localhost:3000/auth/logout
 // body: none
-// -> { "message": "Logged out" }
+// Expected: 200 OK
+// Result: { "message": "Logged out" }
 // ---------------------------------------------------------------
 router.post("/logout", asyncHandler(async (req, res) => {
   const session = readSession(req);
@@ -65,11 +63,13 @@ router.post("/logout", asyncHandler(async (req, res) => {
 }));
 
 // ---------------------------------------------------------------
-// ดูข้อมูลบัญชีที่ login อยู่ (ใช้ในหน้า profile / admin-profile)
-// Testing 1 / 2 (หลัง login ด้วย admin_ploy และ somchai)
-// method: get
+// ดูข้อมูลบัญชีที่ login อยู่ (หน้า profile / admin-profile)
+// Testing 1: ดูข้อมูลบัญชี admin_aomsin หลัง login
+// method: GET
 // URL: http://localhost:3000/auth/me
-// -> { "id": 3, "role": "user", "username": "somchai", "firstname": "Somchai", ... }
+// Expected: 200 OK
+// Result: แสดงข้อมูลบัญชี เช่น id, role, username,
+//         firstname, lastname, email และ picture
 // ---------------------------------------------------------------
 router.get("/me", requireLogin, asyncHandler(async (req, res) => {
   const [rows] = await db.query(
@@ -84,17 +84,26 @@ router.get("/me", requireLogin, asyncHandler(async (req, res) => {
 }));
 
 // ---------------------------------------------------------------
-// แก้ไขโปรไฟล์ตัวเอง (ชื่อ นามสกุล อีเมล และรูปโปรไฟล์)
-// Testing 1: เปลี่ยนชื่อ
-// method: put
+// แก้ไขโปรไฟล์ตัวเอง (ต้อง login ก่อน)
+// Testing 1: แก้ไขข้อมูลโปรไฟล์
+// method: PUT
 // URL: http://localhost:3000/auth/me
 // body: raw JSON
-// { "firstname": "Ploy", "lastname": "Suksan", "email": "ploy.suksan@samudtrade.com" }
+// {
+//   "firstname": "Aomsin",
+//   "lastname": "Test",
+//   "email": "aomsin@example.com"
+// }
+// Expected: 200 OK
+// Result: { "message": "Profile updated" }
 //
-// Testing 2: เปลี่ยนรูป
-// method: put
+// Testing 2: เปลี่ยนรูปโปรไฟล์
+// method: PUT
 // URL: http://localhost:3000/auth/me
-// body: form-data  (image = ไฟล์รูป)
+// body: form-data
+// image = (เลือกไฟล์รูปภาพ)
+// Expected: 200 OK
+// Result: { "message": "Profile updated" }
 // ---------------------------------------------------------------
 router.put("/me", requireLogin, upload.single("image"), asyncHandler(async (req, res) => {
   const [rows] = await db.query(
