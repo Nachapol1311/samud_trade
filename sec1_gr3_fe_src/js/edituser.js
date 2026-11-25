@@ -63,4 +63,4 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 // Testing Delete user
 // method: delete
-// http://localhost:3000/accounts/12
+// http://localhost:3000/accounts/id

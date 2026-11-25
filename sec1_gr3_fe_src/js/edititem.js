@@ -85,3 +85,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 //   "condition": 2,
 //   "detail": "good"
 // }
+
+// Testing Delete book
+// method: delete
+// http://localhost:3000/books/id
