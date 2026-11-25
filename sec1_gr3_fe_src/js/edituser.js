@@ -60,3 +60,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 //   "email": "test.user@gmail.com",
 //   "password": "Admin@1234"
 // }
+
+// Testing Delete user
+// method: delete
+// http://localhost:3000/accounts/12
