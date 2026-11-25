@@ -8,7 +8,7 @@ const UPLOAD_DIR = path.join(__dirname, "uploads");
 // หมวดหมู่หนังสือ (ต้องตรงกับ option ในหน้าเว็บ)
 const CATEGORIES = [
   "art-design", "biography", "business", "children", "comic", "cooking", "exam-prep",
-  "fantasy", "finance", "health", "history", "horror", "language", "light-novel",
+  "fantasy", "finance", "health", "history", "horror", "language", "law", "light-novel",
   "magazine", "manga", "mystery", "novel", "other", "programming", "psychology",
   "religion", "romance", "science", "sci-fi", "self-help", "technology", "textbook",
   "thriller", "travel",
