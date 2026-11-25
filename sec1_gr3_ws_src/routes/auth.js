@@ -90,18 +90,14 @@ router.get("/me", requireLogin, asyncHandler(async (req, res) => {
 // URL: http://localhost:3000/auth/me
 // body: raw JSON
 // {
-//   "firstname": "Aomsin",
-//   "lastname": "Test",
-//   "email": "aomsin@example.com"
+//     "id": 1,
+//     "role": "admin",
+//     "username": "admin_aomsin_update",
+//     "firstname": "yo",
+//     "lastname": "pin",
+//     "email": "aomsinn@samudtrade.com",
+//     "picture": "/uploads/1795293750751-7d64cc71.jpg"
 // }
-// Expected: 200 OK
-// Result: { "message": "Profile updated" }
-//
-// Testing 2: เปลี่ยนรูปโปรไฟล์
-// method: PUT
-// URL: http://localhost:3000/auth/me
-// body: form-data
-// image = (เลือกไฟล์รูปภาพ)
 // Expected: 200 OK
 // Result: { "message": "Profile updated" }
 // ---------------------------------------------------------------
