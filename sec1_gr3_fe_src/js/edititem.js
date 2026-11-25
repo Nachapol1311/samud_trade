@@ -73,3 +73,15 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     });
 });
+
+// Testing Update book
+// method: put
+// http://localhost:3000/books/id
+// body: raw JSON
+// {
+//   "name": "newtestBook",
+//   "category": "novel",
+//   "price": 250,
+//   "condition": 2,
+//   "detail": "good"
+// }
