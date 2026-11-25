@@ -23,3 +23,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+// Testing Insert account login
+// method: post
+// URL: http://localhost:3000/auth/login
+// body: raw JSON
+// {
+//   "username": "admin_aomsin",
+//   "password": "Admin@1234"
+// }
