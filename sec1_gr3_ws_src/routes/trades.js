@@ -79,6 +79,7 @@ router.post("/", asyncHandler(async (req, res) => {
 // Testing 1: (login ด้วย kim) 
 // method: get
 // URL: http://localhost:3000/trades/incoming
+// Body: none
 // Expected: 200 OK
 // Result:
 // [
