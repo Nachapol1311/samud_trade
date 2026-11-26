@@ -36,19 +36,7 @@ const TRADE_FROM = `FROM trade_request t
   JOIN user_Account ou ON ou.acc_id = t.owner_acc_id`;
 
 // ---------------------------------------------------------------
-// ขอแลกหนังสือ (หน้า select-book) ส่งไปแสดงที่หน้า match ของเจ้าของ และหน้า wait ของเรา
-// Testing 1: (login ด้วย kim) ขอแลกหนังสือ id 37 ของ bebe ด้วยหนังสือ id 12 ของเรา
-// method: post
-// URL: http://localhost:3000/trades
-// body: raw JSON
-// { "want_book_id": 37, "offer_book_id": 12 }
-// Expected: 201 Created
-// Result: 
-//{
-//   "message": "Trade request sent",
-//   "id": 5
-// }
-// ---------------------------------------------------------------
+
 router.post("/", asyncHandler(async (req, res) => {
   const wantId = toInt(req.body.want_book_id);
   const offerId = toInt(req.body.offer_book_id);
@@ -75,41 +63,7 @@ router.post("/", asyncHandler(async (req, res) => {
 }));
 
 // ---------------------------------------------------------------
-// หน้า match: คำขอที่คนอื่นอยากแลกกับเรา (ซ้าย = หนังสือของเขา, ขวา = หนังสือของเรา)
-// Testing 1: (login ด้วย kim) 
-// method: get
-// URL: http://localhost:3000/trades/incoming
-// Body: none
-// Expected: 200 OK
-// Result:
-// [
-//     {
-//         "id": 2,
-//         "from": "mai",
-//         "theirBook": {
-//             "id": 21,
-//             "name": "เดนดาว NEVERDIE",
-//             "category": "novel",
-//             "price": 380,
-//             "detail": "หนังสืองอ ขอบขาดนิดหน่อย",
-//             "condition": 4,
-//             "picture": "/uploads/b21.jpg",
-//             "owner": "mai"
-//         },
-//         "myBook": {
-//             "id": 12,
-//             "name": "BETTER THAN THE MOVIE",
-//             "category": "romance",
-//             "price": 477,
-//             "detail": "หนังสืองอ ปกงอ มีรสนิดหน่อยไม่เยอะมาก",
-//             "condition": 3,
-//             "picture": "/uploads/b12.jpg",
-//             "owner": "kim"
-//         }
-//     },
-//      ...
-// ]
-// ---------------------------------------------------------------
+
 router.get("/incoming", asyncHandler(async (req, res) => {
   const [rows] = await db.query(
     `SELECT t.trade_id, ru.acc_username AS other_user, ou.acc_username AS my_user,
@@ -127,41 +81,7 @@ router.get("/incoming", asyncHandler(async (req, res) => {
 }));
 
 // ---------------------------------------------------------------
-// หน้า wait: คำขอที่เราส่งไปและยังรอการตอบรับ (ซ้าย = หนังสือที่เราอยากได้, ขวา = หนังสือของเรา)
-// Testing 1: (login ด้วย kim) 
-// method: get
-// URL: http://localhost:3000/trades/outgoing
-// Body: none
-// Expected: 200 OK
-// Result:
-// [
-//     {
-//         "id": 5,
-//         "to": "bebe",
-//         "theirBook": {
-//             "id": 37,
-//             "name": "My Return to the Walter boys",
-//             "category": "novel",
-//             "price": 299,
-//             "detail": "มีรอยพับหน้า",
-//             "condition": 4,
-//             "picture": "/uploads/b37.jpg",
-//             "owner": "bebe"
-//         },
-//         "myBook": {
-//             "id": 12,
-//             "name": "BETTER THAN THE MOVIE",
-//             "category": "romance",
-//             "price": 477,
-//             "detail": "หนังสืองอ ปกงอ มีรสนิดหน่อยไม่เยอะมาก",
-//             "condition": 3,
-//             "picture": "/uploads/b12.jpg",
-//             "owner": "kim"
-//         }
-//     },
-//     ...
-//]
-// ---------------------------------------------------------------
+
 router.get("/outgoing", asyncHandler(async (req, res) => {
   const [rows] = await db.query(
     `SELECT t.trade_id, ou.acc_username AS other_user, ru.acc_username AS my_user,
@@ -179,17 +99,7 @@ router.get("/outgoing", asyncHandler(async (req, res) => {
 }));
 
 // ---------------------------------------------------------------
-// ตกลงแลกเปลี่ยน (เฉพาะเจ้าของหนังสือที่ถูกขอ): สลับเจ้าของหนังสือทั้งสองเล่ม
-// และยกเลิกคำขออื่นที่ยัง pending ที่เกี่ยวกับหนังสือสองเล่มนี้
-// Testing 1: (login ด้วย kim) 
-// method: post
-// URL: http://localhost:3000/trades/1/accept
-// Expected: 200 OK
-// Result:
-// {
-//     "message": "Trade completed"
-// }
-// ---------------------------------------------------------------
+
 router.post("/:id/accept", asyncHandler(async (req, res) => {
   const conn = await db.getConnection();
   try {
@@ -258,28 +168,10 @@ async function changeStatus(req, res, column, status, message) {
 }
 
 // ---------------------------------------------------------------
-// ไม่แลกเปลี่ยน (เฉพาะเจ้าของหนังสือที่ถูกขอ)
-// Testing 1: (login ด้วย kim) 
-// method: post
-// URL: http://localhost:3000/trades/2/decline
-// Expected: 200 OK
-// Result:
-// {
-//  "message": "Trade declined"
-// }
-// ---------------------------------------------------------------
+
 router.post("/:id/decline", asyncHandler((req, res) => changeStatus(req, res, "owner_acc_id", "declined", "Trade declined")));
 
-// ---------------------------------------------------------------
-// ยกเลิกคำขอที่เราส่ง (เฉพาะผู้ขอ) หน้า wait
-// Testing 1: (login ด้วย kim) 
-// method: post
-// URL: http://localhost:3000/trades/3/cancel
-// Expected: 200 OK
-// Result:
-// {
-//     "message": "Trade request cancelled"
-// }
+
 // ---------------------------------------------------------------
 router.post("/:id/cancel", asyncHandler((req, res) => changeStatus(req, res, "requester_acc_id", "cancelled", "Trade request cancelled")));
 

@@ -57,14 +57,7 @@ router.post("/login", asyncHandler(async (req, res) => {
 }));
 
 // ---------------------------------------------------------------
-// Logout: ลบ cookie และบันทึกเวลาออกจากระบบ
-// Testing 1: logout หลังจาก login สำเร็จ
-// method: POST
-// URL: http://localhost:3000/auth/logout
-// body: none
-// Expected: 200 OK
-// Result: { "message": "Logged out" }
-// ---------------------------------------------------------------
+
 router.post("/logout", asyncHandler(async (req, res) => {
   const session = readSession(req);
   if (session && session.logId) {
@@ -77,14 +70,6 @@ router.post("/logout", asyncHandler(async (req, res) => {
   res.json({ message: "Logged out" });
 }));
 
-// ---------------------------------------------------------------
-// ดูข้อมูลบัญชีที่ login อยู่ (หน้า profile / admin-profile)
-// Testing 1: ดูข้อมูลบัญชี admin_aomsin หลัง login
-// method: GET
-// URL: http://localhost:3000/auth/me
-// Expected: 200 OK
-// Result: แสดงข้อมูลบัญชี เช่น id, role, username,
-//         firstname, lastname, email และ picture
 // ---------------------------------------------------------------
 router.get("/me", requireLogin, asyncHandler(async (req, res) => {
   const [rows] = await db.query(
@@ -99,23 +84,7 @@ router.get("/me", requireLogin, asyncHandler(async (req, res) => {
 }));
 
 // ---------------------------------------------------------------
-// แก้ไขโปรไฟล์ตัวเอง (ต้อง login ก่อน)
-// Testing 1: แก้ไขข้อมูลโปรไฟล์
-// method: PUT
-// URL: http://localhost:3000/auth/me
-// body: raw JSON
-// {
-//     "id": 1,
-//     "role": "admin",
-//     "username": "admin_aomsin_update",
-//     "firstname": "yo",
-//     "lastname": "pin",
-//     "email": "aomsinn@samudtrade.com",
-//     "picture": "/uploads/1795293750751-7d64cc71.jpg"
-// }
-// Expected: 200 OK
-// Result: { "message": "Profile updated" }
-// ---------------------------------------------------------------
+
 router.put("/me", requireLogin, upload.single("image"), asyncHandler(async (req, res) => {
   const [rows] = await db.query(
     "SELECT acc_name, acc_surname, acc_email, acc_picture_link FROM information_Account WHERE acc_id = ?",

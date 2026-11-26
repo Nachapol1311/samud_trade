@@ -36,12 +36,41 @@ function duplicateMessage(err) {
 
 // ---------------------------------------------------------------
 // ค้นหาบัญชีผู้ใช้ทั้งหมด (เฉพาะ admin)
-// Testing 1: แสดงบัญชีผู้ใช้ทั้งหมด
+// Testing 1: Search user
 // method: GET
-// URL: http://localhost:3000/accounts
+// URL: http://localhost:3000/accounts?username=chai
 // Body: none
 // Expected: 200 OK
-// Result: แสดงรายการบัญชีผู้ใช้ทั้งหมดในรูปแบบ JSON
+// Result: 
+// [
+//     {
+//         "id": 4,
+//         "role": "user",
+//         "username": "chai",
+//         "firstname": "chaiyaaa",
+//         "lastname": "naja",
+//         "email": "chai@gmail.com",
+//         "picture": "/uploads/acc04.jpg"
+//     }
+// ]
+
+// Testing 2: Search user
+// method: GET
+// URL: http://localhost:3000/accounts?username=gun
+// Body: none
+// Expected: 200 OK
+// Result: 
+// [
+//     {
+//         "id": 9,
+//         "role": "user",
+//         "username": "gun",
+//         "firstname": "gunt",
+//         "lastname": "Thongdee",
+//         "email": "gun@gmail.com",
+//         "picture": "/uploads/acc09.jpg"
+//     }
+// ]
 // ---------------------------------------------------------------
 router.get("/", asyncHandler(async (req, res) => {
   const text = (value) => String(value || "").trim();
@@ -95,14 +124,7 @@ router.get("/", asyncHandler(async (req, res) => {
 }));
 
 // ---------------------------------------------------------------
-// ดูรายละเอียดบัญชีผู้ใช้ 1 รายการ (เฉพาะ admin)
-// Testing 1: ดูข้อมูลบัญชี ID 12
-// method: GET
-// URL: http://localhost:3000/accounts/12
-// Body: none
-// Expected: 200 OK
-// Result: แสดงข้อมูลบัญชี ID 12 ในรูปแบบ JSON
-// ---------------------------------------------------------------
+
 router.get("/:id", asyncHandler(async (req, res) => {
   const [rows] = await db.query(`SELECT ${ACC_COLS} ${ACC_FROM} WHERE u.acc_id = ?`, [req.params.id]);
   if (!rows.length) return res.status(404).json({ message: "Account not found" });
@@ -111,20 +133,44 @@ router.get("/:id", asyncHandler(async (req, res) => {
 
 // ---------------------------------------------------------------
 // เพิ่มบัญชีผู้ใช้ (เฉพาะ admin)
-// Testing 1: เพิ่มบัญชีผู้ใช้ใหม่
+// Testing 1: Add user
 // method: POST
 // URL: http://localhost:3000/accounts
 // Body: raw JSON
 // {
-//   "role": "admin",
-//   "firstname": "kim",
-//   "lastname": "lnw",
-//   "username": "kimlnw",
-//   "email": "test.user@gmail.com",
-//   "password": "Admin@1234"
+//     "role": "user",
+//     "firstname": "Test01",
+//     "lastname": "User01",
+//     "username": "testuser01",
+//     "email": "testuser01@gmail.com",
+//     "password": "User@1234"
+// }
+
+// Expected: 201 Created
+// Result: 
+// {
+//     "message": "Account added",
+//     "id": 11
+// }
+
+// Testing 2: Add user
+// method: POST
+// URL: http://localhost:3000/accounts
+// Body: raw JSON
+// {
+//     "role": "user",
+//     "firstname": "Test02",
+//     "lastname": "User02",
+//     "username": "testuser02",
+//     "email": "testuser02@gmail.com",
+//     "password": "User@1234"
 // }
 // Expected: 201 Created
-// Result: { "message": "Account added", "id": 12 }
+// Result: 
+// {
+//     "message": "Account added",
+//     "id": 12
+// }
 // ---------------------------------------------------------------
 router.post("/", asyncHandler(async (req, res) => {
   const { error, data } = validateAccount(req.body, true);
@@ -154,20 +200,43 @@ router.post("/", asyncHandler(async (req, res) => {
 
 // ---------------------------------------------------------------
 // แก้ไขบัญชีผู้ใช้ (เฉพาะ admin)
-// Testing 1: แก้ไขข้อมูลบัญชี ID 12
+// Testing 1: Edit user
+// method: PUT
+// URL: http://localhost:3000/accounts/11
+// Body: raw JSON
+// {
+//     "role": "user",
+//     "firstname": "Test01Edit",
+//     "lastname": "User01Edit",
+//     "username": "testuser01Edit",
+//     "email": "testuser0@gmail.com",
+//     "password": "User@1234"
+// }
+//  
+// Expected: 200 OK
+// Result:
+// {
+//     "message": "Account updated"
+// }
+
+// Testing 2: Edit user
 // method: PUT
 // URL: http://localhost:3000/accounts/12
 // Body: raw JSON
 // {
-//   "role": "admin",
-//   "firstname": "kimupdate",
-//   "lastname": "lnw",
-//   "username": "kimlnw",
-//   "email": "test.user@gmail.com",
-//   "password": "Admin@1234"
+//     "role": "user",
+//     "firstname": "Test02Edit",
+//     "lastname": "User02Edit",
+//     "username": "testuser02Edit",
+//     "email": "testuser02@gmail.com",
+//     "password": "User@1234"
 // }
+//  
 // Expected: 200 OK
-// Result: { "message": "Account updated" }
+// Result:
+// {
+//     "message": "Account updated"
+// }
 // ---------------------------------------------------------------
 router.put("/:id", upload.single("image"), asyncHandler(async (req, res) => {
   const newFile = req.file ? "/uploads/" + req.file.filename : null;
@@ -225,12 +294,25 @@ router.put("/:id", upload.single("image"), asyncHandler(async (req, res) => {
 
 // ---------------------------------------------------------------
 // ลบบัญชีผู้ใช้ (เฉพาะ admin)
-// Testing 1: ลบบัญชีผู้ใช้ ID 12
+// Testing 1: Delete use
+// method: DELETE
+// URL: http://localhost:3000/accounts/11
+// Body: none
+// Expected: 200 OK
+// Result:
+// {
+//     "message": "Account removed"
+// }
+
+// Testing 2: Delete use
 // method: DELETE
 // URL: http://localhost:3000/accounts/12
 // Body: none
 // Expected: 200 OK
-// Result: { "message": "Account removed" }
+// Result:
+// {
+//     "message": "Account removed"
+// }
 // ---------------------------------------------------------------
 router.delete("/:id", asyncHandler(async (req, res) => {
   if (Number(req.params.id) === req.user.id) {

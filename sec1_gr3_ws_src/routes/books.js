@@ -30,19 +30,223 @@ function validateBook(body) {
 }
 
 // ---------------------------------------------------------------
-// ค้นหาหนังสือ (ไม่ต้อง login)
-// Testing 1: ค้นหาหนังสือทั้งหมด
+// Testing 1: Search by name
 // method: GET
-// URL: http://localhost:3000/books
-
-// Testing 2: ค้นหาหนังสือด้วยชื่อ
-// method: GET
-// URL: http://localhost:3000/books?name=Kim
-// Params:
-//   Key: name
-//   Value: Kim
+// URL: http://localhost:3000/books?name=atomic
+// Body: none
 // Expected: 200 OK
-// Result: แสดงรายการหนังสือที่ตรงกับคำค้นหา เช่น Kim Jiyoung, Born 1982 
+// Result: 
+// [
+//     {
+//         "id": 19,
+//         "name": "Atomic Habits",
+//         "category": "self-help",
+//         "price": 435,
+//         "detail": "Fair condition",
+//         "condition": 3,
+//         "owner": "chai",
+//         "picture": "/uploads/b19.jpg",
+//         "ownerId": 4,
+//         "score": 3
+//     }
+// ]
+
+// Testing 2: Search by name
+// method: GET
+// URL: http://localhost:3000/books?name=business
+// Body: none
+// Expected: 200 OK
+// Result: 
+// [
+//     {
+//         "id": 6,
+//         "name": "BUILBING your MONEY MACHINE",
+//         "category": "business",
+//         "price": 350,
+//         "detail": "ปกบวมน้ำ",
+//         "condition": 1,
+//         "owner": "admin_dada",
+//         "picture": "/uploads/b06.jpg",
+//         "ownerId": 2,
+//         "score": 0
+//     }
+// ]
+
+// Testing 3: Search by category
+// method: GET
+// URL: http://localhost:3000/books?category=business
+// Body: none
+// Expected: 200 OK
+// Result: 
+// [
+//     {
+//         "id": 6,
+//         "name": "BUILBING your MONEY MACHINE",
+//         "category": "business",
+//         "price": 350,
+//         "detail": "ปกบวมน้ำ",
+//         "condition": 1,
+//         "owner": "admin_dada",
+//         "picture": "/uploads/b06.jpg",
+//         "ownerId": 2,
+//         "score": 0
+//     }
+// ]
+
+// Testing 4: Search by category
+// method: GET
+// URL: http://localhost:3000/books?category=comic
+// Body: none
+// Expected: 200 OK
+// Result: 
+// [
+//     {
+//         "id": 1,
+//         "name": "one piece v59",
+//         "category": "comic",
+//         "price": 0,
+//         "detail": "เพื่อนซื้อมาฝากจากญี่ปุ่น ยังไม่ได้เอาออกจากแพ็ค สภาพดีเยี่ยมพร้อมเก็บสะสม",
+//         "condition": 5,
+//         "owner": "admin_aomsin",
+//         "picture": "/uploads/b01.jpg",
+//         "ownerId": 1,
+//         "score": 0
+//     }
+// ]
+
+// Testing 5: Search by price
+// method: GET
+// URL: http://localhost:3000/books?max=0
+// Body: none
+// Expected: 200 OK
+// Result: 
+// [
+//     {
+//         "id": 46,
+//         "name": "หลักธรรมคำสอนของพระพุทธเจ้ากับประเทศไทย 4.0",
+//         "category": "psychology",
+//         "price": 0,
+//         "detail": "พระให้มา สภาพดี",
+//         "condition": 5,
+//         "owner": "job",
+//         "picture": "/uploads/b46.jpg",
+//         "ownerId": 10,
+//         "score": 0
+//     },
+//     {
+//         "id": 1,
+//         "name": "one piece v59",
+//         "category": "comic",
+//         "price": 0,
+//         "detail": "เพื่อนซื้อมาฝากจากญี่ปุ่น ยังไม่ได้เอาออกจากแพ็ค สภาพดีเยี่ยมพร้อมเก็บสะสม",
+//         "condition": 5,
+//         "owner": "admin_aomsin",
+//         "picture": "/uploads/b01.jpg",
+//         "ownerId": 1,
+//         "score": 0
+//     }
+// ]
+
+// Testing 6: Search by price
+// method: GET
+// URL: http://localhost:3000/books?max=390
+// Body: none
+// Expected: 200 OK
+// Result: 
+// [
+//     {
+//         "id": 47,
+//         "name": "รักกันได้จริงด้วยบางสิ่งที่ไม่ใช่รัก",
+//         "category": "self-help",
+//         "price": 389,
+//         "detail": "สะอาด สภาพดี",
+//         "condition": 5,
+//         "owner": "job",
+//         "picture": "/uploads/b47.jpg",
+//         "ownerId": 10,
+//         "score": 0
+//     },
+//     {
+//         "id": 34,
+//         "name": "Ghostly Brews",
+//         "category": "other",
+//         "price": 390,
+//         "detail": "อ่านสนุกมีรอยเขียนเล็กน้อย",
+//         "condition": 4,
+//         "owner": "fang",
+//         "picture": "/uploads/b34.jpg",
+//         "ownerId": 7,
+//         "score": 0
+//     }
+// ]
+
+// Testing 7: Search product by name
+// method: GET
+// URL: http://localhost:3000/books?limit=500&scope=manage&name=The%20Hunger%20Games
+// Body: none
+// Expected: 200 OK
+// Result: 
+// [
+//     {
+//         "id": 11,
+//         "name": "THE HUNGER GAMES II",
+//         "category": "fantasy",
+//         "price": 295,
+//         "detail": "ขอบเหลือง มีรอยขีดข่วนเล็กน้อย",
+//         "condition": 4,
+//         "owner": "kim",
+//         "picture": "/uploads/b11.jpg",
+//         "ownerId": 3,
+//         "score": 0
+//     },
+//     {
+//         "id": 10,
+//         "name": "THE HUNGER GAMES I",
+//         "category": "novel",
+//         "price": 245,
+//         "detail": "ปกเปิกมุมงอ",
+//         "condition": 2,
+//         "owner": "admin_dada",
+//         "picture": "/uploads/b10.jpg",
+//         "ownerId": 2,
+//         "score": 0
+//     },
+//     {
+//         "id": 8,
+//         "name": "THE HUNGER GAMES III",
+//         "category": "novel",
+//         "price": 295,
+//         "detail": "เหลืองขอบเลอะ",
+//         "condition": 3,
+//         "owner": "admin_dada",
+//         "picture": "/uploads/b08.jpg",
+//         "ownerId": 2,
+//         "score": 0
+//     }
+// ]
+
+// Testing 8: Search product by name
+// method: GET
+// URL: http://localhost:3000/books?limit=500&scope=manage&name=ร้านขายเวลา
+// Body: none
+// Expected: 200 OK
+// Result: 
+// [
+//     {
+//         "id": 39,
+//         "name": "ร้านขายเวลา",
+//         "category": "novel",
+//         "price": 200,
+//         "detail": "good",
+//         "condition": 4,
+//         "owner": "bebe",
+//         "picture": "/uploads/b39.jpg",
+//         "ownerId": 8,
+//         "score": 0
+//     }
+// ]
+
+
 // ---------------------------------------------------------------
 router.get("/", asyncHandler(async (req, res) => {
   const where = [];
@@ -105,15 +309,7 @@ router.get("/", asyncHandler(async (req, res) => {
 }));
 
 // ---------------------------------------------------------------
-// หนังสือของตัวเองทั้งหมด (หน้า my item, select-book)
-// Testing 1: ดูหนังสือทั้งหมดของบัญชีที่ login อยู่
-// Login: admin_aomsin
-// method: GET
-// URL: http://localhost:3000/books/mine
-// Body: none
-// Expected: 200 OK
-// Result: แสดงรายการหนังสือทั้งหมดของบัญชีที่ login อยู่
-// ---------------------------------------------------------------
+
 router.get("/mine", requireLogin, asyncHandler(async (req, res) => {
   const [rows] = await db.query(`SELECT ${BOOK_COLS} ${BOOK_FROM} WHERE b.acc_id = ? ORDER BY b.book_id DESC`, [
     req.user.id,
@@ -141,10 +337,41 @@ router.get("/next", requireLogin, asyncHandler(async (req, res) => {
 
 // ---------------------------------------------------------------
 // ดูรายละเอียดหนังสือ 1 เล่ม
-// Testing 1: ดูรายละเอียดหนังสือ 1 เล่ม
+// Testing 1: Book detail
 // method: get  
-// URL: http://localhost:3000/books/"id"
+// URL: http://localhost:3000/books/"27"
+// Body: none
+// Expected: 200 OK
+// Result:
+// {
+//     "id": 27,
+//     "name": "A Christmas Carol",
+//     "category": "novel",
+//     "price": 250,
+//     "detail": "มีรอยนิดหน่อย",
+//     "condition": 4,
+//     "owner": "north",
+//     "picture": "/uploads/b27.jpg",
+//     "ownerId": 6
+// }
 
+// Testing 2: Book detail
+// method: get  
+// URL: http://localhost:3000/books/"45"
+// Body: none
+// Expected: 200 OK
+// Result:
+// {
+//     "id": 45,
+//     "name": "อย่าเป็นคนเก่งที่คุยไม่เป็น",
+//     "category": "self-help",
+//     "price": 220,
+//     "detail": "ขอบหนังสือยับนิดหน่อย",
+//     "condition": 4,
+//     "owner": "gun",
+//     "picture": "/uploads/b45.jpg",
+//     "ownerId": 9
+// }
 // ---------------------------------------------------------------
 router.get("/:id", optionalLogin, asyncHandler(async (req, res) => {
   const [rows] = await db.query(`SELECT ${BOOK_COLS} ${BOOK_FROM} WHERE b.book_id = ?`, [req.params.id]);
@@ -153,20 +380,43 @@ router.get("/:id", optionalLogin, asyncHandler(async (req, res) => {
 }));
 
 // ---------------------------------------------------------------
-// เพิ่มหนังสือ (ต้อง login ก่อน)
-// Testing 1: เพิ่มหนังสือโดยไม่มีรูปภาพ
+// Testing 1: Add product
 // method: POST
 // URL: http://localhost:3000/books
 // Body: raw -> JSON
 // {
-//   "name": "testbook",
-//   "category": "novel",
-//   "price": 120,
-//   "condition": 4,
-//   "detail": "Book for Postman testing"
+//     "name": "Test01B",
+//     "category": "fantasy",
+//     "price": 250,
+//     "condition": 4,
+//     "detail": "A Testter fiction adventure novel"
 // }
 // Expected: 201 Created
-// Result: { "message": "Book added", "id": ... }
+// Result: 
+// {
+//     "message": "Book added",
+//     "id": 51
+// }
+
+// Testing 1: Add product
+// method: POST
+// URL: http://localhost:3000/books
+// Body: raw -> JSON
+// {
+//     "name": "Test02B",
+//     "category": "fantasy",
+//     "price": 250,
+//     "condition": 4,
+//     "detail": "A Testter2 fiction adventure novel"
+// }
+// Expected: 201 Created
+// Result: 
+// {
+//     "message": "Book added",
+//     "id": 52
+// }
+
+
 // ---------------------------------------------------------------
 router.post("/", requireLogin, upload.single("image"), asyncHandler(async (req, res) => {
   const { error, data } = validateBook(req.body);
@@ -184,20 +434,39 @@ router.post("/", requireLogin, upload.single("image"), asyncHandler(async (req, 
 }));
 
 // ---------------------------------------------------------------
-// แก้ไขหนังสือ (เจ้าของหนังสือหรือ admin เท่านั้น)
-// Testing 1: แก้ไขข้อมูลหนังสือ ID 56
+// Testing 1: Edit product
 // method: PUT
-// URL: http://localhost:3000/books/56
+// URL: http://localhost:3000/books/51
 // Body: raw -> JSON
 // {
-//   "name": "newtestBook",
-//   "category": "novel",
-//   "price": 250,
-//   "condition": 2,
-//   "detail": "good"
+//     "name": "Test01BE",
+//     "category": "fantasy",
+//     "price": 250,
+//     "condition": 4,
+//     "detail": "A Testter2 fiction adventure novel Edittt"
 // }
 // Expected: 200 OK
-// Result: { "message": "Book updated" }
+// Result: 
+// {
+//     "message": "Book updated"
+// }
+
+// Testing 2: Edit product
+// method: PUT
+// URL: http://localhost:3000/books/52
+// Body: raw -> JSON
+// {
+//     "name": "Test02BE",
+//     "category": "fantasy",
+//     "price": 250,
+//     "condition": 4,
+//     "detail": "A Testter2 fiction adventure novel Edittt"
+// }
+// Expected: 200 OK
+// Result: 
+// {
+//     "message": "Book updated"
+// }
 // ---------------------------------------------------------------
 router.put("/:id", requireLogin, upload.single("image"), asyncHandler(async (req, res) => {
   const newFile = req.file ? "/uploads/" + req.file.filename : null;
@@ -225,13 +494,25 @@ router.put("/:id", requireLogin, upload.single("image"), asyncHandler(async (req
 }));
 
 // ---------------------------------------------------------------
-// ลบหนังสือ (เจ้าของหนังสือหรือ admin เท่านั้น)
-// Testing 1: ลบหนังสือ ID 56
+// Testing 1: Delete product
 // method: DELETE
-// URL: http://localhost:3000/books/56
+// URL: http://localhost:3000/books/51
 // Body: none
 // Expected: 200 OK
-// Result: { "message": "Book removed" }
+// Result:
+// {
+//     "message": "Book removed"
+// }
+
+// Testing 2: Delete product
+// method: DELETE
+// URL: http://localhost:3000/books/52
+// Body: none
+// Expected: 200 OK
+// Result:
+// {
+//     "message": "Book removed"
+// }
 // ---------------------------------------------------------------
 router.delete("/:id", requireLogin, asyncHandler(async (req, res) => {
   const [rows] = await db.query("SELECT acc_id, book_lick_pic FROM book WHERE book_id = ?", [req.params.id]);
