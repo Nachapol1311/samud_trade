@@ -37,14 +37,17 @@ const TRADE_FROM = `FROM trade_request t
 
 // ---------------------------------------------------------------
 // ขอแลกหนังสือ (หน้า select-book) ส่งไปแสดงที่หน้า match ของเจ้าของ และหน้า wait ของเรา
-// Testing 1: (login ด้วย somchai) ขอแลกหนังสือ id 17 ของ mali ด้วยหนังสือ id 14 ของเรา
+// Testing 1: (login ด้วย kim) ขอแลกหนังสือ id 37 ของ bebe ด้วยหนังสือ id 12 ของเรา
 // method: post
 // URL: http://localhost:3000/trades
 // body: raw JSON
-// { "want_book_id": 17, "offer_book_id": 14 }
-//
-// Testing 2: (login ด้วย krit_dev)
-// { "want_book_id": 11, "offer_book_id": 22 }
+// { "want_book_id": 37, "offer_book_id": 12 }
+// Expected: 201 Created
+// Result: 
+//{
+//   "message": "Trade request sent",
+//   "id": 5
+// }
 // ---------------------------------------------------------------
 router.post("/", asyncHandler(async (req, res) => {
   const wantId = toInt(req.body.want_book_id);
