@@ -257,8 +257,14 @@ async function changeStatus(req, res, column, status, message) {
 
 // ---------------------------------------------------------------
 // ไม่แลกเปลี่ยน (เฉพาะเจ้าของหนังสือที่ถูกขอ)
-// Testing 1: (login ด้วย somchai) method: post  URL: http://localhost:3000/trades/2/decline
-// Testing 2: (login ด้วย napat)   method: post  URL: http://localhost:3000/trades/3/decline
+// Testing 1: (login ด้วย kim) 
+// method: post
+// URL: http://localhost:3000/trades/2/decline
+// Expected: 200 OK
+// Result:
+// {
+//  "message": "Trade declined"
+// }
 // ---------------------------------------------------------------
 router.post("/:id/decline", asyncHandler((req, res) => changeStatus(req, res, "owner_acc_id", "declined", "Trade declined")));
 
