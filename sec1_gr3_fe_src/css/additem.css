@@ -116,7 +116,7 @@
 }
 
 /* ---------- ปุ่ม ---------- */
-.additem>div:last-child {
+.additem .form-actions {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -124,8 +124,8 @@
     margin-top: 30px;
 }
 
-.additem>div:last-child a,
-.additem>div:last-child button {
+.additem .form-actions a,
+.additem .form-actions button {
     width: 70px;
     height: 36px;
     padding: 0;

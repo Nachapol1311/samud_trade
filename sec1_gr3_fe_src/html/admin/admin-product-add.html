@@ -22,7 +22,7 @@
         </nav>
 
         <a class="profile" href="/admin-profile">
-            <svg class="profile-icon" viewbox="0 0 24 24">
+            <svg class="profile-icon" viewBox="0 0 24 24">
                 <circle cx="12" cy="8.6" r="3.9"></circle>
                 <path d="M2.6 24c0-4.3 4.2-7.9 9.4-7.9s9.4 3.6 9.4 7.9z"></path>
             </svg>
@@ -32,11 +32,11 @@
     <main class="additem" id="additem_content">
         <h2>Add New Book</h2>
 
-        <div class="detail">
+        <form id="bookForm" class="detail" enctype="multipart/form-data">
 
             <div>
                 <p>Book</p>
-                <input id="book_name" maxlength="100" placeholder="Enter book" type="text" />
+                <input id="book_name" name="name" maxlength="100" placeholder="Enter book" type="text" required/>
             </div>
 
             <!-- ค้นหาข้อมูลหนังสือจาก Public Web Service: Open Library -->
@@ -51,8 +51,8 @@
             </div>
 
             <div>
-                <p>Catagory</p>
-                <select id="category" name="category">
+                <p>Category</p>
+                <select id="category" name="category" required>
                     <option value="">-- select category --</option>
                     <option value="art-design">art &amp; design</option>
                     <option value="biography">biography</option>
@@ -90,13 +90,13 @@
 
             <div>
                 <p>Price</p>
-                <input id="book_price" min="0" placeholder="Price" type="number" />
+                <input id="book_price" name="price" min="0" placeholder="Price" type="number" required />
             </div>
 
             <div>
                 <p>Condition</p>
                 <div class="stars">
-                    <input id="star5" name="condition" type="radio" value="5" />
+                    <input id="star5" name="condition" type="radio" value="5" required />
                     <label for="star5" title="5 ดาว">★</label>
                     <input id="star4" name="condition" type="radio" value="4" />
                     <label for="star4" title="4 ดาว">★</label>
@@ -116,19 +116,20 @@
 
             <div id="info-detail">
                 <p>Detail</p>
-                <textarea id="book_detail" maxlength="255" name="deteil"></textarea>
+                <textarea id="book_detail" maxlength="255" name="detail"></textarea>
             </div>
 
             <div>
                 <p>Book Image</p>
-                <input id="book_image" type="file" accept="image/*" />
+                <input id="book_image" name="image" type="file" accept="image/*" />
             </div>
-        </div>
 
-        <div>
-            <a href="/product-manage" class="cancel-btn">Cancel</a>
-            <button type="button" class="save-btn" id="saveBtn">Add</button>
-        </div>
+            <div class="form-actions">
+                <a href="/product-manage" class="cancel-btn">Cancel</a>
+                <button type="submit" class="save-btn" id="saveBtn">Add</button>
+            </div>
+        </form>
+
     </main>
     <footer>
         <div>

@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     const preview = document.getElementById("book_preview");
     const fileInput = document.getElementById("book_image");
     const saveBtn = document.getElementById("saveBtn");
+    const bookForm = document.getElementById("bookForm");
+    
 
     let book;
     try {
@@ -44,7 +46,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (fileInput.files[0]) preview.src = URL.createObjectURL(fileInput.files[0]);
     });
 
-    saveBtn.addEventListener("click", async () => {
+    bookForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
         const name = document.getElementById("book_name").value.trim();
         const category = document.getElementById("category").value;
         const price = document.getElementById("book_price").value.trim();

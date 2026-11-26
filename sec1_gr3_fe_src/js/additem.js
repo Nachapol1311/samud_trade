@@ -6,8 +6,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     document.getElementById("book_owner").textContent = me.username;
     const saveBtn = document.getElementById("saveBtn");
+    const bookForm = document.getElementById("bookForm");
 
-    saveBtn.addEventListener("click", async () => {
+    bookForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
         const name = document.getElementById("book_name").value.trim();
         const category = document.getElementById("category").value;
         const price = document.getElementById("book_price").value.trim();
