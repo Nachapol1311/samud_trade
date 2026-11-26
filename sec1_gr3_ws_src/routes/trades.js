@@ -179,8 +179,14 @@ router.get("/outgoing", asyncHandler(async (req, res) => {
 // ---------------------------------------------------------------
 // ตกลงแลกเปลี่ยน (เฉพาะเจ้าของหนังสือที่ถูกขอ): สลับเจ้าของหนังสือทั้งสองเล่ม
 // และยกเลิกคำขออื่นที่ยัง pending ที่เกี่ยวกับหนังสือสองเล่มนี้
-// Testing 1: (login ด้วย somchai) method: post  URL: http://localhost:3000/trades/1/accept
-// Testing 2: (login ด้วย somchai) method: post  URL: http://localhost:3000/trades/2/accept
+// Testing 1: (login ด้วย kim) 
+// method: post
+// URL: http://localhost:3000/trades/1/accept
+// Expected: 200 OK
+// Result:
+// {
+//     "message": "Trade completed"
+// }
 // ---------------------------------------------------------------
 router.post("/:id/accept", asyncHandler(async (req, res) => {
   const conn = await db.getConnection();
