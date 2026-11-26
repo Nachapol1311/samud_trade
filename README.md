@@ -2,7 +2,7 @@
 
 เว็บแอปพลิเคชันสำหรับแลกเปลี่ยนหนังสือมือสอง (ITDS242 Web Technologies Lab, Section 1 Group 3)
 
-UX/UI design: [Figma](https://www.figma.com/site/xTVThcl4ufSjm26Wln06Aw/samud-trade?node-id=0-1&t=lABmWiwHzc8Kair1-1)
+UX/UI design: [Figma](https://www.figma.com/design/KPzYKICUoTmFftekxmzGJY/Untitled?node-id=0-1&t=HNiqkErVdR8zX2Xf-1)
 
 ## โครงสร้างโปรเจกต์
 
