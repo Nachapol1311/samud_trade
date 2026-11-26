@@ -127,8 +127,38 @@ router.get("/incoming", asyncHandler(async (req, res) => {
 
 // ---------------------------------------------------------------
 // หน้า wait: คำขอที่เราส่งไปและยังรอการตอบรับ (ซ้าย = หนังสือที่เราอยากได้, ขวา = หนังสือของเรา)
-// Testing 1: (login ด้วย somchai) method: get  URL: http://localhost:3000/trades/outgoing
-// Testing 2: (login ด้วย mali_reads) method: get  URL: http://localhost:3000/trades/outgoing
+// Testing 1: (login ด้วย kim) 
+// method: get
+// URL: http://localhost:3000/trades/outgoing
+// Expected: 200 OK
+// Result:
+// [
+//     {
+//         "id": 5,
+//         "to": "bebe",
+//         "theirBook": {
+//             "id": 37,
+//             "name": "My Return to the Walter boys",
+//             "category": "novel",
+//             "price": 299,
+//             "detail": "มีรอยพับหน้า",
+//             "condition": 4,
+//             "picture": "/uploads/b37.jpg",
+//             "owner": "bebe"
+//         },
+//         "myBook": {
+//             "id": 12,
+//             "name": "BETTER THAN THE MOVIE",
+//             "category": "romance",
+//             "price": 477,
+//             "detail": "หนังสืองอ ปกงอ มีรสนิดหน่อยไม่เยอะมาก",
+//             "condition": 3,
+//             "picture": "/uploads/b12.jpg",
+//             "owner": "kim"
+//         }
+//     },
+//     ...
+//]
 // ---------------------------------------------------------------
 router.get("/outgoing", asyncHandler(async (req, res) => {
   const [rows] = await db.query(
