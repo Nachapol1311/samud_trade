@@ -8,7 +8,7 @@ const { asyncHandler, removeUpload } = require("../util");
 const router = express.Router();
 
 // ---------------------------------------------------------------
-// Login: ตรวจ username/password แล้วตั้ง cookie
+// Login: ตรวจ username/password แล้วตั้ง cookie (valid)
 // Testing 1: admin login (Postman จะเก็บ cookie ให้อัตโนมัติ)
 // method: POST
 // URL: http://localhost:3000/auth/login
@@ -19,6 +19,21 @@ const router = express.Router();
 // }
 // Expected: 200 OK
 // Result: { "role": "admin", "redirect": "/admin-home" }
+// ---------------------------------------------------------------
+// Login: ตรวจ username/password (Invalid)
+// Testing 1: admin login 
+// method: POST
+// URL: http://localhost:3000/auth/login
+// Body: raw
+// {
+//     "username" : "admin_aomsin",
+//     "password" : "error"
+// }
+// Expected: 401 Unauthorized
+// Result: 
+// {
+//     "message": "Invalid username or password"
+// }
 // ---------------------------------------------------------------
 router.post("/login", asyncHandler(async (req, res) => {
   const username = String(req.body.username || "").trim();
