@@ -131,6 +131,7 @@ router.get("/incoming", asyncHandler(async (req, res) => {
 // Testing 1: (login ด้วย kim) 
 // method: get
 // URL: http://localhost:3000/trades/outgoing
+// Body: none
 // Expected: 200 OK
 // Result:
 // [
