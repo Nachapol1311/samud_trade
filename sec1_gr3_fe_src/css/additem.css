@@ -28,6 +28,7 @@
 }
 
 .additem input[type="text"],
+.additem input[type="number"],
 .additem select {
     width: 100%;
     height: 38px;
