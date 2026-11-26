@@ -76,8 +76,38 @@ router.post("/", asyncHandler(async (req, res) => {
 
 // ---------------------------------------------------------------
 // หน้า match: คำขอที่คนอื่นอยากแลกกับเรา (ซ้าย = หนังสือของเขา, ขวา = หนังสือของเรา)
-// Testing 1: (login ด้วย somchai) method: get  URL: http://localhost:3000/trades/incoming
-// Testing 2: (login ด้วย napat)   method: get  URL: http://localhost:3000/trades/incoming
+// Testing 1: (login ด้วย kim) 
+// method: get
+// URL: http://localhost:3000/trades/incoming
+// Expected: 200 OK
+// Result:
+// [
+//     {
+//         "id": 2,
+//         "from": "mai",
+//         "theirBook": {
+//             "id": 21,
+//             "name": "เดนดาว NEVERDIE",
+//             "category": "novel",
+//             "price": 380,
+//             "detail": "หนังสืองอ ขอบขาดนิดหน่อย",
+//             "condition": 4,
+//             "picture": "/uploads/b21.jpg",
+//             "owner": "mai"
+//         },
+//         "myBook": {
+//             "id": 12,
+//             "name": "BETTER THAN THE MOVIE",
+//             "category": "romance",
+//             "price": 477,
+//             "detail": "หนังสืองอ ปกงอ มีรสนิดหน่อยไม่เยอะมาก",
+//             "condition": 3,
+//             "picture": "/uploads/b12.jpg",
+//             "owner": "kim"
+//         }
+//     },
+//      ...
+// ]
 // ---------------------------------------------------------------
 router.get("/incoming", asyncHandler(async (req, res) => {
   const [rows] = await db.query(
