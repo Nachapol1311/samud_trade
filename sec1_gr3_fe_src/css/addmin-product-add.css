@@ -115,7 +115,7 @@
     resize: vertical;
 }
 
-.additem>div:last-child {
+.additem .form-actions {
     display: flex;
     justify-content: center;
     gap: 20px;
