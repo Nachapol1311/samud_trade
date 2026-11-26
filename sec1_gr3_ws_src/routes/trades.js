@@ -270,8 +270,14 @@ router.post("/:id/decline", asyncHandler((req, res) => changeStatus(req, res, "o
 
 // ---------------------------------------------------------------
 // ยกเลิกคำขอที่เราส่ง (เฉพาะผู้ขอ) หน้า wait
-// Testing 1: (login ด้วย somchai) method: post  URL: http://localhost:3000/trades/3/cancel
-// Testing 2: (login ด้วย somchai) method: post  URL: http://localhost:3000/trades/4/cancel
+// Testing 1: (login ด้วย kim) 
+// method: post
+// URL: http://localhost:3000/trades/3/cancel
+// Expected: 200 OK
+// Result:
+// {
+//     "message": "Trade request cancelled"
+// }
 // ---------------------------------------------------------------
 router.post("/:id/cancel", asyncHandler((req, res) => changeStatus(req, res, "requester_acc_id", "cancelled", "Trade request cancelled")));
 
